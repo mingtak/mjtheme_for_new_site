@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+  xmlns="http://namespaces.plone.org/diazo"
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+  <!-- Include the backend theme -->
+  <xi:include href="++theme++barceloneta/backend.xml" />
+
+  <!-- Only theme front end pages -->
+  <rules css:if-content="body.frontend#visual-portal-wrapper">
+
+    <theme href="index.html" />
+
+    <!-- Replace title with Plone's page title  -->
+    <replace
+      css:content="html head title"
+      css:theme="html head title"
+      />
+
+    <!-- Copy base tag from Plone -->
+    <before
+      css:content="html head base"
+      css:theme-children="html head"
+      />
+
+    <!-- Copy link, style, meta tags from Plone head -->
+    <before
+      content="/html/head/meta"
+      css:theme-children="html head"
+      />
+
+    <!-- merge classes from Plone body with theme body -->
+    <merge
+      attributes="class"
+      css:content="body"
+      css:theme="body"
+      />
+
+    <!-- Copy script tags from Plone head to end of body -->
+<!--    <after
+      css:content="html head script"
+      css:theme-children="html head"
+      />
+-->
+    <!-- LOGO -->
+    <copy
+      attributes="href title"
+      css:content="#portal-logo"
+      css:theme=".site-branding a"
+      />
+    <replace
+      css:content="#portal-logo img"
+      css:theme=".site-branding a img"
+      />
+
+    <!-- PORTAL NAVIGATION -->
+    <replace
+      css:content="ul#portal-globalnav"
+      css:theme="nav.main-nav ul"
+      />
+    <replace
+      css:content="ul#portal-globalnav"
+      css:theme="nav.big-menu ul"
+      />
+
+    <!-- BREADCRUMBS -->
+<!--    <replace
+      css:content-children="div#portal-breadcrumbs"
+      css:theme-children="ol.breadcrumb"
+      />
+    <drop css:content="span#breadcrumbs-you-are-here" />
+-->
+
+    <!-- CONTENT -->
+    <replace
+      css:content="#portal-column-content"
+      css:theme-children="div.content-area"
+      />
+
+    <!-- FOOTER -->
+    <replace
+      css:content-children="#portal-footer-signature div.portletContent"
+      css:theme-children="footer#footer > div.container"
+      />
+
+
+    <!-- Drop -->
+    <drop css:content="div#edit-zone"/>
+
+  </rules>
+
+</rules>
