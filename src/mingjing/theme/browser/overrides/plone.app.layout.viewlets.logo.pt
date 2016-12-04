@@ -1,10 +1,19 @@
 <a id="portal-logo"
+   rel="home"
    title="Home"
+   class="custom-logo-link"
    tal:attributes="href view/navigation_root_url;
                    title view/navigation_root_title"
    i18n:domain="plone"
    i18n:attributes="title">
-    <img src="logo.png" alt=""
+<div class="col-sm-3">
+    <img src="logo.png" alt="明鏡網"
          tal:attributes="alt view/logo_title;
                          title view/logo_title;
-                         src view/img_src" /></a>
+                         src view/img_src" />
+</div>
+<div class="col-sm-9">
+    <h3>明鏡網</h3>
+    <h4>www.mingjingnews.com</h4>
+</div>
+</a>

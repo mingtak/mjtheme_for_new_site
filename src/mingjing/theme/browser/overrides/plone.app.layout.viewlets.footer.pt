@@ -4,13 +4,12 @@
 <section class="portlet portletClassic" id="portal-footer-signature">
     <div class="portletContent">
         <div class="row">
-            <div class="col-xs-6">
-<br>                Copyright © <tal:year replace="view/year"> 國立臺灣藝術大學體育教學中心. All Rights Reserved.
-            </div>
-            <div class="col-xs-6">
-校址：22058新北市板橋區大觀路1段59號<br>
-電話：02-2272-2181<br>
-校安專線：02-2967-4948
+            <div class="col-xs-12">
+
+明镜网是独立的、开放式的资讯平台，欢迎网友自由发贴，网友自行发布的书面文章、图片、录音、录影等，只代表上贴者个人意见并承担相关责任。<br>
+如发现上贴稿件侵权，或原稿作者不愿在明镜网发表图文，请版权拥有者通知明镜网处理。明镜网保留拒绝某些网友上贴或删除某些贴子的权力。<br>
+明镜网相关媒体可以使用网友上帖图文，除非网友有特别声明。明镜网所发布的所有消息和评论仅供读者参考，不作为任何行为建议。
+
             </div>
         </div>
     </div>

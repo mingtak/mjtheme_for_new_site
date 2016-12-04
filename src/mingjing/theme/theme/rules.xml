@@ -46,14 +46,9 @@
       />
 -->
     <!-- LOGO -->
-    <copy
-      attributes="href title"
+    <replace
       css:content="#portal-logo"
       css:theme=".site-branding a"
-      />
-    <replace
-      css:content="#portal-logo img"
-      css:theme=".site-branding a img"
       />
 
     <!-- PORTAL NAVIGATION -->
@@ -67,12 +62,10 @@
       />
 
     <!-- BREADCRUMBS -->
-<!--    <replace
-      css:content-children="div#portal-breadcrumbs"
-      css:theme-children="ol.breadcrumb"
+    <replace
+      css:content="nav#portal-breadcrumbs"
+      css:theme-children="div.tt-el-ticker"
       />
-    <drop css:content="span#breadcrumbs-you-are-here" />
--->
 
     <!-- CONTENT -->
     <replace
@@ -86,6 +79,10 @@
       css:theme-children="footer#footer > div.container"
       />
 
+    <replace
+      css:content-children="div.colophonWrapper"
+      css:theme-children="div.sub-footer div.container"
+      />
 
     <!-- Drop -->
     <drop css:content="div#edit-zone"/>

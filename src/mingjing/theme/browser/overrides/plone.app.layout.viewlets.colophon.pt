@@ -1,14 +1,14 @@
 <div id="portal-colophon"
      i18n:domain="plone">
 <div class="colophonWrapper">
-<ul>
-  <li>
-    <a href="http://plone.com" target="_blank"
-       title="This site was built using the Plone Open Source CMS/WCM."
-       i18n:attributes="title title_built_with_plone;"
-       i18n:translate="label_powered_by_plone">
-      Powered by Plone &amp; Python</a>
-  </li>
-</ul>
+
+    <div class="row">
+        <div class="col-sm-12">
+
+关於明镜  |  友情连结  |  明镜报导  |  服务条款  |  版权声明  |  隐私政策  |  网站地图  |  RSS订阅  |  
+
+        </div>
+    </div>
+
 </div>
 </div>
