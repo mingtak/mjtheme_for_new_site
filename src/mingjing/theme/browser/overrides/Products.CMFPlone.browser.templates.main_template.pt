@@ -81,16 +81,18 @@
 <!-- Custom Section Start -->
 <section>
     <div class="container">
-        <div class="row">
+        <div class="row sticky-parent">
 
 <!-- Left Column -->
 <tal:lc condition="sl">
-    <div class="col-md-3">
+    <div class="col-md-3 sidebar sticky-column">
+      <div class="theiaStickySidebar">
         <tal:block replace="structure provider:plone.leftcolumn"/>
+      </div>
     </div>
 </tal:lc>
 
-      <div tal:attributes="class python:'col-md-6' if (sr and sl) else 'col-md-9' if (sr or sl) else 'col-md-12' ">
+      <div tal:attributes="class python:'sticky-column col-md-6' if (sr and sl) else 'sticky-column col-md-9' if (sr or sl) else 'col-md-12' ">
         <article id="content">
 
           <metal:bodytext define-slot="main">
@@ -100,11 +102,12 @@
             <metal:title define-slot="content-title">
                 <h1 class="documentFirstHeading"
                     tal:define="title context/Title"
-                    tal:condition="title"
+                    tal:condition="python:title and context.portal_type != 'Cover'"
                     tal:content="title">Title or id</h1>
             </metal:title>
             <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
 
+<!-- 考慮拿掉 -->
             <metal:description define-slot="content-description">
                 <div class="documentDescription description"
                      tal:define="description context/Description"
@@ -130,8 +133,10 @@
 
 <!-- Right Column -->
 <tal:lc condition="sr">
-    <div class="col-md-3">
+    <div class="col-md-3 sidebar sticky-column">
+      <div class="theiaStickySidebar">
         <tal:block replace="structure provider:plone.rightcolumn"/>
+      </div>
     </div>
 </tal:lc> 
 

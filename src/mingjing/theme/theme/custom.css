@@ -1,0 +1,80 @@
+#header nav.main-nav > ul > li:first-child:not(.menu-item-has-children) > a {
+    padding-left: 10px;
+}
+
+.current-menu-item {
+    background-color:#e84244;
+}
+
+#header .panel-header {
+    background-color:#e84244;
+}
+
+#header nav.main-nav > ul > li.menu-item-mega .mega-menu-lists a:hover {
+    background-color: initial;
+    color: #333;
+}
+
+#header nav.main-nav > ul > li ul {
+    background-color: rgba(232, 66, 68, 0.9);
+}
+
+#header nav.main-nav > ul > li::after {
+    background-color: rgba(232, 66, 68, 0.95);
+    height:calc(120%);
+}
+
+#header nav.main-nav > ul > li.menu-item-mega .mega-menu-lists a {
+    padding-top: initial;
+}
+
+#content-core img {
+    max-width:100%;
+}
+
+.post.first.hover-dark div.image img {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.news-slider .box {
+    background: rgba(255, 255, 255, 0.4);
+    left: -3px;
+    width: 100%;
+    bottom: -3px;
+    padding: 35px 30px 3px 4px;
+}
+
+.plone-breadcrumb ol {
+    display: inline-block;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.plone-breadcrumb ol > li {
+    font-weight: 400;
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+}
+
+.plone-breadcrumb ol > li + li:before
+{
+    content:">";
+    padding: 0 10px;
+}
+
+#header .header-wrapper .site-branding {
+  bottom:initial;
+  margin-top:20px;
+}
+
+#header .header-wrapper .site-branding img {
+  width: initial;
+  height: initial;
+}
+
+#header .header-wrapper .site-branding h3 {
+  margin:5px 0;
+}

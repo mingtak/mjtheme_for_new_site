@@ -6,26 +6,71 @@
      tal:condition="portal_tabs"
      i18n:domain="plone">
 
+<?python
+from plone import api
+import math
+portal = api.portal.get()
+?>
+
   <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
   <nav class="plone-navbar" id="portal-globalnav-wrapper">
     <div class="container">
-      <div class="plone-navbar-header">
-        <button type="button" class="plone-navbar-toggle" data-toggle="collapse" data-target="#portal-globalnav-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
 
       <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
+
         <ul class="plone-nav plone-navbar-nav"
             id="portal-globalnav"
             tal:define="selected_tab python:view.selected_portal_tab">
             <tal:tabs tal:repeat="tab portal_tabs">
+              <li tal:define="tid tab/id;
+                              folder python:portal.get(tid);"
+                  tal:attributes="id string:portaltab-${tid};
+                                  class python:'%s %s menu-item-mega' %
+                                        (('current-menu-item' if selected_tab==tid else ''), ('menu-item-has-children' if folder else ''))">
+
+                  <a href=""
+                     tal:content="tab/name"
+                     tal:attributes="href tab/url;
+                                     title tab/description|nothing;
+                                     target tab/link_target|nothing;">
+                    Tab Name
+                  </a>
+                  <ul tal:condition="python:folder">
+<tal:items define="items python:list(folder.getChildNodes());
+                   brain python:api.content.find(Type='Folder', context=folder)">
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-6 col-md-1 mega-menu-column" tal:repeat="col python:range(12)">
+                          <div class="mega-menu-lists" tal:define="colCount python:int(math.ceil(float(len(items))/12))">
+                            <tal:a tal:repeat="item python:range(colCount)">
+                              <a tal:content="python:items[item*12+col].title"
+                                 tal:attributes="href python:items[item*12+col].absolute_url()"
+                                 tal:on-error="nothing"
+                                 href="single-news.html">Autos</a>
+                            </tal:a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+</tal:items>
+                  </ul>
+              </li>
+            </tal:tabs>
+
+        </ul>
+
+
+
+
+
+
+        <ul class="plone-nav plone-navbar-nav"
+            id="portal-globalnav-big"
+            tal:define="selected_tab python:view.selected_portal_tab">
+            <tal:tabs tal:repeat="tab portal_tabs">
               <li tal:define="tid tab/id"
                   tal:attributes="id string:portaltab-${tid};
-                                  class python:selected_tab==tid and 'active' or nothing">
+                                  class python:selected_tab==tid and 'selected' or nothing">
                   <a href=""
                      tal:content="tab/name"
                      tal:attributes="href tab/url;
@@ -36,7 +81,19 @@
               </li>
             </tal:tabs>
         </ul>
+
+
+
+
+
+
+
+
+
+
+
       </div>
+
     </div>
   </nav>
 

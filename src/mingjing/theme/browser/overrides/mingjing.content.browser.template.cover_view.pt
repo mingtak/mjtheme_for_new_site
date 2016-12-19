@@ -1,0 +1,196 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="mingjing.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+news = portal['news']['1'].getChildNodes()
+?>
+
+                <!-- template -->
+<section>
+                <div class="news-slider news-block mv5 mvt0">
+
+                    <!-- masterslider -->
+                    <div class="master-slider ms-skin-default" id="masterslider1">
+
+        
+                                            <div class="ms-slide" data-delay="0" tal:repeat="item python:list(news)[0:5]">
+                            <img src="/++resource++mingjing.theme/images/blank.gif"
+                                 tal:attributes="data-src string:${item/absolute_url}/@@images/image/preview;
+                                                 alt item/title"/>
+                            <div class="ms-thumb post hover-zoom">
+                                <div class="image" tal:attributes="data-src string:${item/absolute_url}/@@images/image/mini"></div>
+                                <div class="thumb-meta">
+<!--                                    <div class="meta">
+                                        <span class="author">Dave Clark</span>
+                                        <span class="date">2h</span>
+                                    </div>
+-->
+                                    <h4 tal:content="item/title">All Roads Lead to Cleveland Behind Marie</h4>
+                                </div>
+                            </div>
+                            
+                            <div class="ms-layer box" data-delay="0" data-effect="bottom(45)" data-duration="300" data-ease="easeInOut">
+
+<!--                                <div class="meta animate-element" data-anim="fadeInUp">
+                                    <span class="author">Dave Clark</span>
+                                    <span class="date">2h</span>
+                                </div>
+-->
+                                <h4 class="animate-element" data-anim="fadeInUp">
+                                <a tal:attributes="href item/absolute_url" tal:content="item/title">Title</a></h4>
+                                <p class="animate-element" data-anim="fadeInUp" tal:content="item/description">Description</p>
+
+                            </div>
+
+                        </div>
+                                            
+
+                    </div>
+                    <!-- end of masterslider -->
+
+                </div>
+</section>
+                <!-- end of template -->
+
+
+<section>
+<div class="parallax-content">
+<h3>熱門話題</h3>
+<tal:repeat repeat="item python:list(news)[0:4]">
+  <tal:even condition="repeat/item/even">
+
+                            <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="category-block articles">
+
+                                        <div class="post first hover-dark">
+                                            <a tal:attributes="href item/absolute_url">
+                                                <div class="image" tal:attributes="data-src string:${item/absolute_url}/@@images/image/mini">
+                                                    <img tal:attributes="src string:${item/absolute_url}/@@images/image/mini;
+                                                                         alt item/title"/>
+                                                </div>
+                                            </a>
+<!--                                            <div class="meta">
+                                                <span class="author">Dave Clark</span>
+                                                <span class="date">2h</span>
+                                            </div>
+-->
+                                            <h4><a tal:attributes="href item/absolute_url" tal:content="item/title"></a></h4>
+                                            <p tal:content="item/description"></p>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-6">
+                                    <div class="category-block articles">
+                                        <div class="post first hover-dark"
+                                             tal:define="sibling python:item.getNextSibling()">
+	                                            <a tal:attributes="href sibling/absolute_url">
+                                                <div class="image"
+                                                     tal:attributes="datasrc string:${sibling/absolute_url}/@@images/image/mini">
+                                                    <img tal:attributes="src string:${sibling/absolute_url}/@@images/image/mini;
+                                                                         alt sibling/title"/>
+                                                </div>
+                                            </a>
+<!--                                            <div class="meta">
+                                                <span class="author">Dave Clark</span>
+                                                <span class="date">2h</span>
+                                            </div>
+-->
+                                            <h4><a tal:attributes="href sibling/absolute_url" tal:content="item/title"></a></h4>
+                                            <p tal:content="sibling/description"></p>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+  </tal:even>
+</tal:repeat>
+                            <div class="row">
+                                <div class="col-sm-12 mv3 mvt0">
+                                    <a href="entertainment.html">
+                                        <img src="https://tpc.googlesyndication.com/simgad/15926840416994248994" alt="廣告" class="full-size">
+                                    </a>
+                                </div>
+                            </div>
+
+
+<!-- 明鏡火拍 假的 -->
+<h3>明鏡火拍</h3>
+<tal:repeat repeat="item python:list(news)[0:4]">
+  <tal:even condition="repeat/item/even">
+
+                            <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="category-block articles">
+
+                                        <div class="post first hover-dark">
+                                            <a href="https://www.youtube.com/watch?v=vqI8VgOkH6U">
+                                                <div class="image" data-src="http://pix.toile-libre.org/upload/original/1480992547.png">
+                                                    <img src="http://pix.toile-libre.org/upload/original/1480992547.png"
+                                                         alt="TEST"/>
+                                                </div>
+                                            </a>
+<!--                                            <div class="meta">
+                                                <span class="author">Dave Clark</span>
+                                                <span class="date">2h</span>
+                                            </div>
+-->
+                                            <h4>
+                                <a url="https://www.youtube.com/watch?v=vqI8VgOkH6U">直播：川普的中國顧問內定，北京撓頭</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-6">
+                                    <div class="category-block articles">
+
+                                        <div class="post first hover-dark">
+                                            <a href="https://www.youtube.com/watch?v=vqI8VgOkH6U">
+                                                <div class="image" data-src="http://pix.toile-libre.org/upload/original/1480992547.png">
+                                                    <img src="http://pix.toile-libre.org/upload/original/1480992547.png"
+                                                         alt="TEST"/>
+                                                </div>
+                                            </a>
+<!--                                            <div class="meta">
+                                                <span class="author">Dave Clark</span>
+                                                <span class="date">2h</span>
+                                            </div>
+-->
+                                            <h4>
+                                <a url="https://www.youtube.com/watch?v=vqI8VgOkH6U">直播：川普的中國顧問內定，北京撓頭</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                            </div>
+  </tal:even>
+</tal:repeat>
+
+                        </div>
+                        <!-- end .parallax-column -->
+
+
+</section>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

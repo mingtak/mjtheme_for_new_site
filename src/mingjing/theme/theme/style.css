@@ -24,7 +24,8 @@
     11. Responsive
   
   -------------------------------------------------------------------------*/
-
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanssc.css);
 
 @font-face {
     font-family: 'SF-UI-Display';
@@ -76,6 +77,9 @@
 
 
 
+
+
+
 .transition {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -120,7 +124,7 @@
 }
 
 #header .header-wrapper .site-branding a {
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 36px;
   font-weight: normal;
   display: inline-block;
@@ -132,7 +136,7 @@
 
 #header .header-wrapper .site-branding p {
   color: rgba(255, 255, 255, 0.4);
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 1px;
@@ -179,7 +183,7 @@
   line-height: 12px;
   text-align: center;
   font-size: 9px;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   background-color: #fff;
   border-radius: 50%;
   color: #333;
@@ -196,7 +200,7 @@
 
 #header .header-wrapper .right-content .user-profile .entry-name > a {
   font-size: 10px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -243,7 +247,7 @@
   padding-left: 25px;
   line-height: 32px;
   width: 160px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 12px;
 }
@@ -275,7 +279,7 @@
   white-space: nowrap;
   line-height: 65px;
   font-size: 10px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -297,7 +301,7 @@
 
 #header nav.main-nav {
   position: relative;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 500;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -490,7 +494,7 @@
   padding: 0px;
   font-size: 14px;
   font-weight: 500;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: #ffffff;
   position: relative;
   padding-bottom: 20px;
@@ -518,7 +522,7 @@
 }
 
 #header nav.main-nav > ul > li.menu-item-mega .mega-menu-panel .post p {
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   line-height: 1.3em;
   color: rgba(255, 255, 255, 0.7);
@@ -701,7 +705,7 @@
   border: none;
   box-shadow: none;
   width: 100%;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
   height: 48px;
@@ -760,7 +764,7 @@
 
 #header .panel-ticker .tt-el-ticker strong {
   font-size: 16px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   color: #000000;
   text-transform: uppercase;
@@ -786,7 +790,7 @@
 
 #header .panel-ticker .tt-el-ticker .entry-ticker {
   font-size: 16px;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 0.1px;
   color: rgba(0, 0, 0, 0.75);
@@ -842,7 +846,7 @@
 #header.header-mini .post-title {
   font-size: 16px;
   line-height: 40px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: #000000;
   text-transform: uppercase;
   margin-left: 40px;
@@ -1024,7 +1028,7 @@ address abbr:first-child span {
 
 .simple-tab-space .tab-title a {
   float: left;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   text-transform: uppercase;
   text-decoration: none;
   font-size: 17px;
@@ -1053,7 +1057,7 @@ address abbr:first-child span {
 
 .tt-el-info h4 {
   font-size: 28px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   letter-spacing: 0px;
   line-height: 1em;
@@ -1065,7 +1069,7 @@ address abbr:first-child span {
 .tt-el-info p {
   margin: 0px;
   padding: 0px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0px;
@@ -1109,7 +1113,7 @@ address abbr:first-child span {
   text-align: center;
   font-size: 36px;
   line-height: 36px;
-  font-family: Montserrat;
+  font-family: Noto Sans TC, 'Noto Sans SC';
   text-transform: uppercase;
 }
 
@@ -1142,7 +1146,7 @@ address abbr:first-child span {
 .block-title {
   font-size: 50px;
   font-weight: 700;
-  font-family: Montserrat;
+  font-family: Noto Sans TC, 'Noto Sans SC';
   color: #000;
   text-transform: uppercase;
   margin-top: 30px;
@@ -1224,7 +1228,7 @@ h4.block-title .category-more.text-right {
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   text-transform: uppercase;
   margin-top: 0;
   width: 100%;
@@ -1269,7 +1273,7 @@ h4.block-title .category-more.text-right {
 
 .category-block .post p,
 .category-block .post h6 a {
-  font-family: Georgia;
+  font-family: Noto Sans TC, 'Noto Sans SC';
   font-size: 14px;
 }
 
@@ -1324,7 +1328,7 @@ h4.block-title .category-more.text-right {
 .post h4 {
   text-transform: uppercase;
   font-size: 14px;
-  font-family: Montserrat;
+  font-family: Noto Sans TC, 'Noto Sans SC';
   font-weight: 700;
   line-height: 18px;
   color: #000;
@@ -1553,7 +1557,7 @@ h4.block-title .category-more.text-right {
   font-size: 14px;
   font-weight: 400;
   border-radius: 0;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 .label:hover {
@@ -1581,7 +1585,7 @@ h4.block-title .category-more.text-right {
   right: 0;
   top: 100px;
   font-size: 150px;
-  font-family: Montserrat;
+  font-family: Noto Sans TC, 'Noto Sans SC';
   font-weight: bold;
   color: rgba(239, 69, 47, 0.3);
   z-index: 0;
@@ -1754,13 +1758,13 @@ h4.block-title .category-more.text-right {
   text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
-  font-family: "Montserrat";
+  font-family: "Noto Sans TC", 'Noto Sans SC';
   color: #000;
 }
 
 .news-slider .box p {
   margin: 0;
-  font-family: "Georgia";
+  font-family: "Noto Sans TC", 'Noto Sans SC';
   color: rgba(0, 0, 0, 0.7);
   font-size: 18px;
   line-height: 24px;
@@ -1964,7 +1968,7 @@ h4.block-title .category-more.text-right {
 }
 
 .gallery-slider .ms-layer {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
@@ -2014,7 +2018,7 @@ h4.block-title .category-more.text-right {
 
 .gallery-slider .image-copyright {
   font-size: 12px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-style: italic;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -2167,7 +2171,7 @@ h4.block-title .category-more.text-right {
   right: 0px;
   height: 100%;
   color: #fff;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
 }
 
@@ -2234,7 +2238,7 @@ h4.block-title .category-more.text-right {
 }
 
 .entertainment-layout .category-more {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 .header-entertainment {
@@ -2290,7 +2294,7 @@ h4.block-title .category-more.text-right {
 .entertainment-slider .ms-layer .meta {
   font-size: 20px;
   font-weight: 300;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 .entertainment-slider .ms-layer .meta span {
@@ -2318,7 +2322,7 @@ h4.block-title .category-more.text-right {
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: Montserrat;
+  font-family: Noto Sans TC, 'Noto Sans SC';
 }
 
 .entertainment-slider .ms-layer h2 span {
@@ -2333,7 +2337,7 @@ h4.block-title .category-more.text-right {
 .entertainment-slider .ms-layer p {
   font-size: 24px;
   margin: 30px 0;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 .entertainment-slider .button {
@@ -2655,13 +2659,13 @@ h4.block-title .category-more.text-right {
 .movie-slider .meta span {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   text-transform: none;
   font-weight: 300;
 }
 
 .movie-slider .excerpt {
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   font-weight: normal;
   text-transform: none;
@@ -2847,7 +2851,7 @@ h4.block-title .category-more.text-right {
   border-bottom: 2px solid #f84432;
   padding-bottom: 15px;
   margin-bottom: 20px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 100;
@@ -3693,7 +3697,7 @@ html {
 }
 
 body {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   line-height: 28px;
   letter-spacing: 0.2px;
@@ -3792,7 +3796,7 @@ input[type=submit] {
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-style: normal;
   text-transform: uppercase;
   padding: 10px 35px;
@@ -4025,7 +4029,7 @@ input[type=submit].text-light {
 
 .circle-chart .circles-text small {
   font-size: 55%;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 400;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -4128,7 +4132,7 @@ input[type=submit].text-light {
 }
 
 .push-menu .pm-container .pm-wrap .big-menu ul li a {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 25px;
   color: #000;
@@ -4146,7 +4150,7 @@ input[type=submit].text-light {
 }
 
 .push-menu .pm-container .pm-wrap .small-menu ul li a {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0.7px;
@@ -4167,7 +4171,7 @@ input[type=submit].text-light {
 }
 
 .push-menu .pm-container .bottom-content .widget .widget-title {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 600;
   font-size: 14px;
   text-transform: none;
@@ -4179,7 +4183,7 @@ input[type=submit].text-light {
 }
 
 .push-menu .pm-container .bottom-content .widget p {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 200;
   font-size: 14px;
   color: #bbb;
@@ -4282,7 +4286,7 @@ input[type=submit].text-light {
   background: transparent;
   width: 100%;
   color: #fff;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   border: none;
 }
@@ -4337,7 +4341,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-entertainment .pm-container .pm-wrap .author-info .auth-name h4 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
@@ -4349,7 +4353,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-entertainment .pm-container .pm-wrap .author-info .auth-name p {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 400;
@@ -4362,7 +4366,7 @@ input[type=submit].text-light {
 
 .push-menu.pm-entertainment .pm-container .pm-wrap h4.pm-en-title {
   font-size: 14px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   text-transform: uppercase;
   margin: 0px;
@@ -4403,7 +4407,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-entertainment .pm-container .pm-wrap nav.big-menu ul li a {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   font-weight: normal;
   color: #fff;
@@ -4471,7 +4475,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-entertainment .pm-container .pm-wrap .pm-go-home a {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.4);
@@ -4580,7 +4584,7 @@ input[type=submit].text-light {
   background: transparent;
   width: 100%;
   color: #fff;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   border: none;
 }
@@ -4635,7 +4639,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-news .pm-container .pm-wrap .author-info .auth-name h4 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 19px;
   font-weight: bold;
   text-transform: uppercase;
@@ -4647,7 +4651,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-news .pm-container .pm-wrap .author-info .auth-name p {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 400;
@@ -4660,7 +4664,7 @@ input[type=submit].text-light {
 
 .push-menu.pm-news .pm-container .pm-wrap h4.pm-en-title {
   font-size: 14px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   text-transform: uppercase;
   margin: 0px;
@@ -4701,7 +4705,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-news .pm-container .pm-wrap nav.big-menu ul li a {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   font-weight: normal;
   color: #000;
@@ -4780,7 +4784,7 @@ input[type=submit].text-light {
 }
 
 .push-menu.pm-news .pm-container .pm-wrap .pm-go-home a {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
@@ -4909,7 +4913,7 @@ input[type=submit].text-light {
 ------------------------------------ */
 
 .single {
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
 }
 
@@ -4926,21 +4930,21 @@ input[type=submit].text-light {
 .single h3,
 .single h4,
 .single h5 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: #000000;
 }
 
 .single .entry-details {
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 12px;
   word-wrap: break-word;
 }
 
 .single .entry-details h5,
 .single .entry-details .entry-views {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
 }
 
@@ -4993,7 +4997,7 @@ input[type=submit].text-light {
 blockquote {
   font-size: 26px;
   line-height: 32px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: #000;
   margin: 35px 0 40px 65px;
   padding: 0 0 0 30px;
@@ -5005,7 +5009,7 @@ blockquote cite {
   display: block;
   font-size: 18px;
   font-weight: 300;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-style: normal;
   margin-bottom: 15px;
 }
@@ -5029,7 +5033,7 @@ blockquote:before {
 }
 
 #comments .comments-wrapper .comments-title {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   font-size: 30px;
   letter-spacing: 1.5px;
@@ -5076,7 +5080,7 @@ blockquote:before {
 
 #comments .comments-wrapper ol.comment-list li article .comment-body .meta-data .comment-author {
   font-size: 16px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: #000000;
   position: relative;
 }
@@ -5115,7 +5119,7 @@ blockquote:before {
   line-height: 20px;
   margin-bottom: 8px;
   color: rgba(77, 77, 77, 0.8);
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 #comments .comments-wrapper ol.comment-list li li .avatar {
@@ -5133,7 +5137,7 @@ blockquote:before {
 }
 
 #respond .comment-reply-title {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   font-size: 30px;
   letter-spacing: 1.5px;
@@ -5439,7 +5443,7 @@ blockquote:before {
 #header.header-blog .search-panel input[type=text] {
   width: 100%;
   background: transparent;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   font-weight: normal;
   color: #000000;
@@ -5474,7 +5478,7 @@ blockquote:before {
   padding: 0px;
   background: none;
   color: #000;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -5537,7 +5541,7 @@ blockquote:before {
 
 .fs-slide .fs-entry-item .fs-title {
   position: relative;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -5552,7 +5556,7 @@ blockquote:before {
   left: 0px;
   bottom: 20px;
   font-size: 160px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.1);
@@ -5571,7 +5575,7 @@ blockquote:before {
 }
 
 .fs-slide .fs-entry-item h3 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   font-size: 56px;
   line-height: 60px;
@@ -5595,7 +5599,7 @@ blockquote:before {
 }
 
 .fs-slide .fs-entry-item p {
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 0px;
@@ -5605,7 +5609,7 @@ blockquote:before {
 }
 
 .fs-slide .fs-entry-item a.read-more {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 24px;
   font-weight: normal;
   color: #000000;
@@ -5617,7 +5621,7 @@ blockquote:before {
 
 .fs-slide .fs-arrows a {
   position: absolute;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: normal;
   text-transform: uppercase;
@@ -5777,7 +5781,7 @@ blockquote:before {
 
 .fs-blog-carousel .fs-title {
   font-size: 24px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0px;
@@ -5819,7 +5823,7 @@ blockquote:before {
 
 .fs-blog-carousel .fs-pager span {
   display: inline-block;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.5);
@@ -5872,7 +5876,7 @@ blockquote:before {
 .fs-blog-carousel .swiper-button-prev span,
 .fs-blog-carousel .swiper-button-next span {
   display: inline-block;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 0px;
@@ -5949,7 +5953,7 @@ blockquote:before {
 
 .fs-blog-item h4 {
   font-size: 16px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 400;
   letter-spacing: 0.3px;
   margin: 0px;
@@ -5965,7 +5969,7 @@ blockquote:before {
   display: inline-block;
   background-color: #000;
   color: #fff;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 10px;
   letter-spacing: 0px;
@@ -6005,7 +6009,7 @@ blockquote:before {
 
 .fs-blog-item.boxed-title .entry-title .read-more a {
   color: #000000;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 13px;
   text-decoration: underline;
@@ -6020,7 +6024,7 @@ blockquote:before {
 }
 
 .fs-post-filter h4 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 46px;
   margin: 0px;
@@ -6050,7 +6054,7 @@ blockquote:before {
 
 .fs-post-filter ul li a {
   font-size: 13px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   color: #000000;
   opacity: 0.4;
@@ -6100,7 +6104,7 @@ blockquote:before {
 }
 
 .fs-post-filter.big-title h4 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   font-size: 50px;
   position: relative;
@@ -6130,7 +6134,7 @@ blockquote:before {
 }
 
 .fs-grid-posts .fs-grid-item .fs-entry-meta {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0px;
@@ -6152,7 +6156,7 @@ blockquote:before {
 }
 
 .fs-grid-posts .fs-grid-item h3 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0px;
@@ -6167,7 +6171,7 @@ blockquote:before {
 
 .fs-grid-posts .fs-grid-item .read-more {
   font-size: 14px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   margin: 0px;
   margin-top: 12px;
@@ -6192,7 +6196,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget .widget-title {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 24px;
   font-weight: normal;
   text-transform: uppercase;
@@ -6218,7 +6222,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget.widget_search form input[type=text] {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
@@ -6231,7 +6235,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget.widget_search form input[type=submit] {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   font-weight: bold;
   font-style: normal;
@@ -6279,7 +6283,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget .fs-recent-post .fs-rp-item .entry-rp .entry-meta {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   font-weight: 400;
   line-height: 1.2em;
@@ -6304,7 +6308,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget .fs-recent-post .fs-rp-item h4 {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 17px;
   font-weight: 300;
   margin: 0px;
@@ -6317,7 +6321,7 @@ blockquote:before {
 
 .fs-sidebar .widget .fs-recent-post .fs-rp-item .read-more {
   margin: 0px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   font-weight: normal;
   line-height: 1.3em;
@@ -6338,7 +6342,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget ul {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -6380,7 +6384,7 @@ blockquote:before {
 }
 
 .fs-sidebar .widget .fs-tags {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -6403,7 +6407,7 @@ blockquote:before {
 
 .fs-sidebar .widget-aboutme h5 {
   font-size: 16px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   color: #000000;
   letter-spacing: 0px;
@@ -6416,7 +6420,7 @@ blockquote:before {
 
 .fs-sidebar .widget-aboutme .about-text {
   font-size: 14px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.5px;
@@ -6427,7 +6431,7 @@ blockquote:before {
 
 .fs-sidebar .widget-aboutme .read-more a {
   font-size: 15px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 400;
   color: #000000;
   text-decoration: underline;
@@ -6473,7 +6477,7 @@ blockquote:before {
 
 .fs-post-table .fs-table-item .fs-table-content h4 {
   margin: 0px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 26px;
   line-height: 1.2em;
@@ -6492,7 +6496,7 @@ blockquote:before {
 
 .fs-post-table .fs-table-item .fs-table-content .read-more {
   margin: 0px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 18px;
   letter-spacing: 0px;
@@ -6506,7 +6510,7 @@ blockquote:before {
 
 .fs-post-table .fs-table-item .fs-table-meta {
   width: 100%;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 400;
   font-size: 14px;
 }
@@ -6594,7 +6598,7 @@ blockquote:before {
 
 #footer.footer-blog .widget .widget-title {
   font-size: 18px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-style: normal;
   color: #000000;
@@ -6610,7 +6614,7 @@ blockquote:before {
   border: 0px;
   font-style: normal;
   font-size: 13px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 0px;
   text-transform: none;
@@ -6651,7 +6655,7 @@ blockquote:before {
   height: auto;
   font-size: 14px;
   font-weight: bold;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   padding: 0px;
   background: transparent;
   line-height: 36px;
@@ -6674,7 +6678,7 @@ blockquote:before {
 
 #footer.footer-blog .sub-footer {
   font-weight: normal;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   letter-spacing: 0px;
 }
@@ -6906,7 +6910,7 @@ blockquote:before {
 
 .footer-instagram h4 {
   font-size: 24px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 0px;
   text-transform: uppercase;
@@ -7000,7 +7004,7 @@ blockquote:before {
 .sidebar .widget-title {
   text-transform: uppercase;
   font-size: 20px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   color: #000000;
   margin: 0px;
@@ -7028,7 +7032,7 @@ blockquote:before {
 .sidebar ul li {
   line-height: 2.5em;
   font-size: 14px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 0.3px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -7079,7 +7083,7 @@ blockquote:before {
 
 .widget ul li p {
   line-height: 1.2em;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 .widget.no-border ul li {
@@ -7099,14 +7103,14 @@ blockquote:before {
 
 .widget.recent-posts ul li span {
   font-size: 12px;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
 }
 
 .widget .widget-tags a {
   background-color: rgba(0, 0, 0, 0.07);
   padding: 5px 10px;
   margin-bottom: 5px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: #000;
   display: inline-block;
   text-transform: lowercase;
@@ -7123,7 +7127,7 @@ blockquote:before {
 .widget .rssSummary {
   font-size: 14px;
   font-weight: normal;
-  font-family: 'Georgia';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   color: rgba(0, 0, 0, 0.7);
   line-height: 1.8em;
 }
@@ -7147,7 +7151,7 @@ blockquote:before {
   height: 42px;
   line-height: 42px;
   width: 100%;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 10px;
   font-weight: 300;
   font-style: italic;
@@ -7214,7 +7218,7 @@ blockquote:before {
 }
 
 .subscribe-form.envelope input {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-style: italic;
   background-color: #1f1f1f;
 }
@@ -7356,7 +7360,7 @@ blockquote:before {
 .travel-item .entry-info h3 {
   line-height: 1.2em;
   font-size: 15px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   color: #000000;
   text-transform: uppercase;
@@ -7374,7 +7378,7 @@ blockquote:before {
 }
 
 .travel-item .entry-info .info {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   line-height: 1.8em;
   color: rgba(77, 77, 77, 0.8);
@@ -7456,7 +7460,7 @@ blockquote:before {
 }
 
 .travel-item-boxed .price {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   color: #fff;
   top: 50px;
@@ -7487,7 +7491,7 @@ blockquote:before {
 .travel-item-boxed .entry-info h3 {
   font-size: 24px;
   font-weight: bold;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   margin: 0px;
 }
 
@@ -7498,7 +7502,7 @@ blockquote:before {
 .travel-item-boxed .entry-info .desc {
   font-size: 14px;
   line-height: 1.4;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   color: #d2d2d2;
   margin-top: 5px;
@@ -9130,7 +9134,7 @@ blockquote:before {
 
 .fs-slide.ms-slide .fs-entry-item .fs-title {
   position: relative;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 300;
   font-size: 20px;
   letter-spacing: 0px;
@@ -9153,7 +9157,7 @@ blockquote:before {
 }
 
 .fs-slide.ms-slide .fs-entry-item h3 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 54px;
   font-weight: bold;
   line-height: 56px;
@@ -9193,7 +9197,7 @@ blockquote:before {
 }
 
 .fs-slide.ms-slide .fs-entry-item a.read-more {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   font-weight: normal;
   text-decoration: none;
@@ -9316,7 +9320,7 @@ blockquote:before {
 
 .boxoffice-style.ms-style h5 {
   font-size: 13px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   margin: 0px;
   opacity: 0.7;
@@ -9373,7 +9377,7 @@ blockquote:before {
 
 .simple-tab-space.ms-style .tab-title a {
   text-transform: none;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 300;
   font-size: 20px;
   line-height: 1em;
@@ -9723,7 +9727,7 @@ blockquote:before {
 }
 
 #music_player .ms-table .ms-controls .ms-entry-controls .ec-item.ec-playlist .ec-playlist-control .pl-head h5 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   font-weight: normal;
   color: #fff;
@@ -9804,14 +9808,14 @@ blockquote:before {
 
 #music_player .ms-table .ms-controls .ms-entry-controls .ec-item.ec-playlist .ec-playlist-control .pl-list tr td.td-title .pl-item-title {
   margin-right: 5px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 0px;
 }
 
 #music_player .ms-table .ms-controls .ms-entry-controls .ec-item.ec-playlist .ec-playlist-control .pl-list tr td.td-title .pl-item-duration {
   opacity: 0.2;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 500;
   letter-spacing: 0px;
 }
@@ -9819,7 +9823,7 @@ blockquote:before {
 #music_player .ms-table .ms-controls .ms-entry-controls .ec-item.ec-playlist .ec-playlist-control .pl-list tr td.td-title .pl-item-artist {
   display: block;
   opacity: 0.2;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 500;
   letter-spacing: 0.3px;
 }
@@ -9835,7 +9839,7 @@ blockquote:before {
 #music_player .ms-table .ms-controls .ms-entry-controls .ec-item.ec-playlist .ec-playlist-control .pl-list tr td span.number::before {
   content: attr(data-value);
   font-size: 14px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   color: rgba(255, 255, 255, 0.2);
   line-height: 1em;
@@ -9940,7 +9944,7 @@ blockquote:before {
 }
 
 #music_player .ms-table .ms-nowplaying .np-meta .np-title {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0px;
@@ -9949,7 +9953,7 @@ blockquote:before {
 }
 
 #music_player .ms-table .ms-nowplaying .np-meta .np-artist {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -10004,7 +10008,7 @@ blockquote:before {
 
 .msplayer-skin.mejs-container .mejs-controls .mejs-time {
   font-size: 14px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 500;
   color: rgba(255, 255, 255, 0.3);
   width: 44px;
@@ -10178,7 +10182,7 @@ blockquote:before {
 #header.header-fashion .header-wrapper nav.main-nav {
   text-align: center;
   width: auto;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   letter-spacing: 0.3px;
 }
@@ -10393,7 +10397,7 @@ blockquote:before {
 .fs-slide.fn-slide .fs-item .fn-slide-content .fs-entry-item h6 {
   background-color: #fff;
   color: #010101;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -10415,7 +10419,7 @@ blockquote:before {
 }
 
 .fs-slide.fn-slide .fs-item .fn-slide-content .fs-entry-item p {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 20px;
   font-weight: 300;
   line-height: 1.5em;
@@ -10425,7 +10429,7 @@ blockquote:before {
 
 .fs-slide.fn-slide .fs-item .fn-slide-content .fs-entry-item a.read-more {
   font-size: 17px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   color: #fff;
   background-color: #1e1e1e;
@@ -10538,7 +10542,7 @@ blockquote:before {
   position: absolute;
   right: 100px;
   bottom: 55px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 13px;
   color: rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
@@ -10665,7 +10669,7 @@ blockquote:before {
 
 .fn-postbox h6,
 .fn-postbox h3 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: bold;
   font-size: 26px;
   line-height: 1.4em;
@@ -10854,7 +10858,7 @@ blockquote:before {
 
 .fn-fullslide .fn-item .fn-entry h4 {
   font-size: 48px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 700;
   color: #fff;
   margin: 0px;
@@ -11108,7 +11112,7 @@ body.welcome-page ::selection {
   display: inline-block;
   padding: 12px 26px;
   line-height: 1em;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 12px;
   font-weight: normal;
   color: #fff;
@@ -11176,7 +11180,7 @@ body.welcome-page ::selection {
 }
 
 .section-welcome .wentry-title .version-number {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   font-weight: normal;
   letter-spacing: 0px;
@@ -11185,7 +11189,7 @@ body.welcome-page ::selection {
 }
 
 .section-welcome .wentry-title .version-number .vnumber {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 90px;
   font-weight: 100;
   letter-spacing: 0px;
@@ -11203,7 +11207,7 @@ body.welcome-page ::selection {
 }
 
 .section-welcome .wentry-title h2 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 32px;
   font-weight: bold;
   color: #fff;
@@ -11214,7 +11218,7 @@ body.welcome-page ::selection {
 }
 
 .section-welcome .wentry-title p {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 18px;
   font-weight: 200;
   letter-spacing: 0.7px;
@@ -11222,7 +11226,7 @@ body.welcome-page ::selection {
 }
 
 .section-welcome .wentry-title h4 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 0px;
@@ -11247,7 +11251,7 @@ body.welcome-page ::selection {
 }
 
 .section-welcome .wbottom-text {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.7px;
@@ -11282,7 +11286,7 @@ body.welcome-page ::selection {
 }
 
 .wslider .swiper-slide .ws-item h3 {
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 0px;
@@ -11352,7 +11356,7 @@ body.welcome-page ::selection {
 
 .welcome-folio h2 {
   margin: 0px;
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 42px;
   font-weight: 200;
   letter-spacing: -0.35px;
@@ -11362,7 +11366,7 @@ body.welcome-page ::selection {
 
 .welcome-folio .wpf-filter {
   text-align: center;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 16px;
   font-weight: normal;
   letter-spacing: -0.2px;
@@ -11405,7 +11409,7 @@ body.welcome-page ::selection {
 
 .welcome-folio .wpf-item h2 {
   font-size: 18px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   letter-spacing: 0px;
   line-height: 1em;
@@ -11418,7 +11422,7 @@ body.welcome-page ::selection {
 }
 
 .welcome-folio .wpf-item h2 span {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -11457,7 +11461,7 @@ footer#footer.footer-welcome .map-content {
 }
 
 footer#footer.footer-welcome .map-content h3 {
-  font-family: 'SF-UI-Display';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-size: 28px;
   font-weight: 200;
   color: #fff;
@@ -11471,7 +11475,7 @@ footer#footer.footer-welcome .sub-footer {
   width: 100%;
   padding: 0px;
   padding-bottom: 60px;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans TC', 'Noto Sans SC';
   font-weight: normal;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.3);

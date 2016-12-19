@@ -57,7 +57,7 @@
       css:theme="nav.main-nav ul"
       />
     <replace
-      css:content="ul#portal-globalnav"
+      css:content="ul#portal-globalnav-big"
       css:theme="nav.big-menu ul"
       />
 
@@ -86,6 +86,10 @@
 
     <!-- Drop -->
     <drop css:content="div#edit-zone"/>
+
+    <!-- Strip -->
+    <strip css:content=".portletWrapper" />
+    <strip css:content="section.portlet" />
 
   </rules>
 
