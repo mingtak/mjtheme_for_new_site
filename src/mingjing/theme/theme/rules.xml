@@ -28,7 +28,7 @@
 
     <!-- Copy link, style, meta tags from Plone head -->
     <before
-      content="/html/head/meta"
+      content="/html/head/meta | /html/head/link"
       css:theme-children="html head"
       />
 
@@ -40,11 +40,11 @@
       />
 
     <!-- Copy script tags from Plone head to end of body -->
-<!--    <after
+    <after
       css:content="html head script"
       css:theme-children="html head"
       />
--->
+
     <!-- LOGO -->
     <replace
       css:content="#portal-logo"
@@ -85,8 +85,8 @@
       />
 
     <!-- Drop -->
-    <drop css:content="div#edit-zone"/>
-
+<!--    <drop css:content="div#edit-zone"/>
+-->
     <!-- Strip -->
     <strip css:content=".portletWrapper" />
     <strip css:content="section.portlet" />

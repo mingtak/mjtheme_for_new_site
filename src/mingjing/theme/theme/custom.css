@@ -1,3 +1,7 @@
+#edit-zone {
+    z-index: 1001;
+}
+
 #header nav.main-nav > ul > li:first-child:not(.menu-item-has-children) > a {
     padding-left: 10px;
 }
