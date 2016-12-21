@@ -1,3 +1,20 @@
+.title-border {
+    padding: 0 20px 12px 0;
+    margin-bottom: 30px;
+    border-bottom: 4px solid rgba(232, 66, 68, 0.9);
+}
+
+.post.hover-light {
+    height: 100px;
+    overflow: hidden;
+}
+
+.theme-cover-span {
+    border: initial;
+    padding: 4px;
+    text-align: center;
+}
+
 #edit-zone {
     z-index: 1001;
 }

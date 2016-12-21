@@ -14,8 +14,10 @@
 
 <?python
 from plone import api
+from DateTime import DateTime
 portal = api.portal.get()
 news = portal['news']['1'].getChildNodes()
+youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
 ?>
 
                 <!-- template -->
@@ -68,7 +70,7 @@ news = portal['news']['1'].getChildNodes()
 
 <section>
 <div class="parallax-content">
-<h3>熱門話題</h3>
+<h3 class="title-border">熱門話題</h3>
 <tal:repeat repeat="item python:list(news)[0:4]">
   <tal:even condition="repeat/item/even">
 
@@ -127,20 +129,17 @@ news = portal['news']['1'].getChildNodes()
                             </div>
 
 
-<!-- 明鏡火拍 假的 -->
-<h3>明鏡火拍</h3>
-<tal:repeat repeat="item python:list(news)[0:4]">
-  <tal:even condition="repeat/item/even">
-
+<!-- 明鏡火拍 -->
+<h3 class="title-border">明鏡火拍</h3>
                             <div class="row">
+<tal:repeat repeat="item python:youtubes[0:6]">
                                   <div class="col-md-6">
                                     <div class="category-block articles">
-
                                         <div class="post first hover-dark">
-                                            <a href="https://www.youtube.com/watch?v=vqI8VgOkH6U">
-                                                <div class="image" data-src="http://pix.toile-libre.org/upload/original/1480992547.png">
-                                                    <img src="http://pix.toile-libre.org/upload/original/1480992547.png"
-                                                         alt="TEST"/>
+                                            <a href="${item/getURL}/@@to_youtube" target="_blank">
+                                                <div class="image" data-src="${item/getURL}/@@imgages/image/preview">
+                                                    <img src="${item/getURL}/@@images/image/preview"
+                                                         alt="${item/Title}"/>
                                                 </div>
                                             </a>
 <!--                                            <div class="meta">
@@ -149,40 +148,82 @@ news = portal['news']['1'].getChildNodes()
                                             </div>
 -->
                                             <h4>
-                                <a url="https://www.youtube.com/watch?v=vqI8VgOkH6U">直播：川普的中國顧問內定，北京撓頭</a>
+                                <a href="${item/getURL}/@@to_youtube" target="_blank">${item/Title}</a>
                                             </h4>
                                         </div>
                                     </div>
                                   </div>
 
-                                  <div class="col-md-6">
-                                    <div class="category-block articles">
-
-                                        <div class="post first hover-dark">
-                                            <a href="https://www.youtube.com/watch?v=vqI8VgOkH6U">
-                                                <div class="image" data-src="http://pix.toile-libre.org/upload/original/1480992547.png">
-                                                    <img src="http://pix.toile-libre.org/upload/original/1480992547.png"
-                                                         alt="TEST"/>
-                                                </div>
-                                            </a>
-<!--                                            <div class="meta">
-                                                <span class="author">Dave Clark</span>
-                                                <span class="date">2h</span>
-                                            </div>
--->
-                                            <h4>
-                                <a url="https://www.youtube.com/watch?v=vqI8VgOkH6U">直播：川普的中國顧問內定，北京撓頭</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                  </div>
-
-                            </div>
-  </tal:even>
 </tal:repeat>
 
-                        </div>
-                        <!-- end .parallax-column -->
+                            </div>
+
+
+
+
+
+
+
+
+<!-- 最新播報 -->
+<h3 class="title-border">最新播報</h3>
+<div class="row">
+<div class="col-md-6">
+                            <div class="category-block articles">
+<tal:item repeat="item python:list(news)[0:6]">
+                                <div class="post hover-light" tal:condition="repeat/item/even">
+                                    <a href="${item/absolute_url}">
+                                        <div class="image image-thumb"
+                                             data-src="${item/absolute_url}/@@images/image/thumb"
+                                             style="background-image: url('${item/absolute_url}/@@images/image/thumb');"></div>
+                                    </a>
+                                    <h4><a href="${item/absolute_url}">${item/title}</a></h4>
+                                    <p>${python:item.description[0:40]}...</p>
+                                    <div class="meta">
+                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created())} 小時前</span>
+                                    </div>
+                                </div>
+</tal:item>
+                            </div>
+</div>
+                           <!-- end .category-block -->
+<div class="col-md-6">
+
+                            <div class="category-block articles">
+<tal:item repeat="item python:list(news)[0:6]">
+                                <div class="post hover-light" tal:condition="repeat/item/odd">
+                                    <a href="${item/absolute_url}">
+                                        <div class="image image-thumb"
+                                             data-src="${item/absolute_url}/@@images/image/thumb"
+                                             style="background-image: url('${item/absolute_url}/@@images/image/thumb');"></div>
+                                    </a>
+                                    <h4><a href="${item/absolute_url}">${item/title}</a></h4>
+                                    <p>${python:item.description[0:40]}...</p>
+                                    <div class="meta">
+                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created())} 小時前</span>
+                                    </div>
+                                </div>
+</tal:item>
+
+                            </div>
+                            <!-- end .category-block -->
+
+
+</div>
+
+</div>
+
+
+
+</div>
+<!-- end .parallax-column -->
+
+
+
+
+
+
+
 
 
 </section>
