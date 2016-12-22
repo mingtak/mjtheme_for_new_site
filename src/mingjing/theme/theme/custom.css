@@ -1,3 +1,40 @@
+.pagination>li>a:hover, .pagination>li>span:hover {
+    background: #a49b94;
+    border-color: #e79800;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #e84244;
+    border-color: #e84244;
+}
+
+.pagination>li>a:focus, .pagination>li>span:focus {
+    color: #fff;
+    background:#e84244;
+}
+
+.pagination>li>a, .pagination>li>span {
+    color: #888;
+    margin-left:0px;
+}
+
+.master-slider h4.animate-element {
+    padding-left: 15px;
+}
+
+.news-slider .ms-tabs.ms-dir-v.ms-align-right .ms-thumb-frame-selected .ms-thumb-ol {
+    height: 3px;
+    position: inherit;
+}
+
+.news-slider .thumb-meta {
+    position: initial;
+}
+
+#footer {
+    padding: 30px 0;
+}
+
 .title-border {
     padding: 0 20px 12px 0;
     margin-bottom: 30px;
@@ -50,7 +87,7 @@
 }
 
 #content-core img {
-    max-width:100%;
+    max-width: 100%;
 }
 
 .post.first.hover-dark div.image img {

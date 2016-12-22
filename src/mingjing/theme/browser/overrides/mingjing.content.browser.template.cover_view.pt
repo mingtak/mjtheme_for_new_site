@@ -16,7 +16,8 @@
 from plone import api
 from DateTime import DateTime
 portal = api.portal.get()
-news = portal['news']['1'].getChildNodes()
+news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='modified', sort_order='reverse')
+hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
 ?>
 
@@ -28,19 +29,19 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                     <div class="master-slider ms-skin-default" id="masterslider1">
 
         
-                                            <div class="ms-slide" data-delay="0" tal:repeat="item python:list(news)[0:5]">
+                        <div class="ms-slide" data-delay="8" tal:repeat="item python:list(news)[0:8]">
                             <img src="/++resource++mingjing.theme/images/blank.gif"
-                                 tal:attributes="data-src string:${item/absolute_url}/@@images/image/preview;
-                                                 alt item/title"/>
+                                 tal:attributes="data-src string:${item/getURL}/@@images/image/preview;
+                                                 alt item/Title"/>
+
                             <div class="ms-thumb post hover-zoom">
-                                <div class="image" tal:attributes="data-src string:${item/absolute_url}/@@images/image/mini"></div>
                                 <div class="thumb-meta">
 <!--                                    <div class="meta">
                                         <span class="author">Dave Clark</span>
                                         <span class="date">2h</span>
                                     </div>
 -->
-                                    <h4 tal:content="item/title">All Roads Lead to Cleveland Behind Marie</h4>
+                                    <h4 tal:content="item/Title">All Roads Lead to Cleveland Behind Marie</h4>
                                 </div>
                             </div>
                             
@@ -52,7 +53,7 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                                 </div>
 -->
                                 <h4 class="animate-element" data-anim="fadeInUp">
-                                <a tal:attributes="href item/absolute_url" tal:content="item/title">Title</a></h4>
+                                <a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h4>
                                 <p class="animate-element" data-anim="fadeInUp" tal:content="item/description">Description</p>
 
                             </div>
@@ -71,18 +72,15 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 <section>
 <div class="parallax-content">
 <h3 class="title-border">熱門話題</h3>
-<tal:repeat repeat="item python:list(news)[0:4]">
-  <tal:even condition="repeat/item/even">
-
                             <div class="row">
+
+<tal:repeat repeat="item python:list(hots)[0:4]">
                                   <div class="col-md-6">
                                     <div class="category-block articles">
 
                                         <div class="post first hover-dark">
-                                            <a tal:attributes="href item/absolute_url">
-                                                <div class="image" tal:attributes="data-src string:${item/absolute_url}/@@images/image/mini">
-                                                    <img tal:attributes="src string:${item/absolute_url}/@@images/image/mini;
-                                                                         alt item/title"/>
+                                            <a tal:attributes="href item/getURL">
+                                                <div class="image" tal:attributes="data-src string:${item/getURL}/@@images/image/preview">
                                                 </div>
                                             </a>
 <!--                                            <div class="meta">
@@ -90,36 +88,15 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                                                 <span class="date">2h</span>
                                             </div>
 -->
-                                            <h4><a tal:attributes="href item/absolute_url" tal:content="item/title"></a></h4>
+                                            <h4><a tal:attributes="href item/getURL" tal:content="item/Title"></a></h4>
                                             <p tal:content="item/description"></p>
                                         </div>
                                     </div>
                                   </div>
-
-                                  <div class="col-md-6">
-                                    <div class="category-block articles">
-                                        <div class="post first hover-dark"
-                                             tal:define="sibling python:item.getNextSibling()">
-	                                            <a tal:attributes="href sibling/absolute_url">
-                                                <div class="image"
-                                                     tal:attributes="datasrc string:${sibling/absolute_url}/@@images/image/mini">
-                                                    <img tal:attributes="src string:${sibling/absolute_url}/@@images/image/mini;
-                                                                         alt sibling/title"/>
-                                                </div>
-                                            </a>
-<!--                                            <div class="meta">
-                                                <span class="author">Dave Clark</span>
-                                                <span class="date">2h</span>
-                                            </div>
--->
-                                            <h4><a tal:attributes="href sibling/absolute_url" tal:content="item/title"></a></h4>
-                                            <p tal:content="sibling/description"></p>
-                                        </div>
-                                    </div>
-                                  </div>
-                            </div>
-  </tal:even>
 </tal:repeat>
+
+                            </div>
+
                             <div class="row">
                                 <div class="col-sm-12 mv3 mvt0">
                                     <a href="entertainment.html">
@@ -137,9 +114,7 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                                     <div class="category-block articles">
                                         <div class="post first hover-dark">
                                             <a href="${item/getURL}/@@to_youtube" target="_blank">
-                                                <div class="image" data-src="${item/getURL}/@@imgages/image/preview">
-                                                    <img src="${item/getURL}/@@images/image/preview"
-                                                         alt="${item/Title}"/>
+                                                <div class="image" data-src="${item/getURL}/@@images/image/preview">
                                                 </div>
                                             </a>
 <!--                                            <div class="meta">
@@ -174,13 +149,13 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                                 <div class="post hover-light" tal:condition="repeat/item/even">
                                     <a href="${item/absolute_url}">
                                         <div class="image image-thumb"
-                                             data-src="${item/absolute_url}/@@images/image/thumb"
-                                             style="background-image: url('${item/absolute_url}/@@images/image/thumb');"></div>
+                                             data-src="${item/getURL}/@@images/image/mini"
+                                             style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
                                     </a>
-                                    <h4><a href="${item/absolute_url}">${item/title}</a></h4>
-                                    <p>${python:item.description[0:40]}...</p>
+                                    <h4><a href="${item/getURL}">${item/Title}</a></h4>
+                                    <p>${python:item.Description[0:110]}...</p>
                                     <div class="meta">
-                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created())} 小時前</span>
+                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
                                 </div>
 </tal:item>
@@ -192,15 +167,15 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                             <div class="category-block articles">
 <tal:item repeat="item python:list(news)[0:6]">
                                 <div class="post hover-light" tal:condition="repeat/item/odd">
-                                    <a href="${item/absolute_url}">
+                                    <a href="${item/getURL}">
                                         <div class="image image-thumb"
-                                             data-src="${item/absolute_url}/@@images/image/thumb"
-                                             style="background-image: url('${item/absolute_url}/@@images/image/thumb');"></div>
+                                             data-src="${item/getURL}/@@images/image/mini"
+                                             style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
                                     </a>
-                                    <h4><a href="${item/absolute_url}">${item/title}</a></h4>
-                                    <p>${python:item.description[0:40]}...</p>
+                                    <h4><a href="${item/getURL}">${item/Title}</a></h4>
+                                    <p>${python:item.Description[0:110]}...</p>
                                     <div class="meta">
-                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created())} 小時前</span>
+                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
                                 </div>
 </tal:item>
