@@ -17,4 +17,14 @@
       directory="static"
       />
 
+  <!-- browser view -->
+  <browser:page
+      name="view_macro"
+      for="*"
+      class=".views.ViewMacro"
+      layer="mingjing.theme.interfaces.IMingjingThemeLayer"
+      permission="zope2.View"
+      />
+
+
 </configure>

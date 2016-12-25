@@ -1,3 +1,20 @@
+thead {
+    background-color: #bbf;
+}
+
+.even {
+    background-color: #ccc;
+}
+
+.push-menu.pm-news .pm-container .pm-wrap::before {
+    background-image: initial;
+ }
+
+.rwd-menu-logo img{
+    max-width: 100%;
+    margin: 0 0 50px 0;
+}
+
 .pagination>li>a:hover, .pagination>li>span:hover {
     background: #a49b94;
     border-color: #e79800;

@@ -1,0 +1,92 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+<?python
+from plone import api
+import math
+portal = api.portal.get()
+?>
+
+
+            <div class="push-menu pm-news plone-rwd-menu">
+                <div class="pm-overlay"></div>
+                <div class="pm-container">
+                    <div class="pm-viewport">
+                        <div class="pm-wrap">
+                        
+                            <a href="javascript:;" class="close-menu"></a>
+                            
+                            <div class="pm-socials">
+                                <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                                <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                                <a href="javascript:;"><i class="fa fa-google-plus"></i></a>
+                                <a href="javascript:;"><i class="fa fa-pinterest"></i></a>
+                                <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                            </div>
+
+
+<div class="text-center">
+<p>註冊 | 登入 | 訂閱新聞 | 訂閱郵報</p>
+
+
+</div>
+                            <div class="rwd-menu-logo">
+                                <img src="${portal/absolute_url}/logo_black.png" alt="${portal/title}">
+<!--                                <div class="auth-name">
+                                    <h4><a href="${portal/absolute_url}">明鏡網</a></h4>
+                                    <p><a href="javascript:;">mingjingnet.com</a></p>
+                                </div>
+-->
+                            </div>
+
+                            <h4 class="pm-en-title">主 選 單</h4>
+
+                            <nav class="big-menu">
+
+        <ul class="plone-nav plone-navbar-nav"
+            id="portal-globalnav-big"
+            tal:define="selected_tab python:view.selected_portal_tab">
+            <tal:tabs tal:repeat="tab portal_tabs">
+              <li tal:define="tid tab/id"
+                  tal:attributes="id string:portaltab-${tid};
+                                  class python:selected_tab==tid and 'selected' or nothing">
+                  <a href=""
+                     tal:content="tab/name"
+                     tal:attributes="href tab/url;
+                                     title tab/description|nothing;
+                                     target tab/link_target|nothing;">
+                    Tab Name
+                  </a>
+              </li>
+            </tal:tabs>
+        </ul>
+
+
+                            </nav>
+
+                            <div class="pm-en-recent">
+<h4 class="title-border">最新書刊</h4>
+                                <a href="#" class="er-item">
+                                    <img src="http://www.mingjingnews.com/MIBM/upimages/Book/P00001021.jpg" alt="recent news">
+                                </a>
+                                <a href="#" class="er-item">
+                                    <img src="http://www.mingjingnews.com/MIBM/upimages/Banner/WW120161028004603.jpg" alt="recent entertainment">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+</tal:sections>

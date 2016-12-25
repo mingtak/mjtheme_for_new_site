@@ -57,8 +57,8 @@
       css:theme="nav.main-nav ul"
       />
     <replace
-      css:content="ul#portal-globalnav-big"
-      css:theme="nav.big-menu ul"
+      css:content="div.push-menu.pm-news"
+      css:theme="div.push-menu.pm-news"
       />
 
     <!-- BREADCRUMBS -->
