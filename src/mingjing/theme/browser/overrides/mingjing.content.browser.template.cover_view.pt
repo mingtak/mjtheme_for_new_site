@@ -22,76 +22,36 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 ?>
 
                 <!-- template -->
-<section tal:define="items python:list(news)[0:8]">
-    <metal:macro use-macro="context/@@mingjing_macro/macros/testmacro"/>
+<section tal:define="items python:list(news)[0:8];
+                     main_slider_id string:cover_main_slider_1">
+    <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
                 <!-- end of template -->
 
 
 <section>
-<div class="parallax-content">
-<h3 class="title-border">熱門話題</h3>
-                            <div class="row">
+    <div class="parallax-content">
 
-<tal:repeat repeat="item python:list(hots)[0:4]">
-                                  <div class="col-md-6">
-                                    <div class="category-block articles">
+        <h3 class="title-border">熱門話題</h3>
+        <div class="row" tal:define="items python:list(hots)[0:4]">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_preview"/>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 mv3 mvt0">
+                <a href="entertainment.html">
+                    <img src="https://tpc.googlesyndication.com/simgad/15926840416994248994" alt="廣告" class="full-size">
+                </a>
+            </div>
+        </div>
 
-                                        <div class="post first hover-dark">
-                                            <a tal:attributes="href item/getURL">
-                                                <div class="image" tal:attributes="data-src string:${item/getURL}/@@images/image/preview">
-                                                </div>
-                                            </a>
-<!--                                            <div class="meta">
-                                                <span class="author">Dave Clark</span>
-                                                <span class="date">2h</span>
-                                            </div>
--->
-                                            <h4><a tal:attributes="href item/getURL" tal:content="item/Title"></a></h4>
-                                            <p tal:content="item/description"></p>
-                                        </div>
-                                    </div>
-                                  </div>
-</tal:repeat>
 
-                            </div>
 
-                            <div class="row">
-                                <div class="col-sm-12 mv3 mvt0">
-                                    <a href="entertainment.html">
-                                        <img src="https://tpc.googlesyndication.com/simgad/15926840416994248994" alt="廣告" class="full-size">
-                                    </a>
-                                </div>
-                            </div>
 
 
 <!-- 明鏡火拍 -->
-<h3 class="title-border">明鏡火拍</h3>
-                            <div class="row">
-<tal:repeat repeat="item python:youtubes[0:6]">
-                                  <div class="col-md-6">
-                                    <div class="category-block articles">
-                                        <div class="post first hover-dark">
-                                            <a href="${item/getURL}/@@to_youtube" target="_blank">
-                                                <div class="image" data-src="${item/getURL}/@@images/image/preview">
-                                                </div>
-                                            </a>
-<!--                                            <div class="meta">
-                                                <span class="author">Dave Clark</span>
-                                                <span class="date">2h</span>
-                                            </div>
--->
-                                            <h4>
-                                <a href="${item/getURL}/@@to_youtube" target="_blank">${item/Title}</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                  </div>
-
-</tal:repeat>
-
-                            </div>
-
+<tal:items define="items python:youtubes[0:6]">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/mingjing_youtube"/>
+</tal:items>
 
 
 
@@ -101,10 +61,14 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 
 <!-- 最新播報 -->
 <h3 class="title-border">最新播報</h3>
-<div class="row">
+<div class="row" tal:define="items python:list(news)[0:6]">
+
+
 <div class="col-md-6">
-                            <div class="category-block articles">
-<tal:item repeat="item python:list(news)[0:6]">
+        <div class="category-block articles">
+
+
+      <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/even">
                                     <a href="${item/absolute_url}">
                                         <div class="image image-thumb"
@@ -117,14 +81,18 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
                                         <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
                                 </div>
-</tal:item>
+      </tal:item>
+
+
+
                             </div>
 </div>
                            <!-- end .category-block -->
+
 <div class="col-md-6">
 
                             <div class="category-block articles">
-<tal:item repeat="item python:list(news)[0:6]">
+<tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/odd">
                                     <a href="${item/getURL}">
                                         <div class="image image-thumb"
@@ -144,6 +112,13 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 
 
 </div>
+
+
+
+
+
+
+
 
 </div>
 
