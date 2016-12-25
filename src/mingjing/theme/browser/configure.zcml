@@ -19,12 +19,12 @@
 
   <!-- browser view -->
   <browser:page
-      name="view_macro"
+      name="mingjing_macro"
       for="*"
-      class=".views.ViewMacro"
+      class=".views.MingjingMacro"
+      template="template/mingjing_macro.pt"
       layer="mingjing.theme.interfaces.IMingjingThemeLayer"
       permission="zope2.View"
       />
-
 
 </configure>

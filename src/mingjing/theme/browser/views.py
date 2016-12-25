@@ -4,14 +4,16 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 
 
-class ViewMacro(BrowserView):
+class MingjingMacro(BrowserView):
 
-    template = ViewPageTemplateFile("template/view_macro.pt")
+#    template = ViewPageTemplateFile("template/mingjing_macro.pt")
 
     def __call__(self):
+        """
         context = self.context
         request = self.request
         portal = api.portal.get()
 
         return self.template()
+        """
 

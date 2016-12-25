@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="mingjing.content">
+<body>
+
+<!-- Main Slider, 傳入 items(brain) -->
+  <metal:row define-macro="testmacro">
+
+                <div class="news-slider news-block mv5 mvt0">
+                    <!-- masterslider -->
+                    <div class="master-slider ms-skin-default" id="masterslider1">
+       
+                        <div class="ms-slide" data-delay="8" tal:repeat="item items">
+                            <img src="/++resource++mingjing.theme/images/blank.gif"
+                                 tal:attributes="data-src string:${item/getURL}/@@images/image/preview;
+                                                 alt item/Title"/>
+
+                            <div class="ms-thumb post hover-zoom">
+                                <div class="thumb-meta">
+                                    <h4 tal:content="item/Title">All Roads Lead to Cleveland Behind Marie</h4>
+                                </div>
+                            </div>
+                            
+                            <div class="ms-layer box" data-delay="0" data-effect="bottom(45)" data-duration="300" data-ease="easeInOut">
+
+                                <h4 class="animate-element" data-anim="fadeInUp">
+                                <a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h4>
+                                <p class="animate-element" data-anim="fadeInUp" tal:content="item/description">Description</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end of masterslider -->
+
+                </div>
+
+  </metal:row>
+
+</body>
+</html>
+

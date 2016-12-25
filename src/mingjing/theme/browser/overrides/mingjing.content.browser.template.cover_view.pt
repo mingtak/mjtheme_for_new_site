@@ -22,49 +22,8 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 ?>
 
                 <!-- template -->
-<section>
-                <div class="news-slider news-block mv5 mvt0">
-
-                    <!-- masterslider -->
-                    <div class="master-slider ms-skin-default" id="masterslider1">
-
-        
-                        <div class="ms-slide" data-delay="8" tal:repeat="item python:list(news)[0:8]">
-                            <img src="/++resource++mingjing.theme/images/blank.gif"
-                                 tal:attributes="data-src string:${item/getURL}/@@images/image/preview;
-                                                 alt item/Title"/>
-
-                            <div class="ms-thumb post hover-zoom">
-                                <div class="thumb-meta">
-<!--                                    <div class="meta">
-                                        <span class="author">Dave Clark</span>
-                                        <span class="date">2h</span>
-                                    </div>
--->
-                                    <h4 tal:content="item/Title">All Roads Lead to Cleveland Behind Marie</h4>
-                                </div>
-                            </div>
-                            
-                            <div class="ms-layer box" data-delay="0" data-effect="bottom(45)" data-duration="300" data-ease="easeInOut">
-
-<!--                                <div class="meta animate-element" data-anim="fadeInUp">
-                                    <span class="author">Dave Clark</span>
-                                    <span class="date">2h</span>
-                                </div>
--->
-                                <h4 class="animate-element" data-anim="fadeInUp">
-                                <a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h4>
-                                <p class="animate-element" data-anim="fadeInUp" tal:content="item/description">Description</p>
-
-                            </div>
-
-                        </div>
-                                            
-
-                    </div>
-                    <!-- end of masterslider -->
-
-                </div>
+<section tal:define="items python:list(news)[0:8]">
+    <metal:macro use-macro="context/@@mingjing_macro/macros/testmacro"/>
 </section>
                 <!-- end of template -->
 
