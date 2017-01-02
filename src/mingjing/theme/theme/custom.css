@@ -1,3 +1,84 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border: 1px solid #e84244;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #e84244;
+}
+
+.nav > li > a {
+    padding: 10px 8px;
+}
+
+ul.nav.nav-tabs li a:before, ul.nav.nav-pills li a:before {
+    content: initial;
+}
+
+.ms-tabs .ms-thumb-frame {
+    border: initial;
+}
+
+.news-slider .ms-tabs .ms-thumb-frame, .news-slider{
+    background-color: #444;
+}
+
+.news-slider .ms-thumb h4 {
+    color: #fff;
+}
+
+.news-slider .ms-thumb h4:before, .widget ul li a:before {
+    content: "\f1db";
+    margin-right: 5px;
+    font-size: 2px;
+    font-family: Fontawesome;
+}
+
+.widget ul li a:before {
+    content: "\f0da";
+}
+
+
+img.hot-news-main-img {
+    max-height: initial !important;
+}
+
+.category-area {
+    margin-bottom: 20px;
+}
+
+.category-title.title-border {
+    margin-bottom: 10px;
+}
+
+.category-block {
+    margin-bottom: 5px;
+}
+
+.category-block .post p, .category-block .post h6 a {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.post .image-listing250 {
+    float: left;
+    max-width: 250px;
+    max-height: 250px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.post .image-listing250 img {
+    width: 250px;
+}
+
+.post .image-listing {
+    float: left;
+    max-width: 160px;
+    max-height: 160px;
+    margin-right: 20px;
+    overflow:hidden;
+}
+
 thead {
     background-color: #bbf;
 }

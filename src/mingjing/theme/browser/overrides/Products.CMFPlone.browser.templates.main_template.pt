@@ -41,10 +41,10 @@
     <meta name="generator" content="Plone - http://plone.com" />
 
   </head>
-
+<!-- 增加 sl, sr 條件: endswith('edit') -->
   <body tal:define="isRTL portal_state/is_rtl;
-                    sl python:plone_layout.have_portlets('plone.leftcolumn', view);
-                    sr python:plone_layout.have_portlets('plone.rightcolumn', view);
+                    sl python:plone_layout.have_portlets('plone.leftcolumn', view) and not view.request.getURL().endswith('edit');
+                    sr python:plone_layout.have_portlets('plone.rightcolumn', view) and not view.request.getURL().endswith('edit');
                     body_class python:plone_layout.bodyClass(template, view);"
         tal:attributes="class body_class;
                         dir python:isRTL and 'rtl' or 'ltr';
@@ -100,21 +100,22 @@
           <header>
             <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
             <metal:title define-slot="content-title">
-                <h1 class="documentFirstHeading"
+<!--                <h1 class="documentFirstHeading"
                     tal:define="title context/Title"
                     tal:condition="python:title and context.portal_type != 'Cover'"
                     tal:content="title">Title or id</h1>
+-->
             </metal:title>
             <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
 
-<!-- 考慮拿掉 -->
             <metal:description define-slot="content-description">
-                <div class="documentDescription description"
+<!--                <div class="documentDescription description"
                      tal:define="description context/Description"
                      tal:content="description"
                      tal:condition="description">
                     Description
                 </div>
+-->
             </metal:description>
           </header>
 

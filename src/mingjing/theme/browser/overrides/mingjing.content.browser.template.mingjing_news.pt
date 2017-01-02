@@ -19,12 +19,21 @@ portal = api.portal.get()
 news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='modified', sort_order='reverse')
 hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
+hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse')
+children_folder= api.content.find(context=context, Type='Folder')
 ?>
 
-<!-- Main slider start -->
-<section tal:define="items python:list(news)[0:12];
-                     main_slider_id string:cover_main_slider_1">
+<!-- 廣告 -->
+<!--    <div class="row">
+        <div class="col-sm-12 mv3 mvt0">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+        </div>
+    </div>
+-->
 
+<!-- Main slider start -->
+<section tal:define="items python:list(news)[0:8];
+                     main_slider_id string:cover_main_slider_1">
     <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
 <!-- Main slider end -->
@@ -33,36 +42,34 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 <section>
     <div class="parallax-content">
 
-<!-- 熱門話題 -->
-        <h3 class="title-border">熱門話題</h3>
-        <div class="row" tal:define="items python:list(hots)[0:4]">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_preview"/>
-        </div>
+<!-- 焦點話題 -->
 
-<!-- Ad block -->
+        <h3 class="title-middle title-border">焦點話題</h3>
+        <tal:hot_news define="items python:hot_news[0:4]">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/hot_news" />
+        </tal:hot_news>
+
+<!-- 廣告 -->
         <div class="row">
             <div class="col-sm-12 mv3 mvt0">
-                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
+                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
             </div>
         </div>
 
-<!-- 明鏡火拍 -->
-        <tal:items define="items python:youtubes[0:6]">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/mingjing_youtube"/>
-        </tal:items>
 
-<!-- Ad block -->
-        <div class="row">
-            <div class="col-sm-12 mv3 mvt0">
-                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
-            </div>
-        </div>
 
-<!-- 最新播報 -->
-        <h3 class="title-border">最新播報</h3>
-        <div class="row" tal:define="items python:list(news)[0:6]">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
-        </div>
+<!-- 新聞列表 -->
+        <h3 class="title-middle title-border mt3">新聞列表</h3>
+            <tal:listing define="items python:hot_news[:6]">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />
+            </tal:listing>
+
+<!-- 分類消息 -->
+        <h3 class="title-middle title-border mt3">分類新聞</h3>
+            <tal:listing define="items children_folder">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/categories_listing" />
+            </tal:listing>
+
 
     </div>
     <!-- end .parallax-content -->

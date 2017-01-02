@@ -51,6 +51,11 @@
       css:theme=".site-branding a"
       />
 
+    <after
+      css:content=".logo-side-ad"
+      css:theme-children=".site-branding"
+      />
+
     <!-- PORTAL NAVIGATION -->
     <replace
       css:content="ul#portal-globalnav"
@@ -63,8 +68,8 @@
 
     <!-- BREADCRUMBS -->
     <replace
-      css:content="nav#portal-breadcrumbs"
-      css:theme-children="div.tt-el-ticker"
+      css:content-children=".above-content-info"
+      css:theme-children="div.panel-ticker"
       />
 
     <!-- CONTENT -->

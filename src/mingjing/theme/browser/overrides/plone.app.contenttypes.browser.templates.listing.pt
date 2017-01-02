@@ -18,6 +18,20 @@
     <div metal:define-slot="inside" tal:replace="structure text">The body</div>
   </div>
 
+
+
+<?python
+from plone import api
+hot_news = api.content.find(context=context, Type='News Item')
+?>
+
+        <tal:hot_news define="items python:hot_news[0:4]">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/hot_news" />
+        </tal:hot_news>
+
+
+
+  <h2 class="title-middle title-border">焦點話題</h2>
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">
@@ -39,14 +53,18 @@
                 item_is_event python:view.is_event(obj);
                 item_has_image python:item.getIcon">
               <metal:block define-slot="entry">
-                <article class="entry">
-                  <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
+<div class="row">
+                <div class="entry category-block articles col-md-12">
+                  <header class="post first" metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
+<div class="post first">
                     <span class="summary" tal:attributes="title item_type">
-                     <a tal:attributes="href item_link">
+                     <a tal:attributes="href item_link" tal:condition="item_has_image">
+<div class="image image-listing250">
                     	<img class="image-tile"
-                             tal:condition="item_has_image"                          
-                             tal:attributes="src  string:$item_url/@@images/image/tile">
+                             tal:attributes="src  string:$item_url/@@images/image/preview">
+</div>
                       </a>
+<h4>
                       <a tal:attributes="href item_link;
                                          class string:$item_type_class $item_wf_state_class url;
                                          title item_type"
@@ -54,6 +72,7 @@
 
                              Item Title
                       </a>
+</h4>
                      </span>
                     <metal:block metal:define-macro="document_byline">
                       <div class="documentByLine">
@@ -96,21 +115,40 @@
                             </tal:comment>
                           </metal:description>
                         </tal:byline>
-                      </div>
-                    </metal:block>
-                  </header>
-                  <p class="description discreet"
-                      tal:condition="item_description"
-                      tal:content="item_description">
+
+                  <p tal:condition="item_description"
+                     tal:content="item_description">
                     description
                   </p>
-                </article>
+
+                      </div>
+                    </metal:block>
+</div>
+                  </header>
+
+                </div>
+</div>
+
+<!-- Ad block -->
+        <div class="row" tal:condition="python:repeat['item'].number == 10">
+            <div class="col-sm-12 mv3 mvt0">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
+            </div>
+        </div>
+
               </metal:block>
             </tal:block>
           </tal:repeat>
         </div>
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+<!-- Ad block -->
+        <div class="row">
+            <div class="col-sm-12 mv3 mvt0">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
+            </div>
+        </div>
 
       </tal:listing>
 

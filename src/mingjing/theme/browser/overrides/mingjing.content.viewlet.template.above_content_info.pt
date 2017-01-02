@@ -1,0 +1,69 @@
+<?python
+from plone import api
+portal = api.portal.get()
+items = api.content.find(context=portal['news'], Type=['News Item', 'Document'], sort_on="created")[0:6]
+?>
+
+<div class="above-content-info">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="tt-el-ticker">
+                                <strong>最新訊息: </strong>
+                                <span class="entry-ticker">
+                                    <span tal:repeat="item items">
+                                        <a href="${item/getURL}">${python:item.Description[0:120]}${python:'...' if len(item.Description)>120 else None}</a>
+                                    </span>
+                                </span>
+<!--                                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" tal:condition="python:context.Type() == 'Cover'"/>
+-->
+
+<nav id="portal-breadcrumbs" class="plone-breadcrumb"
+         i18n:domain="plone"
+         tal:define="breadcrumbs view/breadcrumbs"
+         tal:condition="python:context.Type() != 'Cover'">
+
+    <strong id="breadcrumbs-you-are-here" class="hiddenStructure"
+            i18n:translate="you_are_here">You are here:</strong>
+    <ol aria-labelledby="breadcrumbs-you-are-here">
+      <li id="breadcrumbs-home">
+        <a i18n:translate="tabs_home"
+            tal:attributes="href view/navigation_root_url">Home</a>
+      </li>
+      <li tal:repeat="crumb breadcrumbs"
+          tal:attributes="id string:breadcrumbs-${repeat/crumb/number};">
+        <tal:item tal:define="is_last repeat/crumb/end;
+                                url crumb/absolute_url;
+                                title crumb/Title">
+          <a href="#"
+              tal:omit-tag="not: url"
+              tal:condition="python:not is_last"
+              tal:attributes="href url"
+              tal:content="title">
+                  crumb
+          </a>
+          <span id="breadcrumbs-current"
+                tal:condition="is_last"
+                tal:content="title">crumb</span>
+        </tal:item>
+      </li>
+    </ol>
+</nav>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 text-right phl0">
+                            <div class="tt-el-info text-right">
+
+<div><a href="https://itunes.apple.com/us/app/ming-jing-xin-wen/id1077265998?mt=8" target="_blank"><img src="http://www.mingjingnews.com/MIB/images/appstore.png" alt="明鏡蘋果" align="absmiddle" /> 蘋果</a>   <a href="https://play.google.com/store/apps/details?id=tw.com.appsfly.mirror" target="_blank"><img src="http://www.mingjingnews.com/MIB/images//googleplay.png" alt="明鏡安卓" align="absmiddle" /> 安卓</a>   <a href="https://twitter.com/MingJingNews" target="_blank"><img src="http://www.mingjingnews.com/MIB/images/twitter.png" alt="明鏡推特" align="absmiddle" /> 推特</a>   <a href="https://www.facebook.com/MingJingNews" target="_blank"><img src="http://www.mingjingnews.com/MIB/images/facebook.png" alt="明鏡FB" align="absmiddle" /> FB</a></div>
+<div>今日人氣：254996      昨日人氣：78624</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+</div>

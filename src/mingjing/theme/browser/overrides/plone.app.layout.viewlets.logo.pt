@@ -13,3 +13,7 @@
                          src view/img_src" />
 </div>
 </a>
+
+<div class="logo-side-ad pull-right" style="width: 468px; height:60px; margin:5px 0 0 10px">
+<metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
+</div>

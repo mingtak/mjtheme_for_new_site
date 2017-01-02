@@ -35,7 +35,7 @@ portal = api.portal.get()
                                      target tab/link_target|nothing;">
                     Tab Name
                   </a>
-                  <ul tal:condition="python:folder">
+                  <ul tal:condition="python:folder and folder.Type() == 'Folder'">
 <tal:items define="items python:list(folder.getChildNodes());
                    brain python:api.content.find(Type='Folder', context=folder)">
                     <li>

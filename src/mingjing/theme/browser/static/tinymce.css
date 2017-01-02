@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanssc.css);
+
+#tinymce {
+    font-size: 14px;
+    font-family: 'Noto Sans TC', 'Noto Sans SC';
+}
+
+div {
+    font-size: 14px;
+    font-family: 'Noto Sans TC', 'Noto Sans SC';
+}
+
+p {
+    font-size: 14px;
+    font-family: 'Noto Sans TC', 'Noto Sans SC';
+}

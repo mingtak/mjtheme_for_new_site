@@ -26,7 +26,7 @@
                 ${python:obj.Title}
             </tal:title>
             <tal:title condition="python:len(obj.Title)>48">
-                ${python:obj.Title[0:48]}...
+                ${python:obj.Title[0:42]}...
             </tal:title>
 
 
