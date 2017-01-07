@@ -1,3 +1,33 @@
+#header nav.main-nav {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: initial;
+}
+
+#header nav.main-nav > ul > li > a {
+    color: #fff;
+}
+
+.ms-tabs.ms-dir-v .ms-thumb-frame {
+    margin-left: 5px;
+}
+
+.typed-cursor {
+    display:none;
+}
+
+@media (max-width: 1100px) {
+    .logo-side-ad {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .tt-el-ticker {
+        display: none;
+    }
+}
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     border: 1px solid #e84244;
 }
@@ -19,17 +49,17 @@ ul.nav.nav-tabs li a:before, ul.nav.nav-pills li a:before {
 }
 
 .news-slider .ms-tabs .ms-thumb-frame, .news-slider{
-    background-color: #444;
+    background-color: #ddd;
 }
 
 .news-slider .ms-thumb h4 {
-    color: #fff;
+    color: #444;
 }
 
 .news-slider .ms-thumb h4:before, .widget ul li a:before {
     content: "\f1db";
     margin-right: 5px;
-    font-size: 2px;
+/*    font-size: 2px; */
     font-family: Fontawesome;
 }
 
@@ -162,8 +192,12 @@ thead {
     background-color:#e84244;
 }
 
+.panel-menu {
+    background-color: rgba(30, 30, 30,0.9);
+}
+
 #header .panel-header {
-    background-color:#e84244;
+    background-color: #fff;
 }
 
 #header nav.main-nav > ul > li.menu-item-mega .mega-menu-lists a:hover {
@@ -173,11 +207,21 @@ thead {
 
 #header nav.main-nav > ul > li ul {
     background-color: rgba(232, 66, 68, 0.9);
+    margin-top: initial;
 }
 
 #header nav.main-nav > ul > li::after {
     background-color: rgba(232, 66, 68, 0.95);
-    height:calc(120%);
+    height:calc(100%);
+}
+
+#header nav.main-nav > ul > li.menu-item-mega {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#header nav.main-nav > ul > li.menu-item-mega > a {
+    font-size: 18px;
 }
 
 #header nav.main-nav > ul > li.menu-item-mega .mega-menu-lists a {

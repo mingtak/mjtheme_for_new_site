@@ -435,7 +435,7 @@ loop:true,
 
 
 		// Personal Blog footer instagram
-		$('.footer-instagram .swiper-container').swiper({
+/*		$('.footer-instagram .swiper-container').swiper({
 			slidesPerView: 6,
 			breakpoints: {
 	            1024: {
@@ -453,7 +453,7 @@ loop:true,
 	        }
 		});
 
-	
+*/	
 		// carousel travel
 		$('.carousel-travel').each(function(){
 			var $this = $(this);

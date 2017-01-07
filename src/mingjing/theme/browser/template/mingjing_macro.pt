@@ -237,7 +237,7 @@ from DateTime import DateTime
                         <div class="ms-slide" data-delay="8" tal:repeat="item items">
                             <img src="/++resource++mingjing.theme/images/blank.gif"
                                  tal:attributes="data-src string:${item/getURL}/@@images/image/preview;
-                                                 alt item/Title"/>
+                                                 alt item/Title" />
 
                             <div class="ms-thumb post hover-zoom">
                                 <div class="thumb-meta">
@@ -248,7 +248,7 @@ from DateTime import DateTime
                             <div class="ms-layer box" data-delay="0" data-effect="bottom(45)" data-duration="300" data-ease="easeInOut">
 
                                 <h4 class="animate-element" data-anim="fadeInUp">
-                                <a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h4>
+                                    <a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h4>
                                 <p class="animate-element" data-anim="fadeInUp" tal:content="item/description">Description</p>
 
                             </div>
