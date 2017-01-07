@@ -10,6 +10,10 @@
 .header-member { float:left !important; margin: 5px 0 }
 }
 
+div.sidebar {
+    margin-top: -40px;
+}
+
 #header .panel-ticker .tt-el-ticker {
     margin: 10px 0;
 }
@@ -30,6 +34,14 @@
 
 .social-list .white i {
     color:#fff;
+}
+
+.social-list .white a {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 5px ;
+    padding: 0 5px;
+    border: 1px solid;
 }
 
 .social-list div {
@@ -109,7 +121,7 @@ ul.nav.nav-tabs li a:before, ul.nav.nav-pills li a:before {
 
 .news-slider .ms-tabs .ms-thumb-frame, .news-slider{
     background-color: #ddd;
-    margin-bottom: 0px;
+    margin-bottom: 8px !important;
 }
 
 .slider-b {
@@ -126,6 +138,10 @@ ul.nav.nav-tabs li a:before, ul.nav.nav-pills li a:before {
     content: "\f105";
     margin-right: 5px;
     font-family: Fontawesome;
+}
+
+.news-slider .box p {
+    font-size: 16px;
 }
 
 .widget ul li a:before {
@@ -217,7 +233,7 @@ thead {
 
 .ms-layer.box p, .master-slider h4.animate-element a {
     color:#fff;
-    padding-bottom:5px;
+    padding-bottom:9px;
 }
 
 .news-slider .ms-tabs.ms-dir-v.ms-align-right .ms-thumb-frame-selected .ms-thumb-ol {

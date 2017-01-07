@@ -69,7 +69,8 @@
 
     <drop css:theme="#search_handler" />
 
-    <!-- BREADCRUMBS -->
+
+    <!-- 快訊 / BREADCRUMBS -->
     <replace
       css:content-children=".above-content-info"
       css:theme-children="div.panel-ticker"

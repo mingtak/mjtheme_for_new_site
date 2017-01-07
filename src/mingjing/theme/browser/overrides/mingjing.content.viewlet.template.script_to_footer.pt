@@ -5,8 +5,10 @@ $(function() {
     var lang = getCookie('lang');
     if(lang == 'tw'){     
         $("body").s2t();
+        document.getElementById('portaltab-s2t').innerHTML = '简';
     }else{
         $("body").t2s();
+        document.getElementById('portaltab-s2t').innerHTML = '繁';
     }
 });
 
@@ -15,9 +17,11 @@ $("#portaltab-s2t").click(function(){
     if(lang == 'tw'){
         setCookie('lang', 'cn');
         $("body").t2s();
+        document.getElementById('portaltab-s2t').innerHTML = '繁';
     }else{
         setCookie('lang', 'tw');
         $("body").s2t();
+        document.getElementById('portaltab-s2t').innerHTML = '简';
     }
 });
 

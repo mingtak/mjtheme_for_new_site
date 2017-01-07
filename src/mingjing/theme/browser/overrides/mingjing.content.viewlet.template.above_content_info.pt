@@ -8,13 +8,13 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-9">
                             <div class="tt-el-ticker">
                                 <strong class="fastest-news">快訊 <i class="fa fa-angle-double-right" aria-hidden="true"></i> </strong>
                                 <span class="entry-ticker">
                                     <span tal:repeat="item items">
                                         <a href="${item/getURL}" class="fastest-news">
-                                            ${python:item.Description[0:180]}${python:'...' if len(item.Description)>180 else None}
+                                            ${python:item.Description[0:130]}${python:'...' if len(item.Description)>130 else None}
                                         </a>
                                     </span>
                                 </span>
@@ -54,17 +54,6 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
 
                             </div>
                         </div>
-
-<!--
-                        <div class="col-sm-3 text-right phl0">
-                            <div class="tt-el-info text-right">
-
-<div><a href="https://itunes.apple.com/us/app/ming-jing-xin-wen/id1077265998?mt=8" target="_blank"><img src="http://www.mingjingnews.com/MIB/images/appstore.png" alt="明鏡蘋果" align="absmiddle" /> 蘋果</a>   <a href="https://play.google.com/store/apps/details?id=tw.com.appsfly.mirror" target="_blank"><img src="http://www.mingjingnews.com/MIB/images//googleplay.png" alt="明鏡安卓" align="absmiddle" /> 安卓</a>   <a href="https://twitter.com/MingJingNews" target="_blank"><img src="http://www.mingjingnews.com/MIB/images/twitter.png" alt="明鏡推特" align="absmiddle" /> 推特</a>   <a href="https://www.facebook.com/MingJingNews" target="_blank"><img src="http://www.mingjingnews.com/MIB/images/facebook.png" alt="明鏡FB" align="absmiddle" /> FB</a></div>
-<div>今日人氣：254996      昨日人氣：78624</div>
-
-                            </div>
-                        </div>
--->
                     </div>
                 </div>
 

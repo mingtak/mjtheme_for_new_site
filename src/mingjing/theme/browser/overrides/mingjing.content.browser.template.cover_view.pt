@@ -22,7 +22,7 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 ?>
 
 <!-- Main slider start -->
-<section tal:define="items python:list(news)[0:6];
+<section tal:define="items python:list(news)[0:10];
                      main_slider_id string:cover_main_slider_1">
 
     <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
