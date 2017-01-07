@@ -152,7 +152,7 @@ from DateTime import DateTime
                                              style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
                                     </a>
                                     <h4><a href="${item/getURL}">${item/Title}</a></h4>
-                                    <p>${python:item.Description[0:110]}...</p>
+                                    <p>${python:item.Description[0:100]}...</p>
                                     <div class="meta">
                                         <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
@@ -172,7 +172,7 @@ from DateTime import DateTime
                                              style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
                                     </a>
                                     <h4><a href="${item/getURL}">${item/Title}</a></h4>
-                                    <p>${python:item.Description[0:110]}...</p>
+                                    <p>${python:item.Description[0:100]}...</p>
                                     <div class="meta">
                                         <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
@@ -230,26 +230,27 @@ from DateTime import DateTime
 <!-- Main Slider, 傳入 items(brain) / main_slider_id-->
   <metal:row define-macro="main_slider">
 
+      <div class="slider-b">
                 <div class="news-slider news-block mv5 mvt0">
                     <!-- masterslider -->
                     <div class="master-slider ms-skin-default" id="${main_slider_id}">
        
                         <div class="ms-slide" data-delay="8" tal:repeat="item items">
                             <img src="/++resource++mingjing.theme/images/blank.gif"
-                                 tal:attributes="data-src string:${item/getURL}/@@images/image/preview;
-                                                 alt item/Title" />
+                                 data-src="${string:${item/getURL}/@@images/image/preview}"
+                                 alt="${item/Title}" />
 
                             <div class="ms-thumb post hover-zoom">
                                 <div class="thumb-meta">
-                                    <h4 tal:content="item/Title">All Roads Lead to Cleveland Behind Marie</h4>
+                                    <h4>${python:item.Title[0:36]} ${python:'...' if len(item.Title) > 36 else None}</h4>
                                 </div>
                             </div>
                             
                             <div class="ms-layer box" data-delay="0" data-effect="bottom(45)" data-duration="300" data-ease="easeInOut">
 
                                 <h4 class="animate-element" data-anim="fadeInUp">
-                                    <a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h4>
-                                <p class="animate-element" data-anim="fadeInUp" tal:content="item/description">Description</p>
+                                    <a tal:attributes="href item/getURL">${item/Title}</a></h4>
+                                <p class="animate-element" data-anim="fadeInUp">${python:item.Description[0:150]}...</p>
 
                             </div>
 
@@ -259,7 +260,7 @@ from DateTime import DateTime
                     <!-- end of masterslider -->
 
                 </div>
-
+      </div>
   </metal:row>
 
 </body>

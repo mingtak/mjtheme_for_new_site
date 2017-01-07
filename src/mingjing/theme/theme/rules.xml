@@ -47,13 +47,8 @@
 
     <!-- LOGO -->
     <replace
-      css:content="#portal-logo"
-      css:theme=".site-branding a"
-      />
-
-    <after
-      css:content=".logo-side-ad"
-      css:theme-children=".site-branding"
+      css:content=".panel-header"
+      css:theme=".panel-header"
       />
 
     <!-- PORTAL NAVIGATION -->
@@ -65,6 +60,14 @@
       css:content="div.push-menu.pm-news"
       css:theme="div.push-menu.pm-news"
       />
+
+    <!-- SOCIAL LIST -->
+    <replace
+      css:content=".social-list"
+      css:theme=".search-panel"
+      />
+
+    <drop css:theme="#search_handler" />
 
     <!-- BREADCRUMBS -->
     <replace

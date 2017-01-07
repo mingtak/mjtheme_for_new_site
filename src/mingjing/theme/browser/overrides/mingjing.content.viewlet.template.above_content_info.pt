@@ -8,16 +8,16 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-12">
                             <div class="tt-el-ticker">
-                                <strong>最新訊息: </strong>
+                                <strong class="fastest-news">快訊 <i class="fa fa-angle-double-right" aria-hidden="true"></i> </strong>
                                 <span class="entry-ticker">
                                     <span tal:repeat="item items">
-                                        <a href="${item/getURL}">${python:item.Description[0:120]}${python:'...' if len(item.Description)>120 else None}</a>
+                                        <a href="${item/getURL}" class="fastest-news">
+                                            ${python:item.Description[0:180]}${python:'...' if len(item.Description)>180 else None}
+                                        </a>
                                     </span>
                                 </span>
-<!--                                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" tal:condition="python:context.Type() == 'Cover'"/>
--->
 
 <nav id="portal-breadcrumbs" class="plone-breadcrumb"
          i18n:domain="plone"
@@ -55,6 +55,7 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
                             </div>
                         </div>
 
+<!--
                         <div class="col-sm-3 text-right phl0">
                             <div class="tt-el-info text-right">
 
@@ -63,6 +64,7 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
 
                             </div>
                         </div>
+-->
                     </div>
                 </div>
 

@@ -1,3 +1,68 @@
+            <div class="panel-header">
+                <div class="container">
+                    <div class="row">
+                            
+                            <div class="header-wrapper">
+
+                                <div class="site-logo col-lg-2 col-md-2 col-sm-2">
+                                    <!-- image logo -->
+                                    <a href="${view/navigation_root_url}"
+                                       title="${view/navigation_root_title}"
+                                       rel="home" class="custom-logo-link">
+                                        <img src="logo.png" alt="${view/navigation_root_title}">
+                                    </a>
+                                    <!-- text logo -->
+                                    
+                                    
+
+
+                                </div>
+
+<div class="logo-side-ad col-lg-5 col-md-1">
+    <div class="pull-right">
+        <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+    </div>
+
+</div>
+
+
+
+                                <div class="pull-right col-lg-3 col-md-5 col-sm-5 header-member">
+                                    <div class="user-profile">
+                                        <div class="entry-name">
+會員註冊 | 會員登入 | 設為首頁 | 會員專區<br>
+購物車　 | 訂閱新聞 | 訂閱郵報 | 聯絡我們
+                                        </div>
+
+                                    </div>
+                                </div>
+
+<div class="pull-right col-lg-2 col-md-1 header-date">
+<span>
+[美東時間]<br>
+2017年01月07日<br>
+18時03分 星期二
+</span>
+</div>
+
+
+
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+<!--
 <a id="portal-logo"
    rel="home"
    title="Home"
@@ -17,3 +82,4 @@
 <div class="logo-side-ad pull-right" style="width: 468px; height:60px; margin:5px 0 0 10px">
 <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
 </div>
+-->
