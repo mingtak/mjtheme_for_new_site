@@ -93,6 +93,12 @@
       css:theme-children="div.sub-footer div.container"
       />
 
+    <!-- script_to_footer -->
+    <replace
+      css:content-children="#script_to_footer"
+      css:theme="#script_to_footer"
+      />
+
     <!-- Drop -->
 <!--    <drop css:content="div#edit-zone"/>
 -->

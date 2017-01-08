@@ -10,11 +10,11 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
                     <div class="row">
                         <div class="col-sm-9">
                             <div class="tt-el-ticker">
-                                <strong class="fastest-news">快訊 <i class="fa fa-angle-double-right" aria-hidden="true"></i> </strong>
-                                <span class="entry-ticker">
+                                <strong class="fastest-news" style="font-family: initial">快訊 <i class="fa fa-angle-double-right" aria-hidden="true"></i> </strong>
+                                <span class="entry-ticker fastest-news-title fastest-news">
                                     <span tal:repeat="item items">
                                         <a href="${item/getURL}" class="fastest-news">
-                                            ${python:item.Description[0:130]}${python:'...' if len(item.Description)>130 else None}
+                                            ${python:item.Description[0:150]}${python:'...' if len(item.Description)>130 else None}
                                         </a>
                                     </span>
                                 </span>

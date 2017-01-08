@@ -7,6 +7,33 @@
     i18n:domain="mingjing.content">
 <body>
 
+<!-- 直播 slider, 傳入: items, live_slider_id -->
+  <metal:row define-macro="live_slider">
+            <!-- masterslider -->
+            <div class="live_slider master-slider ms-skin-default" id="${live_slider_id}">
+                <!-- new slide -->
+                <div class="ms-slide"
+                     tal:repeat="item items">
+
+                    <!-- slide background -->
+                    <img src="/++resource++mingjing.theme/images/blank.gif"
+                         data-src="${item/getURL}/@@images/image/preview" alt="${item/Title}"/>     
+
+                    <!-- slide text layer -->
+                    <div class="ms-layer ms-caption" style="top:10px; left:30px;">
+                        ${item/Title}
+                    </div>
+
+                </div>
+                <!-- end of slide -->
+
+            </div>
+            <!-- end of masterslider -->
+  </metal:row>
+
+
+
+
 <!-- 分頁 tabs -->
   <metal:row define-macro="tabs">
       <ul class="nav nav-tabs">
@@ -143,18 +170,18 @@
 from DateTime import DateTime
 ?>
       <div class="col-md-6">
-          <div class="category-block articles">
+          <div class="category-block articles listing_with_mini">
               <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/even">
-                                    <a href="${item/absolute_url}">
+                                    <a href="${item/getURL}">
                                         <div class="image image-thumb"
                                              data-src="${item/getURL}/@@images/image/mini"
                                              style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
                                     </a>
-                                    <h4><a href="${item/getURL}">${item/Title}</a></h4>
-                                    <p>${python:item.Description[0:100]}...</p>
+                                    <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
+                                    <p>${python:item.Description[0:135]}...</p>
                                     <div class="meta">
-                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
+                                        <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
                                 </div>
               </tal:item>
@@ -163,7 +190,7 @@ from DateTime import DateTime
       <!-- end .category-block -->
 
       <div class="col-md-6">
-          <div class="category-block articles">
+          <div class="category-block articles listing_with_mini">
               <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/odd">
                                     <a href="${item/getURL}">
@@ -171,10 +198,10 @@ from DateTime import DateTime
                                              data-src="${item/getURL}/@@images/image/mini"
                                              style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
                                     </a>
-                                    <h4><a href="${item/getURL}">${item/Title}</a></h4>
-                                    <p>${python:item.Description[0:100]}...</p>
+                                    <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
+                                    <p>${python:item.Description[0:135]}...</p>
                                     <div class="meta">
-                                        <span class="theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
+                                        <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
                                 </div>
               </tal:item>
@@ -186,7 +213,7 @@ from DateTime import DateTime
 
 <!-- 明鏡火拍, 傳入 items(brain) -->
   <metal:row define-macro="mingjing_youtube">
-      <h3 class="title-border">明鏡火拍</h3>
+      <h3 class="category-title"><span>明鏡火拍</span></h3>
           <div class="row">
               <tal:repeat repeat="item items">
                                   <div class="col-md-6">

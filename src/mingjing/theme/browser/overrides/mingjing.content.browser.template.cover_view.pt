@@ -24,7 +24,6 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 <!-- Main slider start -->
 <section tal:define="items python:list(news)[0:10];
                      main_slider_id string:cover_main_slider_1">
-
     <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
 <!-- Main slider end -->
@@ -33,11 +32,29 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 <section>
     <div class="parallax-content">
 
+<!-- 直播 明鏡24小時 -->
+        <h3 class="category-title"><span>明鏡24小時</span></h3>
+        <div class="row">
+            <div class="col-md-12" tal:define="items python:list(news)[0:5];
+                                               live_slider_id string:cover_live_slider_1">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
+            </div>
+        </div>
+
+
+<!-- 最新消息 -->
+        <h3 class="category-title"><span>最新消息</span></h3>
+        <div class="row" tal:define="items python:list(news)[0:8]">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
+        </div>
+
+
 <!-- 熱門話題 -->
-        <h3 class="title-border">熱門話題</h3>
+        <h3 class="category-title"><span>熱門話題</span></h3>
         <div class="row" tal:define="items python:list(hots)[0:4]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_preview"/>
         </div>
+
 
 <!-- Ad block -->
         <div class="row">
@@ -59,7 +76,7 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
         </div>
 
 <!-- 最新播報 -->
-        <h3 class="title-border">最新播報</h3>
+        <h3 class="category-title"><span>最新播報</span></h3>
         <div class="row" tal:define="items python:list(news)[0:6]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>

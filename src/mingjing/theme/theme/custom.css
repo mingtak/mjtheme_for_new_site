@@ -1,13 +1,74 @@
 @media (max-width: 1200px) {
     .logo-side-ad, .header-date { display: none; }
-    .social-list { float:left !important }
+    .header-member {font-size:12px;}
+    .social-list { float:left !important; }
+    .news-slider .box h4 { font-size: 18px;}
 }
 
 @media (max-width: 768px) {
-    .tt-el-ticker {
-        display: none;
-    }
-.header-member { float:left !important; margin: 5px 0 }
+    .tt-el-ticker { display: none; }
+    .header-member { float:left !important; margin: 5px 0 }
+    .social-list i.fa { font-size: 25px !important;}
+    #header nav.main-nav > ul > li.menu-item-mega > a { font-size:16px !important;}
+    .slider-b { margin-top: 30px; padding:15px 15px 5px 15px !important;}
+    .slider-b p { display: none }
+}
+
+@media (max-width: 480px) {
+    .listing_with_mini h4 { font-size: 22px !important; line-height: 24px;}
+    .listing_with_mini p { display: none; }
+}
+
+/* above is @media's css setting */
+
+.fastest-news-title a {
+    font-size:14px;
+}
+
+.listing_with_mini .image.image-thumb {
+    width: 120px;
+    height: 120px !important;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.listing_with_mini h4 {
+    font-size:16px;
+    padding-top: 8px;
+}
+
+.listing_with_mini .post p {
+    font-size:14px;
+    line-height: 20px;
+    padding-right: 6px;
+}
+
+.listing_with_mini .meta {
+    position:absolute; 
+    width:100%;
+    bottom:0px;
+    padding-right:3px;
+}
+
+.listing_with_mini .meta {
+    margin-right:initial;
+}
+
+.listing_with_mini .post.hover-light {
+    box-shadow:3px 3px 3px #ccc;
+    border: solid 1px #e84244;
+}
+
+.category-title {
+    margin: 30px 0;
+    border-bottom: 4px solid #666;
+    padding-bottom:5px;
+}
+
+.category-title span {
+    padding: 0 5px;
+    color: #fff;
+    background-color: #e84244;
 }
 
 div.sidebar {
@@ -27,8 +88,8 @@ div.sidebar {
 }
 
 .social-list i.fa {
-    font-size:45px;
-    margin:10px 5px;
+    font-size:39px;
+    margin:15px 5px 12px 5px;
     color:#ff5;
 }
 
@@ -38,7 +99,7 @@ div.sidebar {
 
 .social-list .white a {
     color: #fff;
-    font-size: 30px;
+    font-size: 26px;
     margin: 0 5px ;
     padding: 0 5px;
     border: 1px solid;
@@ -125,7 +186,7 @@ ul.nav.nav-tabs li a:before, ul.nav.nav-pills li a:before {
 }
 
 .slider-b {
-    padding:30px 0;
+    padding:15px 0 5px 15px;
     background-color: #ddd;
     margin-bottom:50px;
 }
@@ -165,7 +226,7 @@ img.hot-news-main-img {
     margin-bottom: 5px;
 }
 
-.category-block .post p, .category-block .post h6 a {
+.category-block .post h6 a {
     font-size: 16px;
     line-height: 25px;
 }
@@ -256,7 +317,7 @@ thead {
 }
 
 .post.hover-light {
-    height: 110px;
+    height: 130px;
     overflow: hidden;
 }
 
