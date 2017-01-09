@@ -9,26 +9,20 @@
 
 <!-- 直播 slider, 傳入: items, live_slider_id -->
   <metal:row define-macro="live_slider">
-            <!-- masterslider -->
-            <div class="live_slider master-slider ms-skin-default" id="${live_slider_id}">
-                <!-- new slide -->
-                <div class="ms-slide"
-                     tal:repeat="item items">
+      <div class="live_sliderslider-b">
+				<!-- masterslider -->
+				<div class="master-slider ms-skin-black-2 round-skin" id="${live_slider_id}">
+				    <div tal:repeat="item items" class="ms-slide">
+				        <img src="/++resource++mingjing.theme/images/blank.gif"
+                                             data-src="${item/getURL}/@@images/image/preview"
+                                             alt="${item/Description}"/> 
+				        <img src="${item/getURL}/@@images/image/thumb" alt="${item/Title}" class="ms-thumb"/>
+				        <div class="ms-info">${item/Title}</div>
+				    </div>
+				</div>
+				<!-- end of masterslider -->
 
-                    <!-- slide background -->
-                    <img src="/++resource++mingjing.theme/images/blank.gif"
-                         data-src="${item/getURL}/@@images/image/preview" alt="${item/Title}"/>     
-
-                    <!-- slide text layer -->
-                    <div class="ms-layer ms-caption" style="top:10px; left:30px;">
-                        ${item/Title}
-                    </div>
-
-                </div>
-                <!-- end of slide -->
-
-            </div>
-            <!-- end of masterslider -->
+      </div>
   </metal:row>
 
 

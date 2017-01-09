@@ -21,10 +21,41 @@
 
 /* above is @media's css setting */
 
+/* Live slider */
+ .live_slider.slider-b {
+    padding:15px 0 15px 15px;
+    background-color: #ddd;
+/*    margin-bottom:50px; */
+}
+
+.live_slider .ms-container, .live_slider .ms-thumb-list, .live_slider .ms-thumb-frame, .live_slider {
+    background-color: #ddd;
+}
+
+.live_slider .ms-tabs.ms-dir-v.ms-align-right .ms-thumb-frame-selected .ms-thumb-ol {
+    opacity: 0;
+}
+
+.live_slider .ms-tabs.ms-dir-v .ms-thumb-frame {
+    margin-left: 0px;
+}
+
+.live_slider .ms-tabs .ms-thumb  {
+    padding: 0 5px;
+}
+
+.live_slider .ms-tabs .ms-thumb:before  {
+    content:'\f105';
+    margin-right: 5px;
+    font-family: Fontawesome;
+}
+
+
 .fastest-news-title a {
     font-size:14px;
 }
 
+/* Listing with mini */
 .listing_with_mini .image.image-thumb {
     width: 120px;
     height: 120px !important;

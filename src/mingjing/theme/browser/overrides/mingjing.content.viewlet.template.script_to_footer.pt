@@ -1,28 +1,28 @@
 <div id="script_to_footer">
 
 <!-- Live_slider -->
-<!-- <script>
+<script>
     var slider = new MasterSlider();
 
-    slider.control('arrows');
+    slider.control('scrollbar' , {dir:"v"});
     slider.control('thumblist', {
           autohide:false ,
           dir:'v',
           type:'tabs',
           align:'right',
-          margin:10,
+          margin:20,
           space:25,
-          width:235,
-          height:25,
-          hideUnder:640
+          width:400,
+          height:15,
+          hideUnder:640,
     });
     slider.setup('cover_live_slider_1' , {
             width:1200,
-            height:400,
+            height:900,
             space:5
         });
 </script>
--->
+
 
 <!-- Twitter embed code -->
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
