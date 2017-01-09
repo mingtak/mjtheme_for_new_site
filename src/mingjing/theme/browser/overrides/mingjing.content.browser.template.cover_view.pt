@@ -35,7 +35,7 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
 <!-- 直播 明鏡24小時 -->
         <h3 class="category-title"><span>明鏡24小時</span></h3>
         <div class="row">
-            <div class="col-md-12" tal:define="items python:list(news)[0:5];
+            <div class="col-md-12" tal:define="items python:list(youtubes)[0:5];
                                                live_slider_id string:cover_live_slider_1">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
             </div>

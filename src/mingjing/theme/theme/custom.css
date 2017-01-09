@@ -25,7 +25,6 @@
  .live_slider.slider-b {
     padding:15px 0 15px 15px;
     background-color: #ddd;
-/*    margin-bottom:50px; */
 }
 
 .live_slider .ms-container, .live_slider .ms-thumb-list, .live_slider .ms-thumb-frame, .live_slider {
@@ -50,6 +49,9 @@
     font-family: Fontawesome;
 }
 
+.live_slider .ms-info a {
+    color: #fff;
+}
 
 .fastest-news-title a {
     font-size:14px;

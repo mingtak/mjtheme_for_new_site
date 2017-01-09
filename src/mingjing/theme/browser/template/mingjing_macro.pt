@@ -7,20 +7,24 @@
     i18n:domain="mingjing.content">
 <body>
 
-<!-- 直播 slider, 傳入: items, live_slider_id -->
+<!-- 直播 slider(開新視窗到 youtube), 傳入: items, live_slider_id -->
   <metal:row define-macro="live_slider">
-      <div class="live_sliderslider-b">
+      <div class="live_slider">
+
+<style>#ms-gallery-${live_slider_id}{max-width: 1230px;margin:0 auto; overflow: hidden;}</style>
+<div class="ms-gallery-template" id="ms-gallery-${live_slider_id}">
 				<!-- masterslider -->
 				<div class="master-slider ms-skin-black-2 round-skin" id="${live_slider_id}">
-				    <div tal:repeat="item items" class="ms-slide">
+				    <div tal:repeat="item items" class="ms-slide" data-delay="8">
 				        <img src="/++resource++mingjing.theme/images/blank.gif"
                                              data-src="${item/getURL}/@@images/image/preview"
                                              alt="${item/Description}"/> 
 				        <img src="${item/getURL}/@@images/image/thumb" alt="${item/Title}" class="ms-thumb"/>
-				        <div class="ms-info">${item/Title}</div>
+				        <div class="ms-info"><a href="${item/getURL}/@@to_youtube" target="_blank">${item/Title}</a></div>
 				    </div>
 				</div>
 				<!-- end of masterslider -->
+</div>
 
       </div>
   </metal:row>

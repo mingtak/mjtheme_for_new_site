@@ -2,25 +2,23 @@
 
 <!-- Live_slider -->
 <script>
-    var slider = new MasterSlider();
-
-    slider.control('scrollbar' , {dir:"v"});
-    slider.control('thumblist', {
-          autohide:false ,
-          dir:'v',
-          type:'tabs',
-          align:'right',
-          margin:20,
-          space:25,
-          width:400,
-          height:15,
-          hideUnder:640,
-    });
-    slider.setup('cover_live_slider_1' , {
-            width:1200,
-            height:900,
-            space:5
+    $(document).ready(function(){
+        var slider = new MasterSlider();
+        slider.setup('cover_live_slider_1' , {
+            width:1130,
+            height:500,
+            autoplay:true,
+            loop:true,
+            space:10,
+            speed: 10,
+            preload:1,
+            view:'basic'
         });
+        slider.control('arrows');
+
+        var gallery = new MSGallery('ms-gallery-cover_live_slider_1' , slider);
+        gallery.setup();
+    });
 </script>
 
 
