@@ -7,23 +7,17 @@
     i18n:domain="mingjing.content">
 <body>
 
-<!-- 直播 slider(開新視窗到 youtube), 傳入: items, live_slider_id -->
+<!-- 直播 slider(開新視窗到 youtube), 傳入: items, live_slider_id, col(owl-carousel-6 or owl-carousel-12) -->
   <metal:row define-macro="live_slider">
       <div class="live_slider">
 
-<style>#ms-gallery-${live_slider_id}{max-width: 1230px;margin:0 auto; overflow: hidden;}</style>
-<div class="ms-gallery-template" id="ms-gallery-${live_slider_id}">
-				<!-- masterslider -->
-				<div class="master-slider ms-skin-black-2 round-skin" id="${live_slider_id}">
-				    <div tal:repeat="item items" class="ms-slide" data-delay="8">
-				        <img src="/++resource++mingjing.theme/images/blank.gif"
-                                             data-src="${item/getURL}/@@images/image/preview"
-                                             alt="${item/Description}"/> 
-				        <img src="${item/getURL}/@@images/image/thumb" alt="${item/Title}" class="ms-thumb"/>
-				        <div class="ms-info"><a href="${item/getURL}/@@to_youtube" target="_blank">${item/Title}</a></div>
-				    </div>
-				</div>
-				<!-- end of masterslider -->
+<div class="${col} owl-theme owl-carousel">
+  <div class="live_slider_item" tal:repeat="item items">
+      <img src="${item/getURL}/@@images/image" alt="${item/Title}" />
+      <a href="${item/getURL}/@@to_youtube" title="${item/Description}" target="_blank">
+          <div class="live-item-title">${python:item.Title[0:70]}${python:'...' if len(item.Title)>70 else None}</div>
+      </a>
+  </div>
 </div>
 
       </div>
@@ -210,7 +204,7 @@ from DateTime import DateTime
 
 
 <!-- 明鏡火拍, 傳入 items(brain) -->
-  <metal:row define-macro="mingjing_youtube">
+<!--  <metal:row define-macro="mingjing_youtube">
       <h3 class="category-title"><span>明鏡火拍</span></h3>
           <div class="row">
               <tal:repeat repeat="item items">
@@ -230,7 +224,7 @@ from DateTime import DateTime
               </tal:repeat>
           </div>
   </metal:row>
-
+-->
 
 <!-- Listing with preview image, 傳入 items(brain) -->
   <metal:row define-macro="listing_with_preview">

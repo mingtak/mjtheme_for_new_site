@@ -1,25 +1,35 @@
 <div id="script_to_footer">
 
-<!-- Live_slider -->
-<script>
-    $(document).ready(function(){
-        var slider = new MasterSlider();
-        slider.setup('cover_live_slider_1' , {
-            width:1130,
-            height:500,
-            autoplay:true,
-            loop:true,
-            space:10,
-            speed: 10,
-            preload:1,
-            view:'basic'
-        });
-        slider.control('arrows');
 
-        var gallery = new MSGallery('ms-gallery-cover_live_slider_1' , slider);
-        gallery.setup();
+<!-- Owl carousel -->
+<script>
+$(document).ready(function(){
+    $(".owl-carousel-6").owlCarousel({
+        items: 1,
+        autoplay:true,
+        loop:true,
+        nav:true,
+        lazyLoad:true,
+        height: 100,
+        navText:['<i class="fa fa-2x fa-chevron-left"></i>', '<i class="fa fa-2x fa-chevron-right"></i>'],
+        navElement:"span",
     });
+});
+
+$(document).ready(function(){
+    $(".owl-carousel-12").owlCarousel({
+        items: 1,
+        autoplay:true,
+        loop:true,
+        nav:true,
+        lazyLoad:true,
+        height: 100,
+        navText:['<i class="fa fa-2x fa-chevron-left"></i>', '<i class="fa fa-2x fa-chevron-right"></i>'],
+        navElement:"span",
+    });
+});
 </script>
+
 
 
 <!-- Twitter embed code -->
