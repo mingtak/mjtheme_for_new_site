@@ -51,41 +51,52 @@
 
 <!-- 分類列表 -->
   <metal:row define-macro="categories_listing">
-    <tal:folder repeat="item items">
-      <div class="col-md-6 category-area" tal:condition="python:item.getObject() != context">
-          <h4 class="title-border category-title"><a href="${item/getURL}">${item/Title}</a></h4>
-          <ul class="category-block articles" tal:repeat="obj python:list(item.getObject().getChildNodes())[0:5]">
-              <li>
-                  <h5><a href="${obj/absolute_url}">${python:obj.title[:25]}${python:'...' if len(obj.title)>25 else None}</a></h5>
-              </li>
-          </ul>
-      </div>
-      <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"
-                   tal:condition="python:repeat['item'].index % 20 == 0 and repeat['item'].index != 0"/>
-    </tal:folder>
+    <div class="categories_listing">
+<div class="row">
+      <tal:folder repeat="item items">
+        <div class="col-md-6" tal:condition="python:item.getObject() != context">
+          <div class="category-area">
+            <h4 class="title-border category-title"><a href="${item/getURL}">${item/Title}</a></h4>
+            <ul class="category-block articles" tal:repeat="obj python:list(item.getObject().getChildNodes())[0:5]">
+                <li>
+                    <h5><a href="${obj/absolute_url}">${python:obj.title[:25]}${python:'...' if len(obj.title)>25 else None}</a></h5>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <tal:ad condition="python:repeat['item'].index % 20 == 0 and repeat['item'].index != 0">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block">
+        </tal:ad>
+      </tal:folder>
+</div>
+    </div>
   </metal:row>
 
 
 <!-- Item listing, 傳入 n 筆 brain -->
   <metal:row define-macro="item_listing">
-      <div class="row">
+      <div class="row item_listing">
             <div tal:repeat="item python:items"
-                 class="category-block articles col-md-12">
-                <div class="post first">
-                    <a href="${item/getURL}">
-                        <div class="image image-listing">
-                            <img src="${item/getURL}/@@images/image/mini" alt="${item/Title}"/>
+                 class="category-blockarticles col-md-12">
+                <div class="category-block articles">
+                    <div class="post first">
+                        <div class="row">
+                            <a href="${item/getURL}">
+                                <div class="image image-listing col-md-3">
+                                    <img src="${item/getURL}/@@images/image/mini" alt="${item/Title}"/>
+                                </div>
+                            </a>
+                            <div class="col-md-9 item-content">
+                                <div class="meta">
+                                    <span class="subject">
+                                        <a href="${python:item.getObject().getParentNode().absolute_url()}">${python:item.getObject().getParentNode().title}</a>
+                                    </span>
+                                </div>
+                                <h4><a href="${item/getURL}">${item/Title}</a></h4>
+                                <p>${item/Description}</p>
+                            </div>
                         </div>
-                    </a>
-
-                    <div class="meta">
-                        <span class="subject">
-                            <a href="${python:item.getObject().getParentNode().absolute_url()}">${python:item.getObject().getParentNode().title}</a>
-                        </span>
                     </div>
-
-                    <h4><a href="${item/getURL}">${item/Title}</a></h4>
-                    <p>${item/Description}</p>
                 </div>
             </div>
       </div>

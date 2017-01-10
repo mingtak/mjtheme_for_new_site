@@ -59,7 +59,7 @@ children_folder= api.content.find(context=context, Type='Folder')
 
 
 <!-- 新聞列表 -->
-        <h3 class="title-middle title-border mt3">新聞列表</h3>
+        <h3 class="category-title"><span>新聞列表</span></h3>
             <tal:listing define="items python:hot_news[:6]">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />
             </tal:listing>
