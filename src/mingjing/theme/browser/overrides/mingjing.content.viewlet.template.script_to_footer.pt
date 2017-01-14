@@ -20,25 +20,25 @@ $(document).ready(function(){
 
     if(document.documentElement.clientWidth > 800){
         $(".owl-carousel-12").owlCarousel({
-            stagePadding: 150,
-            margin:15,
-            items: 1,
-            autoplay:false,
+//            stagePadding: 150,
+            margin:3,
+            items: 3,
+            autoplay:true,
             loop:true,
             nav:true,
             lazyLoad:true,
-            height: 100,
+//            height: 1300,
             navText:['<i class="fa fa-2x fa-chevron-left"></i>', '<i class="fa fa-2x fa-chevron-right"></i>'],
             navElement:"span",
         });
     }else{
         $(".owl-carousel-12").owlCarousel({
             items: 1,
-            autoplay:false,
+            autoplay:true,
             loop:true,
             nav:true,
             lazyLoad:true,
-            height: 100,
+//            height: 300,
             navText:['<i class="fa fa-2x fa-chevron-left"></i>', '<i class="fa fa-2x fa-chevron-right"></i>'],
             navElement:"span",
         });

@@ -11,16 +11,17 @@
 <!-- 節目表 live_program -->
   <metal:row define-macro="live_program">
       <div class="live_program">
-          <div>
-              <tal:item repeat="item items">
-                  <div class="row">
-<p>
-                      <span class="time col-sm-2">${python:item.created.strftime('%H:%M')}</span>
-                      <span class="title col-sm-10">${item/Title}</span>
-</p>
-                  </div>
-              </tal:item>
-          </div>
+                <h4>節目表(美國東部時間)</h4>
+          <table>
+              <tbody>
+                  <tal:item repeat="item items">
+                      <tr class="${python:'odd' if repeat['item'].even else 'even'}">
+                          <td class="time">${python:item.created.strftime('%H:%M')}</td>
+                          <td class="title"><a href="${item/getURL}/@@to_youtube" target="_blank">${item/Title}</a></td>
+                      </tr>
+                  </tal:item>
+              </tbody>
+          </table>
       </div>
   </metal:row>
 
@@ -33,7 +34,9 @@
 
 <div class="${col} owl-theme owl-carousel">
   <div class="live_slider_item" tal:repeat="item items">
-      <img src="${item/getURL}/@@images/image" alt="${item/Title}" />
+      <img tal:define="yUrl python:item.getObject().youtubeURL;
+                       yId python:yUrl.split('v=')[-1]"
+           src="https://img.youtube.com/vi/${yId}/0.jpg" alt="${item/Title}" />
       <a href="${item/getURL}/@@to_youtube" title="${item/Description}" target="_blank">
           <div class="live-item-title">${python:item.Title[0:70]}${python:'...' if len(item.Title)>70 else None}</div>
       </a>

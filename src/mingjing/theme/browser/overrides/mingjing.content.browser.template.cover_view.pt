@@ -51,63 +51,21 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
         <div class="row">
             <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
                                                tmp python:random.shuffle(items);
-                                               items python:items[0:5];
+                                               items python:items[0:20];
                                                live_slider_id string:cover_live_slider_3;
-                                               col string:owl-carousel-12">
-                <h4>明鏡電視</h4>
+                                               col string:owl-carousel-12;
+                                               t_title string:明鏡電視">
+                <h4 class="program-h4">${t_title}</h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
             <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
                                                tmp python:random.shuffle(items);
-                                               items python:items[0:5];
+                                               items python:items[0:20];
                                                live_slider_id string:cover_live_slider_3;
-                                               col string:owl-carousel-12">
-                <h4>明鏡24小時</h4>
+                                               col string:owl-carousel-12;
+                                               t_title string:明鏡24小時">
+                <h4 class="program-h4">${t_title}</h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
-            </div>
-        </div>
-
-
-<!-- 直播頻道 -->
-        <h3 class="category-title"><span>直播頻道</span></h3>
-        <div class="row">
-            <div class="col-12 col-sm-6"
-                 tal:define="items python:list(youtubes);
-                             tmp python:random.shuffle(items);
-                             items python:items[0:5];
-                             live_slider_id string:cover_live_slider_1;
-                             col string:owl-carousel-6">
-                <h4>明鏡新聞</h4>
-                <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
-            </div>
-            <div class="col-12 col-sm-6"
-                 tal:define="items python:list(youtubes);
-                             tmp python:random.shuffle(items);
-                             items python:items[0:5];
-                             live_slider_id string:cover_live_slider_1;
-                             col string:owl-carousel-6">
-                <h4>明鏡電視24小時</h4>
-                <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-6"
-                 tal:define="items python:list(youtubes);
-                             tmp python:random.shuffle(items);
-                             items python:items[0:5];
-                             live_slider_id string:cover_live_slider_1;
-                             col string:owl-carousel-6">
-                <h4>明鏡電視評論台</h4>
-                <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
-            </div>
-            <div class="col-12 col-sm-6"
-                 tal:define="items python:list(youtubes);
-                             tmp python:random.shuffle(items);
-                             items python:items[0:5];
-                             live_slider_id string:cover_live_slider_1;
-                             col string:owl-carousel-6">
-                <h4>明鏡電視歷史台</h4>
-                <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
             </div>
         </div>
 
@@ -126,12 +84,13 @@ youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', s
         </div>
 
 
-<!-- 熱門話題 -->
+<!-- tabs -->
 <!--        <h3 class="category-title"><span>熱門話題</span></h3>
         <div class="row" tal:define="items python:list(hots)[0:4]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_preview"/>
         </div>
 -->
+
 <!-- Ad block -->
         <div class="row">
             <div class="col-sm-12 mv3 mvt0">

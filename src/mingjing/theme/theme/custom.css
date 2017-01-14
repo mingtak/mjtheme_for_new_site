@@ -27,18 +27,22 @@
 /* above is @media's css setting */
 
 /* Live program begin */
-.live_program > div { border:solid 1px #e84244; }
-.live_program .title { border-left:solid 1px #e84244}
-.live_program p { border-top: solid 1px #e84244}
-
+.live_program { height: 250px; overflow: auto; padding:5px; abackground-color:#ddd; margin:5px 0 20px 0;}
+.live_program h4 { padding:15px 10px; background-color:#aaa; margin-bottom:0; font-size:16px}
+.live_program tr { border-bottom: solid 1px #e84244;}
+.live_program tr.odd { background-color: #CCE3F4;}
+.live_program tr.even { background-color: #ddd;}
+.live_program td { padding: 5px 8px; line-height:18px }
+.live_program .time { border-right:solid 1px #e84244;}
+.program-h4 { margin:20px 0 5px 15px;}
 /* Live program end */
 
 /* Live slider begin */
 .live_slider .owl-carousel-6 .owl-stage-outer { height: 200px; }
-.live_slider .owl-carousel-12 .owl-stage-outer { height: 250px; }
+.live_slider .owl-carousel-12 .owl-stage-outer { height: 230px; }
 
 .live_slider .owl-carousel-6 .owl-nav { position: absolute; top: 80px; width:100%}
-.live_slider .owl-carousel-12 .owl-nav { position: absolute; top: 100px; width:100%}
+.live_slider .owl-carousel-12 .owl-nav { position: absolute; top: 80px; width:100%}
 .live_slider .owl-nav .owl-prev { float: left; color:#e84244; background:initial }
 .live_slider .owl-nav .owl-prev:hover {background:initial}
 .live_slider .owl-nav .owl-next { float: right; color:#e84244; background:initial }
