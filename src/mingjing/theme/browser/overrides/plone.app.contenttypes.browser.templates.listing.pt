@@ -31,7 +31,7 @@ hot_news = api.content.find(context=context, Type='News Item')
 
 
 
-  <h2 class="title-middle title-border">焦點話題</h2>
+  <h3 class="category-title"><span>焦點話題</span></h3>
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">
@@ -53,27 +53,28 @@ hot_news = api.content.find(context=context, Type='News Item')
                 item_is_event python:view.is_event(obj);
                 item_has_image python:item.getIcon">
               <metal:block define-slot="entry">
-<div class="row">
-                <div class="entry category-block articles col-md-12">
-                  <header class="post first" metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
-<div class="post first">
-                    <span class="summary" tal:attributes="title item_type">
-                     <a tal:attributes="href item_link" tal:condition="item_has_image">
-<div class="image image-listing250">
-                    	<img class="image-tile"
-                             tal:attributes="src  string:$item_url/@@images/image/preview">
-</div>
-                      </a>
-<h4>
-                      <a tal:attributes="href item_link;
-                                         class string:$item_type_class $item_wf_state_class url;
-                                         title item_type"
-                          tal:content="item_title">
 
-                             Item Title
+<div class="row listing-view">
+              <div class="col-md-12">
+                <div class="entry category-block articles row">
+                    <div class="summary col-md-4" tal:attributes="title item_type">
+                      <a tal:attributes="href item_link" tal:condition="item_has_image">
+                          <div class="image image-listing250">
+                            <img class="image-tile"
+                                 tal:attributes="src  string:$item_url/@@images/image/preview">
+                          </div>
                       </a>
-</h4>
-                     </span>
+                    </div>
+
+                    <div class="col-md-8">
+                    <h4>
+                     <a tal:attributes="href item_link;
+                                        class string:$item_type_class $item_wf_state_class url;
+                                        title item_type"
+                         tal:content="item_title"></a>
+                    </h4>
+
+
                     <metal:block metal:define-macro="document_byline">
                       <div class="documentByLine">
                         <tal:event condition="item_is_event">
@@ -116,17 +117,17 @@ hot_news = api.content.find(context=context, Type='News Item')
                           </metal:description>
                         </tal:byline>
 
-                  <p tal:condition="item_description"
-                     tal:content="item_description">
-                    description
-                  </p>
-
                       </div>
                     </metal:block>
-</div>
-                  </header>
+                      <p tal:condition="item_description"
+                         tal:content="item_description">
+                        description
+                      </p>
 
-                </div>
+                    </div>
+                  </div>
+
+              </div>
 </div>
 
 <!-- Ad block -->

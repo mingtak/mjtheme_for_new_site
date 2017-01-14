@@ -7,6 +7,26 @@
     i18n:domain="mingjing.content">
 <body>
 
+
+<!-- 節目表 live_program -->
+  <metal:row define-macro="live_program">
+      <div class="live_program">
+          <div>
+              <tal:item repeat="item items">
+                  <div class="row">
+<p>
+                      <span class="time col-sm-2">${python:item.created.strftime('%H:%M')}</span>
+                      <span class="title col-sm-10">${item/Title}</span>
+</p>
+                  </div>
+              </tal:item>
+          </div>
+      </div>
+  </metal:row>
+
+
+
+
 <!-- 直播 slider(開新視窗到 youtube), 傳入: items, live_slider_id, col(owl-carousel-6 or owl-carousel-12) -->
   <metal:row define-macro="live_slider">
       <div class="live_slider">
