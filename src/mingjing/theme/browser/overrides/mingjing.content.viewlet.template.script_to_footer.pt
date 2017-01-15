@@ -1,5 +1,24 @@
 <div id="script_to_footer">
 
+<!-- text cloud -->
+<script>
+$( "#wordcloud" ).awesomeCloud({
+    "size" : {
+        "grid" : 5,
+        "factor" : 3,
+        },
+    "color" : {
+        "background" : "#666",
+    },
+    "options" : {
+        "color" : "random-light",
+        "printMultiplier" : 1
+    },
+    "font" : "Futura, Helvetica, sans-serif",
+    "shape" : "square",
+});
+</script>
+
 
 <!-- Owl carousel -->
 <script>

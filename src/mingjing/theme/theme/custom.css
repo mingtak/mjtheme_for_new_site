@@ -26,6 +26,14 @@
 
 /* above is @media's css setting */
 
+/* Tabs for Views begin */
+.views_tabs ul.nav { border-bottom: 1px solid #e84244; }
+.views_tabs ul.nav { margin-bottom: 12px; }
+.views_tabs .tab-content ul { padding: 0 10px; margin-bottom: 40px;}
+.views_tabs ul li { list-style-type: none; }
+.views_tabs ul li a:before { content: "\f0da"; font-family: Fontawesome; margin-right: 5px;}
+/* Tabs for Views end */
+
 /* Live program begin */
 .live_program { height: 250px; overflow: auto; padding:5px; abackground-color:#ddd; margin:5px 0 20px 0;}
 .live_program h4 { padding:15px 10px; background-color:#aaa; margin-bottom:0; font-size:16px}
@@ -507,4 +515,16 @@ thead {
 
 #header .header-wrapper .site-branding h3 {
   margin:5px 0;
+}
+
+.ebook-cover { height: 160px; overflow:hidden }
+.category-title.ebook { margin: 5px; border-bottom: 2px solid #666; padding-bottom:5px; }
+.category-title.ebook span {padding:3px 5px}
+
+.portletHeader {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 0 5px 0;
+    margin-bottom: 0px;
+    border-bottom: 3px solid rgba(232, 66, 68, 0.9);
 }
