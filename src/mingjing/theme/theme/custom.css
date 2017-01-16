@@ -526,5 +526,25 @@ thead {
     font-weight: bold;
     padding: 0 0 5px 0;
     margin-bottom: 0px;
-    border-bottom: 3px solid rgba(232, 66, 68, 0.9);
 }
+
+footer .categories { font-size: 18px; margin-top:30px}
+#relatedItemBox { font-size: 18px }
+#relatedItemBox h3 { margin: 15px 0 }
+#relatedItemBox ul { padding-left: 10px }
+#relatedItemBox ul li { list-style-type: none; margin-bottom: 10px}
+#relatedItemBox ul li a:before { content: "\f105"; font-family: Fontawesome; margin-right: 0px;}
+
+
+/* submenu begin */
+.row.submenu { 
+    background-color: rgba(232, 66, 68, 0.9);
+    padding:15px 0 15px 15px;
+    box-shadow:4px 4px 4px #ccc;
+    border:solid 1px #e84244;
+    margin-bottom:15px;
+    color: #fff;
+}
+.row.submenu span { margin: 0 3px 0 5px; }
+.row.submenu a { white-space:nowrap; color: #fff; }
+/* submenu end */

@@ -8,6 +8,23 @@
 <body>
 
 
+<!-- 網友熱搜 Tags, 傳入 categories url_quote -->
+<metal:row define-macro="subjects">
+
+                <p>
+                    <span id="categories-filed-under">網友熱搜:</span>
+                    <tal:tag repeat="category categories">
+                        <a rel="tag"
+                           tal:define="quotedCat python:url_quote(category)"
+                           tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/@@search?Subject%3Alist=${quotedCat}">
+                           ${category}
+                        </a><span tal:condition="not:repeat/category/end"> / </span>
+                    </tal:tag>
+                </p>
+
+</metal:row>
+
+
 <!-- 節目表 live_program -->
   <metal:row define-macro="live_program">
       <div class="live_program">

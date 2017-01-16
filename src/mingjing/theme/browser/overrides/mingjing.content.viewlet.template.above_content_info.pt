@@ -6,7 +6,20 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
 
 <div class="above-content-info">
 
-                <div class="container">
+                <div class="container" tal:define="breadcrumbs view/breadcrumbs" >
+
+                    <div class="row submenu" tal:condition="python:context.Type() in ['News Item']">
+                        <div class="col-sm-12"
+                             tal:define="id python:breadcrumbs[0]['absolute_url'].split('/')[-1];
+                                        brain python:api.content.find(context=portal[id], depth=1, Type='Folder')">
+                            <tal:tab repeat="item brain">
+                                <a href="${item/getURL}" title="${item/Title}">${item/Title}</a><span tal:condition="not:repeat/item/end">|</span>
+                            </tal:tab>
+                        </div>
+                    </div>
+
+
+
                     <div class="row">
                         <div class="col-sm-9">
                             <div class="tt-el-ticker">
@@ -21,7 +34,6 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
 
 <nav id="portal-breadcrumbs" class="plone-breadcrumb"
          i18n:domain="plone"
-         tal:define="breadcrumbs view/breadcrumbs"
          tal:condition="python:context.Type() != 'Cover'">
 
     <strong id="breadcrumbs-you-are-here" class="hiddenStructure"
