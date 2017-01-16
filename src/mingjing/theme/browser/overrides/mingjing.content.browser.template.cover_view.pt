@@ -39,8 +39,8 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
 <section>
     <div class="parallax-content">
 
-<!-- 直播頻道 -->
-        <h3 class="category-title"><span>直播頻道</span></h3>
+<!-- 電視 -->
+        <h3 class="category-title"><span>電視</span></h3>
 
         <div class="row">
             <div class="col-sm-12" tal:define="items python:list(youtubes);
@@ -48,7 +48,6 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
                                                items python:items[0:5];
                                                live_slider_id string:cover_live_slider_3; 
                                                col string:owl-carousel-12">
-                <h4>明鏡火拍</h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
             </div>
 
@@ -83,8 +82,8 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
             </div>
         </div>
 
-<!-- 最新消息 -->
-        <h3 class="category-title"><span>最新消息</span></h3>
+<!-- 今日播報 -->
+        <h3 class="category-title"><span>今日播報</span></h3>
         <div class="row" tal:define="items python:list(news)[0:8]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>
@@ -148,8 +147,8 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
         </div>
 
 
-<!-- 最新播報 -->
-        <h3 class="category-title"><span>最新播報</span></h3>
+<!-- 排行榜 -->
+        <h3 class="category-title"><span>排行榜</span></h3>
         <div class="row" tal:define="items python:list(news)[0:6]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>
