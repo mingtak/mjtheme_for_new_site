@@ -552,3 +552,5 @@ footer .categories { font-size: 18px; margin-top:30px}
 .row.submenu a.current { font-weight: bold; color:#e84244;}
 #portal-globalnav .current-menu-item.menu-item-mega > a { color: #000; }
 /* submenu end */
+
+.margin-line {margin:20px 0}

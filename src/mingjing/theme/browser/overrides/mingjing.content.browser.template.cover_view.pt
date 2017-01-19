@@ -75,7 +75,7 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
         </div>
 
 <!-- Ad block -->
-<hr>
+<p class="margin-line"/>
         <div class="row">
             <div class="col-sm-12 mv3 mvt0">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
@@ -90,7 +90,7 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
 
 
 <!-- Ad block -->
-<hr>
+<p class="margin-line"/>
         <div class="row">
             <div class="col-sm-12 mv3 mvt0">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
