@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<registry>
+
+  <records prefix="plone.bundles/waypoints"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>waypoints</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/jquery.waypoints.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/typedjs"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>typedjs</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/typed.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/theia-sticky-sidebar"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>theia-sticky-sidebar</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/theia-sticky-sidebar.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/parallax-columns"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>parallax-columns</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/jquery.parallax.columns.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/jquery-s2t"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>jquery-s2t</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++resource++mingjing.theme/jquery.s2t.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/swiper"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>swiper</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/swiper/js/swiper.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/magnific-popup"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>magnific-popup</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/magnific-popup/jquery.magnific-popup.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/masterslider-jquery-easing"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>masterslider-jquery-easing</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/masterslider/jquery.easing.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/masterslider"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>masterslider</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery,plone.bundles/masterslider-jquery-easing</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/masterslider/masterslider.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/owl-carousel"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>owl-carousel</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/owlCarousel/dist/owl.carousel.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
+  <records prefix="plone.bundles/awesomeCloud"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>awesomeCloud</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++resource++mingjing.theme/jquery.awesomeCloud-0.2.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+<!--
+  <records prefix="plone.bundles/theme-scripts"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>theme-scripts</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery,plone.bundles/masterslider,plone.bundles/waypoints,plone.bundles/typedjs,plone.bundles/theia-sticky-sidebar,plone.bundles/parallax-columns,plone.bundles/jquery-s2t,plone.bundles/swiper,plone.bundles/magnific-popup,plone.bundles/masterslider-jquery-easing,plone.bundles/owl-carousel,plone.bundles/awesomeCloud,plone.bundles/awesomeCloud,</value>
+    <value key="jscompilation">++theme++mingjing.theme/js/scripts.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+-->
+</registry>
