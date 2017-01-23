@@ -60,7 +60,7 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
                                                live_slider_id string:cover_live_slider_3;
                                                col string:owl-carousel-12;
                                                t_title string:明鏡電視">
-                <h4 class="program-h4">${t_title}</h4>
+                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC3lyWHqUY9IiP4en5jnY6vA" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
             <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
@@ -69,7 +69,7 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
                                                live_slider_id string:cover_live_slider_3;
                                                col string:owl-carousel-12;
                                                t_title string:明鏡24小時">
-                <h4 class="program-h4">${t_title}</h4>
+                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC68uS1JD0yAVo4FlBRLuCrA" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
         </div>
