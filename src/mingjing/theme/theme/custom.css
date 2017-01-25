@@ -17,6 +17,11 @@
 @media(max-width: 640px) {
     .live_slider .owl-carousel-12 .owl-stage-outer { height: 200px !important; }
     .live_slider .owl-carousel-12 .owl-nav {top: 80px !important; }
+    #header nav.main-nav > ul.plone-nav { display: none;}
+}
+
+@media(min-width: 640px) {
+    #header nav.main-nav .burger-menu.pm-right { display: none;}
 }
 
 @media (max-width: 480px) {
