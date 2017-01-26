@@ -12,6 +12,17 @@
     <value key="last_compilation">2017-01-23 00:00:00</value>
   </records>
 
+  <records prefix="plone.bundles/bootstrap"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="true">
+      <element>bootstrap</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="depends">jquery</value>
+    <value key="jscompilation">++theme++mingjing.theme/vendors/bootstrap/js/bootstrap.min.js</value>
+    <value key="last_compilation">2017-01-23 00:00:00</value>
+  </records>
+
   <records prefix="plone.bundles/typedjs"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="resources" purge="true">
