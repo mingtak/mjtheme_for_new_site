@@ -15,39 +15,53 @@
 <?python
 from plone import api
 from DateTime import DateTime
+import random
 portal = api.portal.get()
 news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='modified', sort_order='reverse')
 hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
 hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse')
-children_folder= api.content.find(context=context, Type='Folder')
+children_folder = api.content.find(context=context, Type='Folder', depth=1)
 ?>
 
-<!-- 廣告 -->
-<!--    <div class="row">
-        <div class="col-sm-12 mv3 mvt0">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+
+<!-- 今日熱門 -->
+<section tal:define="items python:list(youtubes)[0]">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="category-title"><span>今日熱門</span></h3>
+            <metal:macro use-macro="context/@@mingjing_macro/macros/youtube_today_hot"/>
         </div>
     </div>
--->
-
-<!-- Main slider start -->
-<section tal:define="items python:list(news)[0:8];
-                     main_slider_id string:cover_main_slider_1">
-    <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
-<!-- Main slider end -->
 
 
+<!-- 電視節目表 -->
 <section>
     <div class="parallax-content">
-
-<!-- 焦點話題 -->
-
-        <h3 class="category-title"><span>焦點話題</span></h3>
-        <tal:hot_news define="items python:hot_news[0:4]">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/hot_news" />
-        </tal:hot_news>
+        <h3 class="category-title"><span>直播節目表</span></h3>
+        <div class="row">
+            <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
+                                               tmp python:random.shuffle(items);
+                                               items python:items[0:20];
+                                               live_slider_id string:cover_live_slider_3;
+                                               col string:owl-carousel-12;
+                                               t_title string:明鏡電視">
+                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC3lyWHqUY9IiP4en5jnY6vA" target="_blank">${t_title}</a></h4>
+                <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
+            </div>
+            <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
+                                               tmp python:random.shuffle(items);
+                                               items python:items[0:20];
+                                               live_slider_id string:cover_live_slider_3;
+                                               col string:owl-carousel-12;
+                                               t_title string:明鏡24小時">
+                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC68uS1JD0yAVo4FlBRLuCrA" target="_blank">${t_title}</a></h4>
+                <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- 廣告 -->
         <div class="row">
@@ -58,14 +72,21 @@ children_folder= api.content.find(context=context, Type='Folder')
 
 
 
-<!-- 新聞列表 -->
-        <h3 class="category-title"><span>新聞列表</span></h3>
+
+<section>
+    <div class="parallax-content">
+
+
+
+
+<!-- 特别推荐 -->
+        <h3 class="category-title"><span>特别推荐</span></h3>
             <tal:listing define="items python:hot_news[:6]">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />
             </tal:listing>
 
 <!-- 分類消息 -->
-        <h3 class="category-title"><span>分類新聞</span></h3>
+        <h3 class="category-title"><span>分類電視台</span></h3>
             <tal:listing define="items children_folder">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/categories_listing" />
             </tal:listing>

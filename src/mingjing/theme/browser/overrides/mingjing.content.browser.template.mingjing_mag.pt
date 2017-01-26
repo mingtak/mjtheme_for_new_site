@@ -20,52 +20,35 @@ news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='
 hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
 hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse')
-children_folder= api.content.find(context=context, Type='Folder')
+children_folder= api.content.find(context=context, Type='Folder', depth=1)
 ?>
 
-<!-- 廣告 -->
-<!--    <div class="row">
-        <div class="col-sm-12 mv3 mvt0">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+
+
+<section>
+    <div class="row">
+        <div class="col-md-12" tal:define="items python:news[0:10]">
+        <h3 class="category-title"><span>最新內容</span></h3>
+            <metal:macro use-macro="context/@@mingjing_macro/macros/normal_slider" />
         </div>
     </div>
--->
-
-<!-- Main slider start -->
-<section tal:define="items python:list(news)[0:8];
-                     main_slider_id string:cover_main_slider_1">
-    <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
-<!-- Main slider end -->
 
 
 <section>
     <div class="parallax-content">
 
-<!-- 焦點話題 -->
-
-        <h3 class="category-title"><span>焦點話題</span></h3>
-        <tal:hot_news define="items python:hot_news[0:4]">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/hot_news" />
-        </tal:hot_news>
-
-<!-- 廣告 -->
-        <div class="row">
-            <div class="col-sm-12 mv3 mvt0">
-                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
-            </div>
-        </div>
 
 
 
-<!-- 新聞列表 -->
-        <h3 class="category-title"><span>新聞列表</span></h3>
+<!-- 封面故事 -->
+        <h3 class="category-title"><span>封面故事</span></h3>
             <tal:listing define="items python:hot_news[:6]">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />
             </tal:listing>
 
-<!-- 分類消息 -->
-        <h3 class="category-title"><span>分類新聞</span></h3>
+<!-- 雜誌列表 -->
+        <h3 class="category-title"><span>雜誌列表</span></h3>
             <tal:listing define="items children_folder">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/categories_listing" />
             </tal:listing>

@@ -8,6 +8,31 @@
 <body>
 
 
+<!-- 通用slider, 傳入: items -->
+  <metal:row define-macro="normal_slider">
+      <div class="normal_slider">
+
+<div class="owl-theme owl-carousel">
+  <div class="normal_slider_item" tal:repeat="item items">
+      <img src="${item/getURL}/@@images/image/large" alt="${item/Title}" />
+      <a href="${item/getURL}" title="${item/Description}">
+          <h4 class="normal-item-title">${python:item.Title[0:70]}${python:'...' if len(item.Title)>70 else None}</h4>
+      </a>
+  </div>
+</div>
+
+      </div>
+  </metal:row>
+
+
+<!-- 今日熱門 for tv, 傳入 youtube content type(brain) -->
+<metal:row define-macro="youtube_today_hot">
+    <div class="youtube_today_hot" tal:define="y_id python:items.getObject().youtubeURL.split('?v=')[-1]">
+        <iframe width="100%" height="420" src="https://www.youtube.com/embed/${y_id}/" frameborder="0" allowfullscreen></iframe>
+    </div>
+</metal:row>
+
+
 <!-- 網友熱搜 Tags, 傳入 categories url_quote -->
 <metal:row define-macro="subjects">
 
@@ -41,7 +66,6 @@
           </table>
       </div>
   </metal:row>
-
 
 
 
@@ -118,23 +142,35 @@
 <!-- 分類列表 -->
   <metal:row define-macro="categories_listing">
     <div class="categories_listing">
-<div class="row">
-      <tal:folder repeat="item items">
-        <div class="col-md-6" tal:condition="python:item.getObject() != context">
+      <tal:folder repeat="i python:range(len(items))">
+<div class="row" tal:condition="repeat/i/even">
+        <div class="col-md-6">
           <div class="category-area">
-            <h4 class="title-border category-title"><a href="${item/getURL}">${item/Title}</a></h4>
-            <ul class="category-block articles" tal:repeat="obj python:list(item.getObject().getChildNodes())[0:5]">
+            <h4 class="title-border category-title"><a href="${python:items[i].getURL()}">${python:items[i].Title}</a></h4>
+            <ul class="category-block articles" tal:repeat="obj python:list(items[i].getObject().getChildNodes())[0:5]">
                 <li>
                     <h5><a href="${obj/absolute_url}">${python:obj.title[:25]}${python:'...' if len(obj.title)>25 else None}</a></h5>
                 </li>
             </ul>
           </div>
         </div>
-        <tal:ad condition="python:repeat['item'].index % 20 == 0 and repeat['item'].index != 0">
+
+        <div class="col-md-6" tal:condition="not:repeat/i/end">
+          <div class="category-area">
+            <h4 class="title-border category-title"><a href="${python:items[i+1].getURL()}">${python:items[i+1].Title}</a></h4>
+            <ul class="category-block articles" tal:repeat="obj python:list(items[i+1].getObject().getChildNodes())[0:5]">
+                <li>
+                    <h5><a href="${obj/absolute_url}">${python:obj.title[:25]}${python:'...' if len(obj.title)>25 else None}</a></h5>
+                </li>
+            </ul>
+          </div>
+        </div>
+
+        <tal:ad condition="python:repeat['i'].index % 20 == 1 and repeat['i'].index != 1">
             <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block">
         </tal:ad>
-      </tal:folder>
 </div>
+      </tal:folder>
     </div>
   </metal:row>
 
