@@ -74,6 +74,20 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
             </div>
         </div>
 
+
+<!-- 電台 -->
+        <h3 class="category-title"><span>電台</span></h3>
+
+        <div class="row">
+            <div class="col-sm-6" tal:define="side string:even">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/radio_listing" />
+            </div>
+            <div class="col-sm-6" tal:define="side string:odd">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/radio_listing" />
+            </div>
+        </div>
+
+
 <!-- Ad block -->
 <p class="margin-line"/>
         <div class="row">

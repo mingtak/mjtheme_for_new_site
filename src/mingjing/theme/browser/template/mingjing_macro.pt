@@ -67,6 +67,26 @@
       </div>
   </metal:row>
 
+<!-- 電台 youtube radio list 傳入 radioList in Cover, side: 'odd', 'even' or 'single'. (Cover content type only) -->
+  <metal:row define-macro="radio_listing">
+      <div class="radio-listing">
+          <ul>
+              <tal:li repeat="item python:context.radioList.split('\n')[0:10]"
+                      switch="side">
+                  <li tal:case="string:even" tal:condition="repeat/item/even">
+                      <a href="${python:item.split('|||')[1]}" target="_blank">${python:item.split('|||')[0][0:23]}<span tal:condition="python:len(item.split('|||')[0])>23">...</span></a>
+                  </li>
+                  <li tal:case="string:odd" tal:condition="repeat/item/odd">
+                      <a href="${python:item.split('|||')[1]}" target="_blank">${python:item.split('|||')[0][0:23]}<span tal:condition="python:len(item.split('|||')[0])>23">...</span></a>
+                  </li>
+                  <li tal:case="string:single">
+                      <a href="${python:item.split('|||')[1]}" target="_blank">${python:item.split('|||')[0][0:23]}<span tal:condition="python:len(item.split('|||')[0])>23">...</span></a>
+                  </li>
+              </tal:li>
+          </ul>
+      </div>
+  </metal:row>
+
 
 
 <!-- 直播 slider(開新視窗到 youtube), 傳入: items, live_slider_id, col(owl-carousel-6 or owl-carousel-12) -->

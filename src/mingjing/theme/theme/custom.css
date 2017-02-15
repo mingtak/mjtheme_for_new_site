@@ -41,6 +41,12 @@
 .views_tabs ul li a:before { content: "\f0da"; font-family: Fontawesome; margin-right: 5px;}
 /* Tabs for Views end */
 
+/* radio-listing start */
+.radio-listing ul { padding: 0 10px;}
+.radio-listing ul li { list-style-type: none; margin: 5px 0 }
+.radio-listing ul li a:before { content: "\f0da"; font-family: Fontawesome; margin-right: 10px; }
+/* radio-listing end */
+
 /* Live program begin */
 .live_program { height: 250px; overflow: auto; padding:5px; abackground-color:#ddd; margin:5px 0 20px 0;}
 .live_program h4 { padding:15px 10px; background-color:#aaa; margin-bottom:0; font-size:16px}
