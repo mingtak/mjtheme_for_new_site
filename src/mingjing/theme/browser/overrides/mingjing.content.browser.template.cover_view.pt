@@ -36,16 +36,14 @@ for key in tabsNameList_3:
     brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
     tabsBrain_3.append(brain[0:5])
 
+newestBook = api.content.find(context=portal, Type='Ebook', id=context.ebooks.split()[0])[0]
+hotestBook = api.content.find(context=portal, Type='Ebook', id=context.ebooks.split()[1])[0]
+eBook = api.content.find(context=portal, Type='Ebook', id=context.ebooks.split()[2])[0]
+ebooks = [newestBook, hotestBook, eBook]
+
+rankingNews = api.content.find(context=portal, Type='News Item', id=context.rankingNews.split(), sort_on='modified', sort_order='reverse')
 
 news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
-shuffleBrain = list(news)
-tabsBrain = []
-for i in range(10):
-    random.shuffle(shuffleBrain)
-    tabsBrain.append(shuffleBrain[0:5])
-
-hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
-ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_order='reverse')
 ?>
 
 <!-- 首頁 Main slider start -->
@@ -167,23 +165,17 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
             <div class="col-sm-2" tal:repeat="item python:['最新書刊', '最熱書刊', '電子書刊']">
                 <h5 class="category-title ebook"><span>${item}</span></h5>
                 <div class="ebook-cover">
-                    <a href="${python:ebook[repeat['item'].index].getURL()}" title="${python:ebook[repeat['item'].index].Title}">
-                        <img src="${python:ebook[repeat['item'].index].getURL()}/@@images/image" alt="${python:ebook[repeat['item'].index].Description}"/>
+                    <a href="${python:ebooks[repeat['item'].index].getURL()}" title="${python:ebooks[repeat['item'].index].Title}">
+                        <img src="${python:ebooks[repeat['item'].index].getURL()}/@@images/image" alt="${python:ebooks[repeat['item'].index].Description}"/>
                     </a>
                 </div>
-<!--                <p>
-                    <a href="${python:ebook[repeat['item'].index].getURL()}" title="${python:ebook[repeat['item'].index].Title}">
-                        ${python:ebook[repeat['item'].index].Title[0:42]}${python:'...' if len(ebook[repeat['item'].index].Title)>42 else None}
-                    </a>
-                </p>
--->
             </div>
         </div>
 
 
 <!-- 排行榜 -->
         <h3 class="category-title"><span>排行榜</span></h3>
-        <div class="row" tal:define="items python:list(news)[0:6]">
+        <div class="row" tal:define="items python:list(rankingNews)[0:6]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>
 
