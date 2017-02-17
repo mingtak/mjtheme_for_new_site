@@ -20,8 +20,21 @@ portal = api.portal.get()
 mainSliderNews = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='modified', sort_order='reverse')
 todayNews = api.content.find(Type='News Item', id=context.todayNews.split(), sort_on='modified', sort_order='reverse')
-tabsNameList_1 = context.tabsName.split()[0].split(',')
-tabsNameList_2 = context.tabsName.split()[1].split(',') 
+tabsNameList_1 = context.tabsName.split()[0].encode('utf-8').split(',')
+tabsNameList_2 = context.tabsName.split()[1].encode('utf-8').split(',')
+tabsNameList_3 = context.tabsName.split()[1].encode('utf-8').split(',')
+tabsBrain_1 = []
+for key in tabsNameList_1:
+    brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
+    tabsBrain_1.append(brain[0:5])
+tabsBrain_2 = []
+for key in tabsNameList_2:
+    brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
+    tabsBrain_2.append(brain[0:5])
+tabsBrain_3 = []
+for key in tabsNameList_3:
+    brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
+    tabsBrain_3.append(brain[0:5])
 
 
 news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
@@ -122,15 +135,15 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
 <!-- Tabs -->
         <div class="row">
             <div class="col-sm-6"
-                 tal:define="tabs_name python:['房地產', '財經', '汽車', '購物', '法律'];
+                 tal:define="tabs_name tabsNameList_1;
                              tabs_id_prefix string:cover_tabs_1;
-                             brains python:tabsBrain[0:5];">
+                             brains python:tabsBrain_1;">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
             </div>
             <div class="col-sm-6"
-                 tal:define="tabs_name python:['旅遊', '美食', '健康', '教育', '生活'];
+                 tal:define="tabs_name tabsNameList_2;
                              tabs_id_prefix string:cover_tabs_2;
-                             brains python:tabsBrain[5:10];">
+                             brains python:tabsBrain_2;">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
             </div>
         </div>
@@ -146,9 +159,9 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
 <!-- Tabs -->
         <div class="row">
             <div class="col-sm-6"
-                 tal:define="tabs_name python:['時尚', '體育', '科技', '人文', '娛樂'];
+                 tal:define="tabs_name tabsNameList_2;
                              tabs_id_prefix string:cover_tabs_3;
-                             brains python:tabsBrain[3:8];">
+                             brains python:tabsBrain_3;">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
             </div>
             <div class="col-sm-2" tal:repeat="item python:['最新書刊', '最熱書刊', '電子書刊']">
