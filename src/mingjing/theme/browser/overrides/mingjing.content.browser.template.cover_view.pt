@@ -17,19 +17,26 @@ from plone import api
 import random
 from DateTime import DateTime
 portal = api.portal.get()
-news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='modified', sort_order='reverse')
-hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
-youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
+mainSliderNews = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
+youtubes = api.content.find(context=portal, Type='Youtube', sort_on='modified', sort_order='reverse')
+todayNews = api.content.find(Type='News Item', id=context.todayNews.split(), sort_on='modified', sort_order='reverse')
+tabsNameList_1 = context.tabsName.split()[0].split(',')
+tabsNameList_2 = context.tabsName.split()[1].split(',') 
+
+
+news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
 shuffleBrain = list(news)
 tabsBrain = []
 for i in range(10):
     random.shuffle(shuffleBrain)
     tabsBrain.append(shuffleBrain[0:5])
+
+hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
 ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_order='reverse')
 ?>
 
 <!-- 首頁 Main slider start -->
-<section tal:define="items python:list(news)[0:10];
+<section tal:define="items python:list(mainSliderNews)[0:10];
                      main_slider_id string:cover_main_slider_1">
     <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
@@ -98,7 +105,7 @@ ebook = api.content.find(context=portal, Type='Ebook', sort_on='created', sort_o
 
 <!-- 今日播報 -->
         <h3 class="category-title"><span>今日播報</span></h3>
-        <div class="row" tal:define="items python:list(news)[0:8]">
+        <div class="row" tal:define="items python:list(todayNews)[0:8]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>
 
