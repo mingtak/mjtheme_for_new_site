@@ -270,6 +270,8 @@ div.sidebar {
 .header-member {
     margin-top: 35px;
     line-height: 25px;
+    padding:0 5px;
+    text-align:center;
 }
 
 #header nav.main-nav {

@@ -7,7 +7,7 @@
 
 
   <!-- Include the backend theme -->
-  <xi:include href="++theme++barceloneta/backend.xml" />
+  <xi:include href="backend.xml" />
 
   <!-- Only theme front end pages -->
   <rules css:if-content="body.frontend#visual-portal-wrapper">

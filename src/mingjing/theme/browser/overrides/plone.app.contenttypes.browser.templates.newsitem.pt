@@ -20,7 +20,6 @@ isPaid = not api.user.is_anonymous() and api.user.has_permission('MingJing News:
 <div class="row">
     <div class="col-sm-12">
 
-
 <h1>${context/title}</h1>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

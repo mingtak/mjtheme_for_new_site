@@ -58,8 +58,8 @@
               <tbody>
                   <tal:item repeat="item items">
                       <tr class="${python:'odd' if repeat['item'].even else 'even'}">
-                          <td class="time">${python:item.created.strftime('%H:%M')}</td>
-                          <td class="title"><a href="${item/getURL}/@@to_youtube" target="_blank">${item/Title}</a></td>
+                          <td class="time">${python:item.get('start').strftime('%H:%M')}</td>
+                          <td class="title"><a href="${python:item['uri']}" target="_blank">${python:item.get('name')}</a></td>
                       </tr>
                   </tal:item>
               </tbody>
@@ -299,9 +299,22 @@ from DateTime import DateTime
               <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/even">
                                     <a href="${item/getURL}">
-                                        <div class="image image-thumb"
-                                             data-src="${item/getURL}/@@images/image/mini"
-                                             style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                        <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
+                                            <tal:check case="False">
+                                                <div tal:condition="python:item.getObject().image"
+                                                     class="image image-thumb"
+                                                     data-src="${item/getURL}/@@images/image/mini"
+                                                     style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                                <div tal:condition="python:not item.getObject().image"
+                                                     class="image image-thumb"
+                                                     data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
+                                                     style="background-image: url('');"></div>
+                                            </tal:check>
+                                            <div tal:case="default"
+                                                 class="image image-thumb"
+                                                 data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                                 style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                        </tal:img>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
                                     <p>${python:item.Description[0:135]}...</p>
@@ -319,9 +332,22 @@ from DateTime import DateTime
               <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/odd">
                                     <a href="${item/getURL}">
-                                        <div class="image image-thumb"
-                                             data-src="${item/getURL}/@@images/image/mini"
-                                             style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                        <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
+                                            <tal:check case="False">
+                                                <div tal:condition="python:item.getObject().image"
+                                                     class="image image-thumb"
+                                                     data-src="${item/getURL}/@@images/image/mini"
+                                                     style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                                <div tal:condition="python:not item.getObject().image"
+                                                     class="image image-thumb"
+                                                     data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
+                                                     style="background-image: url('');"></div>
+                                            </tal:check>
+                                            <div tal:case="default"
+                                                 class="image image-thumb"
+                                                 data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                                 style="background-image: url();"></div>
+                                        </tal:img>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
                                     <p>${python:item.Description[0:135]}...</p>
@@ -388,10 +414,16 @@ from DateTime import DateTime
                     <div class="master-slider ms-skin-default" id="${main_slider_id}">
        
                         <div class="ms-slide" data-delay="6" tal:repeat="item items">
-                            <img src="/++resource++mingjing.theme/images/blank.gif"
-                                 data-src="${string:${item/getURL}/@@images/image/preview}"
-                                 alt="${item/Title}" />
-
+                            <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
+                                <img tal:case="False"
+                                     src="/++resource++mingjing.theme/images/blank.gif"
+                                     data-src="${string:${item/getURL}/@@images/image/preview}"
+                                     alt="${item/Title}" />
+                                <img tal:case="True"
+                                     src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                     data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                     alt="${item/Title}" />
+                            </tal:img>
                             <div class="ms-thumb post hover-zoom">
                                 <div class="thumb-meta">
                                     <h4>${python:item.Title[0:36]} ${python:'...' if len(item.Title) > 36 else None}</h4>

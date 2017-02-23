@@ -17,31 +17,15 @@ from plone import api
 import random
 from DateTime import DateTime
 portal = api.portal.get()
-mainSliderNews = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
-youtubes = api.content.find(context=portal, Type='Youtube', sort_on='modified', sort_order='reverse')
-todayNews = api.content.find(Type='News Item', id=context.todayNews.split(), sort_on='modified', sort_order='reverse')
-tabsNameList_1 = context.tabsName.split()[0].encode('utf-8').split(',')
-tabsNameList_2 = context.tabsName.split()[1].encode('utf-8').split(',')
-tabsNameList_3 = context.tabsName.split()[1].encode('utf-8').split(',')
-tabsBrain_1 = []
-for key in tabsNameList_1:
-    brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
-    tabsBrain_1.append(brain[0:5])
-tabsBrain_2 = []
-for key in tabsNameList_2:
-    brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
-    tabsBrain_2.append(brain[0:5])
-tabsBrain_3 = []
-for key in tabsNameList_3:
-    brain = api.content.find(context=portal, Type='News Item', Subject=key, sort_on='modified', sort_order='reverse')
-    tabsBrain_3.append(brain[0:5])
 
-newestBook = api.content.find(context=portal, Type='Ebook', id=context.ebooks.split()[0])[0]
-hotestBook = api.content.find(context=portal, Type='Ebook', id=context.ebooks.split()[1])[0]
-eBook = api.content.find(context=portal, Type='Ebook', id=context.ebooks.split()[2])[0]
-ebooks = [newestBook, hotestBook, eBook]
-
-rankingNews = api.content.find(context=portal, Type='News Item', id=context.rankingNews.split(), sort_on='modified', sort_order='reverse')
+mainSliderNews = view.mainSliderNews()
+youtubes = view.youtubes()
+todayNews = view.todayNews()
+tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
+ebooks = view.ebooks()
+rankingNews = view.rankingNews()
+liveProgram_1 = view.liveProgram(context.liveProgram_1)
+liveProgram_2 = view.liveProgram(context.liveProgram_2)
 
 news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
 ?>
@@ -72,20 +56,12 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
-                                               tmp python:random.shuffle(items);
-                                               items python:items[0:20];
-                                               live_slider_id string:cover_live_slider_3;
-                                               col string:owl-carousel-12;
+            <div class="col-sm-12 col-md-6" tal:define="items liveProgram_1;
                                                t_title string:明鏡電視">
                 <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC3lyWHqUY9IiP4en5jnY6vA" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
-            <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
-                                               tmp python:random.shuffle(items);
-                                               items python:items[0:20];
-                                               live_slider_id string:cover_live_slider_3;
-                                               col string:owl-carousel-12;
+            <div class="col-sm-12 col-md-6" tal:define="items liveProgram_2;
                                                t_title string:明鏡24小時">
                 <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC68uS1JD0yAVo4FlBRLuCrA" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
