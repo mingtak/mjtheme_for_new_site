@@ -132,6 +132,10 @@
 
     <!-- Custom rules -->
     <drop css:content="#portal-breadcrumbs" />
+    <drop css:content="#contentview-edit" />
+    <drop css:content="#contentview-view" />
+    <drop css:content="#contentview-local_roles" />
+    <drop css:content="#plone-contentmenu-display" />
   </rules>
 
 </rules>

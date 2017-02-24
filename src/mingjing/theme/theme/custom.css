@@ -56,6 +56,7 @@
 .live_program td { padding: 5px 8px; line-height:18px }
 .live_program .time { border-right:solid 1px #e84244;}
 .program-h4 { margin:20px 0 5px 15px;}
+.live_program tr.now { background-color: rgba(232, 66, 68, 0.6);}
 /* Live program end */
 
 /* Live slider begin */
@@ -434,7 +435,8 @@ thead {
 }
 
 .post.hover-light {
-    height: 130px;
+/*    height: 130px; */
+    max-height:130px;
     overflow: hidden;
 }
 
@@ -569,7 +571,7 @@ footer .categories { font-size: 18px; margin-top:30px}
 #relatedItemBox h3 { margin: 15px 0 }
 #relatedItemBox ul { padding-left: 10px }
 #relatedItemBox ul li { list-style-type: none; margin-bottom: 10px}
-#relatedItemBox ul li a:before { content: "\f105"; font-family: Fontawesome; margin-right: 0px;}
+#relatedItemBox ul li a:before { content: "\f105"; font-family: Fontawesome; margin-right: 5px;}
 
 
 /* submenu begin */
@@ -590,3 +592,5 @@ footer .categories { font-size: 18px; margin-top:30px}
 /* submenu end */
 
 .margin-line {margin:20px 0}
+
+.category-block.articles .post.first.hover-dark p {line-height:25px}

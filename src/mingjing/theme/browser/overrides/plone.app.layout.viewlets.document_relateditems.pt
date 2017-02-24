@@ -1,7 +1,7 @@
 <div class="relatedItems"
      i18n:domain="plone"
      tal:define="related view/related_items"
-     tal:condition="related">
+     tal:condition="python:context.Type() not in ['Cover', 'Folder']">
     <div class="visualClear" id="clear-space-before-relatedItemBox"><!-- --></div>
     <div id="relatedItemBox"
               tal:define="plone_view nocall:context/@@plone;
@@ -11,7 +11,7 @@
                           use_view_action python:context.portal_registry.get('types_use_view_action_in_listings', []);">
         <h3 class="category-title"><span>延伸閱讀</span></h3>
         <ul>
-          <li tal:repeat="item related">
+          <li tal:condition="related" tal:repeat="item related">
             <span tal:define="desc                item/Description;
                               item_type           item/portal_type;
                               item_type_class     python:'contenttype-' + normalizeString(item_type);
@@ -28,6 +28,13 @@
                </a>
             </span>
           </li>
+          <tal:noRelated define="items python:list(context.getParentNode().getChildNodes())[0:5]" condition="not:related">
+              <li tal:repeat="item items">
+                  <span>
+                      <a href="${item/absolute_url}"><span>${item/title}</span></a>
+                  </span>
+              </li>
+          </tal:noRelated>
         </ul>
     </div>
 </div>

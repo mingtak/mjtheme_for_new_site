@@ -16,8 +16,8 @@
 from plone import api
 from DateTime import DateTime
 portal = api.portal.get()
-news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='modified', sort_order='reverse')
-hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
+news = api.content.find(context=portal['news']['n12'], Type='News Item', sort_on='modified', sort_order='reverse')
+hots = api.content.find(context=portal['news']['n01'], Type='News Item', sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
 hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse')
 children_folder = api.content.find(context=context, Type='Folder', depth=1)

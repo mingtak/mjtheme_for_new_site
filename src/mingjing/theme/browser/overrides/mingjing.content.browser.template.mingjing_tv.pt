@@ -17,10 +17,14 @@ from plone import api
 from DateTime import DateTime
 import random
 portal = api.portal.get()
-news = api.content.find(context=portal['news']['1'], Type='News Item', sort_on='modified', sort_order='reverse')
-hots = api.content.find(context=portal['news']['2'], Type='News Item', sort_on='modified', sort_order='reverse')
+
+liveProgram_1 = view.liveProgram(portal['cover'].liveProgram_1)
+liveProgram_2 = view.liveProgram(portal['cover'].liveProgram_2)
+
+news = api.content.find(context=portal['video'], Type='News Item', sort_on='modified', sort_order='reverse')
+hots = api.content.find(context=portal['video'], Type='News Item', sort_on='modified', sort_order='reverse')
 youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
-hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse')
+hot_news = api.content.find(context=context, Type='Youtube', sort_on='modified', sort_order='reverse')
 children_folder = api.content.find(context=context, Type='Folder', depth=1)
 ?>
 
@@ -40,21 +44,16 @@ children_folder = api.content.find(context=context, Type='Folder', depth=1)
 <section>
     <div class="parallax-content">
         <h3 class="category-title"><span>直播節目表</span></h3>
+
+
+
         <div class="row">
-            <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
-                                               tmp python:random.shuffle(items);
-                                               items python:items[0:20];
-                                               live_slider_id string:cover_live_slider_3;
-                                               col string:owl-carousel-12;
+            <div class="col-sm-12 col-md-6" tal:define="items liveProgram_1;
                                                t_title string:明鏡電視">
                 <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC3lyWHqUY9IiP4en5jnY6vA" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
-            <div class="col-sm-12 col-md-6" tal:define="items python:list(youtubes);
-                                               tmp python:random.shuffle(items);
-                                               items python:items[0:20];
-                                               live_slider_id string:cover_live_slider_3;
-                                               col string:owl-carousel-12;
+            <div class="col-sm-12 col-md-6" tal:define="items liveProgram_2;
                                                t_title string:明鏡24小時">
                 <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC68uS1JD0yAVo4FlBRLuCrA" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
