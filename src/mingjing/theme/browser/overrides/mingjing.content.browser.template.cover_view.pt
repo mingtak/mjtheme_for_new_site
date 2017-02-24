@@ -45,9 +45,7 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
         <h3 class="category-title"><span>電視</span></h3>
 
         <div class="row">
-            <div class="col-sm-12" tal:define="items python:list(youtubes);
-                                               tmp python:random.shuffle(items);
-                                               items python:items[0:5];
+            <div class="col-sm-12" tal:define="items python:list(youtubes)[0:5];
                                                live_slider_id string:cover_live_slider_3; 
                                                col string:owl-carousel-12">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
