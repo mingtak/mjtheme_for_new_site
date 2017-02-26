@@ -20,6 +20,7 @@
     .live_slider .owl-carousel-12 .owl-nav {top: 80px !important; }
     #header nav.main-nav > ul.plone-nav { display: none;}
     .user-profile { display:none; }
+    .panel-ticker .container .row.submenu { display: none; }
 }
 
 @media(min-width: 640px) {

@@ -1,0 +1,7 @@
+@media all and (-ms-high-contrast:none)
+{
+    .news-slider .ms-thumb h4 {
+        color: red;
+        font-size:30px;
+    }
+}
