@@ -342,7 +342,7 @@ from DateTime import DateTime
                                                 <div tal:condition="python:item.getObject().image"
                                                      class="image image-thumb"
                                                      data-src="${item/getURL}/@@images/image/mini"
-                                                     style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                                     style="background-image: url('');"></div>
                                                 <div tal:condition="python:not item.getObject().image"
                                                      class="image image-thumb"
                                                      data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
@@ -351,7 +351,7 @@ from DateTime import DateTime
                                             <div tal:case="default"
                                                  class="image image-thumb"
                                                  data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
-                                                 style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                                 style="background-image: url('');"></div>
                                         </tal:img>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
@@ -375,7 +375,7 @@ from DateTime import DateTime
                                                 <div tal:condition="python:item.getObject().image"
                                                      class="image image-thumb"
                                                      data-src="${item/getURL}/@@images/image/mini"
-                                                     style="background-image: url('${item/getURL}/@@images/image/mini');"></div>
+                                                     style="background-image: url('');"></div>
                                                 <div tal:condition="python:not item.getObject().image"
                                                      class="image image-thumb"
                                                      data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
@@ -384,7 +384,7 @@ from DateTime import DateTime
                                             <div tal:case="default"
                                                  class="image image-thumb"
                                                  data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
-                                                 style="background-image: url();"></div>
+                                                 style="background-image: url('');"></div>
                                         </tal:img>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
