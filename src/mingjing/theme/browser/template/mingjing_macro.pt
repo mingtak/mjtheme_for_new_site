@@ -302,7 +302,7 @@
                           <span class="subject">
                               <a href="${python:item.getObject().getParentNode().absolute_url()}">${python:item.getObject().getParentNode().title}</a>
                           </span>
-                          <span class="date">2h</span>
+<!--                          <span class="date">2h</span> -->
                       </div>
                   </div>
 

@@ -1,7 +1,11 @@
             <div class="panel-header">
                 <div class="container">
                     <div class="row">
-                            
+<?python
+from DateTime import DateTime
+now = DateTime()
+weekDay = {'0':'日', '1':'一', '2':'二', '3':'三', '4':'四', '5':'五', '6':'六', '7':'日'}
+?>
                             <div class="header-wrapper">
 
                                 <div class="site-logo col-lg-2 col-md-2 col-sm-2">
@@ -40,8 +44,8 @@
 <div class="pull-right col-lg-2 col-md-1 header-date">
 <span>
 [美東時間]<br>
-2017年01月07日<br>
-18時03分 星期二
+${now/year}年${now/month}月${now/day}日<br>
+${now/hour}時${now/minute}分 星期${python:weekDay[now.strftime('%w')]}
 </span>
 </div>
 
