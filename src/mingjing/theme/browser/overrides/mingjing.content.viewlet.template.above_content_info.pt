@@ -11,11 +11,14 @@ items = api.content.find(context=portal['news'], Type=['News Item', 'Document'],
                     <div class="row submenu" tal:condition="python:context.Type() in ['News Item', 'Folder']">
                         <div class="col-sm-12"
                              tal:define="id python:breadcrumbs[0]['absolute_url'].split('/')[-1];
-                                         brain python:api.content.find(context=portal[id], depth=1, Type='Folder')">
-                            <tal:tab repeat="item brain">
-                                <a class="${python:'current' if (item.getURL() == context.getParentNode().absolute_url()) or (item.getURL() == context.absolute_url()) else None}"
-                                   href="${item/getURL}"
+                                         brain python:api.content.find(context=portal[id], depth=1, Type='Folder');
+                                         folders python:portal[id].getChildNodes()">
+                            <tal:tab repeat="item folders">
+                              <tal:type condition="python:item.Type() == 'Folder'">
+                                <a class="${python:'current' if (item.absolute_url() == context.getParentNode().absolute_url()) or (item.absolute_url() == context.absolute_url()) else None}"
+                                   href="${item/absolute_url}"
                                    title="${item/Title}">${item/Title}</a><span tal:condition="not:repeat/item/end">|</span>
+                              </tal:type>
                             </tal:tab>
                         </div>
                     </div>

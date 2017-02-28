@@ -104,8 +104,8 @@
     <drop css:content="#contentview-view" />
 <!--    <drop css:content="#contentview-local_roles" /> -->
     <drop css:content="#plone-contentmenu-display" />
-<!--    <drop css:content="div#edit-zone"/>
--->
+    <drop css:content="div#edit-zone"/>
+    <drop css:content="#login-forgotten-password"/>
     <!-- Strip -->
     <strip css:content=".portletWrapper" />
     <strip css:content="section.portlet" />

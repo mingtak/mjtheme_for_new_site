@@ -595,3 +595,13 @@ footer .categories { font-size: 18px; margin-top:30px}
 .margin-line {margin:20px 0}
 
 .category-block.articles .post.first.hover-dark p {line-height:25px}
+
+.plone-toolbar-top-expanded {
+    margin-top: 0px;
+}
+
+.template-login_failed .col-md-12 article form,
+.template-login_form .col-md-12 article form,
+.template-logged_out .col-md-12 article form{margin:0px auto;text-align:center }
+.button, button, input[type=button], input[type=submit] { padding: 5px 30px; color:#e84244}
+input[type=button]:hover, input[type=submit]:hover {background-color:#e84244}
