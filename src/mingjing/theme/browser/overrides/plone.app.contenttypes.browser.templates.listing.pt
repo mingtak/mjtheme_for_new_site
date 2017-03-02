@@ -55,19 +55,25 @@ hot_news = api.content.find(context=context, Type='News Item')
               <metal:block define-slot="entry">
 
 <div class="row listing-view">
-              <div class="col-md-12">
+
+<?python
+from plone import api
+?>
+              <div class="col-md-12" tal:condition="python:api.content.get_state(obj=item.getObject(), default=False)">
                 <div class="entry category-block articles row">
                     <div class="summary col-md-3" tal:attributes="title item_type">
                       <a tal:attributes="href item_link">
                           <div class="image image-listing250">
-                            <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
+                            <tal:img switch="python:hasattr(item.getObject(), 'oldPicturePath')">
                                 <tal:check case="False">
                                     <img tal:condition="python:not item.getObject().image"
                                          src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini" alt="${item_title}"
                                     <img tal:condition="python:item.getObject().image" class="image-tile" alt="${item_title}"
                                          tal:attributes="src string:$item_url/@@images/image/preview">
                                 </tal:check>
-                                <img case="default" src="${python:getattr(item.getObject(), 'oldPicturePath')}" alt="${item_title}">
+                                <img case="default"
+                                     src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                     alt="${item_title}" tal:on-error="nothing">
                             </tal:img>
                           </div>
                       </a>
