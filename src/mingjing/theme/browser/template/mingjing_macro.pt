@@ -186,24 +186,35 @@
       <tal:folder repeat="i python:range(len(items))">
 <div class="row" tal:condition="repeat/i/even">
         <div class="col-md-6">
-          <div class="category-area">
+          <div class="category-area" tal:define="newsList python:list(items[i].getObject().getChildNodes())">
             <h4 class="title-border category-title"><a href="${python:items[i].getURL()}">${python:items[i].Title}</a></h4>
-            <ul class="category-block articles" tal:repeat="obj python:list(items[i].getObject().getChildNodes())[0:5]">
-                <li>
-                    <h5><a href="${obj/absolute_url}">${python:obj.title[:25]}${python:'...' if len(obj.title)>25 else None}</a></h5>
+            <ul class="category-block articles" tal:condition="python:len(newsList)>=5">
+                <li tal:repeat="obj python:newsList[0:5]">
+                    <h5><a href="${obj/absolute_url}">${python:obj.title[:23]}${python:'...' if len(obj.title)>23 else None}</a></h5>
+                </li>
+            </ul>
+            <ul class="category-block articles" tal:condition="python:len(newsList)<5">
+                <li tal:repeat="obj python:hot_news[0:5]">
+                    <h5><a href="${obj/getURL}">${python:obj.Title[:65]}${python:'...' if len(obj.Title)>65 else None}</a></h5>
                 </li>
             </ul>
           </div>
         </div>
 
         <div class="col-md-6" tal:condition="not:repeat/i/end">
-          <div class="category-area">
+          <div class="category-area" tal:define="newsList python:list(items[i+1].getObject().getChildNodes())">
             <h4 class="title-border category-title"><a href="${python:items[i+1].getURL()}">${python:items[i+1].Title}</a></h4>
-            <ul class="category-block articles" tal:repeat="obj python:list(items[i+1].getObject().getChildNodes())[0:5]">
-                <li>
-                    <h5><a href="${obj/absolute_url}">${python:obj.title[:25]}${python:'...' if len(obj.title)>25 else None}</a></h5>
+            <ul class="category-block articles" tal:condition="python:len(newsList)>=5">
+                <li tal:repeat="obj python:newsList[0:5]">
+                    <h5><a href="${obj/absolute_url}">${python:obj.title[:23]}${python:'...' if len(obj.title)>23 else None}</a></h5>
                 </li>
             </ul>
+            <ul class="category-block articles" tal:condition="python:len(newsList)<5">
+                <li tal:repeat="obj python:hot_news[0:5]">
+                    <h5><a href="${obj/getURL}">${python:obj.Title[:65]}${python:'...' if len(obj.Title)>65 else None}</a></h5>
+                </li>
+            </ul>
+
           </div>
         </div>
 

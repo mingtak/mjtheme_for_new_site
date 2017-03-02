@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+  <head>
+      <metal:block fill-slot="top_slot">
+        <tal:insert tal:replace="nothing"
+              tal:define="dummy python:request.set('enable_border', 1);
+                          disable_column_one python:request.set('disable_plone.leftcolumn', 1);
+                          disable_column_two python:request.set('disable_plone.rightcolumn', 1);" />
+      </metal:block>
+  </head>
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
+        <div class="pat-structure"
+          tal:attributes="data-pat-structure view/options" />
+
+<?python
+from plone import api
+?>
+<table id="custom-folder-contents">
+    <thead>
+        <tr>
+            <td>標題</td>
+            <td>狀態</td>
+            <td>建立時間</td>
+        </tr>
+    </thead>
+    <tbody tal:define="items python:list(context.getChildNodes())[0:10]">
+        <tr tal:repeat="item items">
+            <td> [ <tal:type replace="item/Type"/> ]
+                 <tal:title replace="item/title"/>
+                 <a href="${item/absolute_url}/edit">(編輯)</a>
+                 <a href="${item/absolute_url}" target="_blank">(閱覽)</a>
+            </td>
+            <td> ${python:api.content.get_state(item)} </td>
+            <td> ${python:item.created().strftime('%Y/%m/%d %H:%M')}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<style type="text/css">
+#custom-folder-contents td { border: solid 1px; padding: 8px}
+</style>
+
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

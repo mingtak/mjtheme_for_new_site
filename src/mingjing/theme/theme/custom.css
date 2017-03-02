@@ -605,3 +605,9 @@ footer .categories { font-size: 18px; margin-top:30px}
 .template-logged_out .col-md-12 article form{margin:0px auto;text-align:center }
 .button, button, input[type=button], input[type=submit] { padding: 5px 30px; color:#e84244}
 input[type=button]:hover, input[type=submit]:hover {background-color:#e84244}
+
+body.template-logged_out #header,
+body.template-logged_out #footer,
+body.template-login_form #header,
+body.template-login_form #footer {display:none}
+body.template-login_form #content {margin-top:200px}
