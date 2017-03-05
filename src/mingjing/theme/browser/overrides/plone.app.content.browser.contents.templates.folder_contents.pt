@@ -69,7 +69,12 @@ tabs.reverse()
                          <tal:title replace="item/title"/>
                      </a>
                  </tal:switch>
-                 <a href="${item/absolute_url}" target="_blank">(閱覽)</a>
+                 <a class="viewpage" href="${item/absolute_url}?view=true" target="_blank">(閱覽)</a>
+                 <span class="featured" tal:condition="python:hasattr(item, 'featured')">
+                     精選: <input ${python:'checked' if getattr(item, 'featured') else ''}
+                                  type="checkbox" class="featured-checkbox" name="featured"
+                                  id="${item/UID}">
+                 </span>
             </td>
             <td> <tal:state replace="python:api.content.get_state(item)" on-error="nothing"/> </td>
             <td> ${python:item.created().strftime('%Y/%m/%d %H:%M')}</td>
@@ -77,12 +82,37 @@ tabs.reverse()
     </tbody>
 </table>
 
+<script>
+$(".featured-checkbox").change(function(obj){
+  uid = obj.target.id;
+  checked = obj.target.checked;
+
+  $.ajax({
+    type: "POST",
+    url: '/set_featured',
+    data: {'uid':uid, 'checked':checked},
+//    success: alert('已完成設定'),
+  });
+
+});
+</script>
+
+
+
 
 <style type="text/css">
 #custom-folder-contents { margin: 50px 0}
 #custom-folder-contents td { border: solid 1px; padding: 8px}
+.featured { color:red}
 .path { margin-top:50px}
+.viewpage { margin: 0 20px}
 </style>
+
+
+    <div class="pat-structure"
+         tal:condition="python:'Manager' in api.user.get_roles()"
+         tal:attributes="data-pat-structure view/options" />
+
 
     </metal:content-core>
 </metal:content-core>

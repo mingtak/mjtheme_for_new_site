@@ -159,6 +159,7 @@
 
 <!-- 分頁 tabs, Portlet用 -->
   <metal:row define-macro="portlet_tabs">
+    <div class="portlet_tabs">
       <ul class="nav nav-tabs">
           <li tal:repeat="tab view/data/tabs"
               class="${python:'active' if not repeat['tab'].index else None}">
@@ -171,12 +172,13 @@
               <ul>
                   <li tal:repeat="item python:list(tab.to_object.results())[0:10]">
                       <a href="${item/getURL}">
-                          ${python:item.title[0:14]} ${python:'...' if len(item.title) > 14 else None}
+                          ${python:item.title[0:15]}
                       </a>
                   </li>
               </ul>
           </div>
       </div>
+    </div>
   </metal:row>
 
 
@@ -187,7 +189,9 @@
 <div class="row" tal:condition="repeat/i/even">
         <div class="col-md-6">
           <div class="category-area" tal:define="newsList python:list(items[i].getObject().getChildNodes())">
-            <h4 class="title-border category-title"><a href="${python:items[i].getURL()}">${python:items[i].Title}</a></h4>
+            <h4 class="title-border category-title">
+                <a href="${python:items[i].getURL()}" class="h4-title">${python:items[i].Title}</a>
+            </h4>
             <ul class="category-block articles" tal:condition="python:len(newsList)>=5">
                 <li tal:repeat="obj python:newsList[0:5]">
                     <h5><a href="${obj/absolute_url}">${python:obj.title[:23]}${python:'...' if len(obj.title)>23 else None}</a></h5>
@@ -203,7 +207,9 @@
 
         <div class="col-md-6" tal:condition="not:repeat/i/end">
           <div class="category-area" tal:define="newsList python:list(items[i+1].getObject().getChildNodes())">
-            <h4 class="title-border category-title"><a href="${python:items[i+1].getURL()}">${python:items[i+1].Title}</a></h4>
+            <h4 class="title-border category-title">
+                <a href="${python:items[i+1].getURL()}" class="h4-title">${python:items[i+1].Title}</a>
+            </h4>
             <ul class="category-block articles" tal:condition="python:len(newsList)>=5">
                 <li tal:repeat="obj python:newsList[0:5]">
                     <h5><a href="${obj/absolute_url}">${python:obj.title[:23]}${python:'...' if len(obj.title)>23 else None}</a></h5>
@@ -256,7 +262,7 @@
                                     </span>
                                 </div>
                                 <h4><a href="${item/getURL}">${item/Title}</a></h4>
-                                <p>${item/Description}</p>
+                                <p>${python:item.Description[0:240]}...<a href="${item/getURL}" class="read-more">更多</a></p>
                             </div>
                         </div>
                     </div>
@@ -275,13 +281,13 @@
                   <div tal:define="item python:items[0]"
                        class="post first hover-dark">
                       <a href="${item/getURL}">
-                          <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
+                          <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath', False))">
                               <tal:check case="False">
-                                  <div tal:condition="python:item.getObject().image"
+                                  <div tal:condition="python:getattr(item.getObject(), 'image', False)"
                                        class="image" data-src="${item/getURL}/@@images/image/preview">
                                        <img class="hot-news-main-img" src="${item/getURL}/@@images/image/preview" alt="${item/Title}"/>
                                   </div>
-                                  <div tal:condition="python:not item.getObject().image"
+                                  <div tal:condition="python:not getattr(item.getObject(), 'image', False)"
                                        class="image" data-src="${item/getURL}/@@images/image/preview">
                                        <img class="hot-news-main-img" src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/preview" alt="${item/Title}"/>
                                   </div>
@@ -380,7 +386,7 @@ from DateTime import DateTime
                                         </tal:img>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
-                                    <p>${python:item.Description[0:135]}...</p>
+                                    <p>${python:item.Description[0:135]}...<a href="${item/getURL}" class="read-more">更多</a></p>
                                     <div class="meta">
                                         <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
@@ -413,7 +419,7 @@ from DateTime import DateTime
                                         </tal:img>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
-                                    <p>${python:item.Description[0:135]}...</p>
+                                    <p>${python:item.Description[0:135]}...<a href="${item/getURL}" class="read-more">更多</a></p>
                                     <div class="meta">
                                         <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
@@ -495,7 +501,7 @@ from DateTime import DateTime
                             </tal:img>
                             <div class="ms-thumb post hover-zoom">
                                 <div class="thumb-meta">
-                                    <h4>${python:item.Title[0:36]} ${python:'...' if len(item.Title) > 36 else None}</h4>
+                                    <h4>${python:item.Title[0:42]}</h4>
                                 </div>
                             </div>
                             

@@ -22,7 +22,8 @@
 
 <?python
 from plone import api
-hot_news = api.content.find(context=context, Type='News Item')
+portal = api.portal.get()
+hot_news = api.content.find(context=context, depth=1)
 ?>
 
         <tal:hot_news define="items python:hot_news[0:3]">
@@ -59,6 +60,7 @@ hot_news = api.content.find(context=context, Type='News Item')
 <?python
 from plone import api
 ?>
+
               <div class="col-md-12" tal:condition="python:api.content.get_state(obj=item.getObject(), default=False)">
                 <div class="entry category-block articles row">
                     <div class="summary col-md-3" tal:attributes="title item_type">
@@ -71,7 +73,7 @@ from plone import api
                                     <img tal:condition="python:item.getObject().image" class="image-tile" alt="${item_title}"
                                          tal:attributes="src string:$item_url/@@images/image/preview">
                                 </tal:check>
-                                <img case="default"
+                                <img tal:case="default"
                                      src="${python:getattr(item.getObject(), 'oldPicturePath')}"
                                      alt="${item_title}" tal:on-error="nothing">
                             </tal:img>
@@ -133,7 +135,7 @@ from plone import api
                       </div>
                     </metal:block>
                       <p tal:condition="item_description"
-                         tal:content="item_description">
+                         tal:content="python:item_description[0:240]">
                         description
                       </p>
 

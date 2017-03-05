@@ -1,7 +1,7 @@
 <div class="relatedItems"
      i18n:domain="plone"
      tal:define="related view/related_items"
-     tal:condition="python:context.Type() not in ['Cover', 'Folder']">
+     tal:condition="python:context.Type() not in ['Cover', 'Folder', 'Page']">
     <div class="visualClear" id="clear-space-before-relatedItemBox"><!-- --></div>
     <div id="relatedItemBox"
               tal:define="plone_view nocall:context/@@plone;

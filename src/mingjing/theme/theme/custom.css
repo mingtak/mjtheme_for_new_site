@@ -34,6 +34,13 @@
 
 /* above is @media's css setting */
 
+/* Sitemap start */
+#portal-sitemap { margin-top:50px }
+#portal-sitemap > li.navTreeItem.visualNoMarker { font-size:22px}
+#portal-sitemap li.navTreeItem.visualNoMarker ul.navTree.navTreeLevel2 li {
+    display:inline; margin-right: 15px; word-break: keep-all; font-size:17px}
+/* Sitemap end */
+
 /* Tabs for Views begin */
 .views_tabs ul.nav { border-bottom: 1px solid #e84244; }
 .views_tabs ul.nav { margin-bottom: 12px; }
@@ -55,7 +62,7 @@
 .live_program tr.odd { background-color: #CCE3F4;}
 .live_program tr.even { background-color: #ddd;}
 .live_program td { padding: 5px 8px; line-height:18px }
-.live_program .time { border-right:solid 1px #e84244;}
+.live_program .time { border-right:solid 1px #e84244; white-space: nowrap;}
 .program-h4 { margin:20px 0 5px 15px;}
 .live_program tr.now { background-color: rgba(232, 66, 68, 0.6);}
 /* Live program end */
@@ -116,8 +123,11 @@
 }
 
 .listing-view .entry.category-block.articles { padding: 10px 0; }
-.listing-view .image-listing250 img { width: 100%;}
+.listing-view .image-listing250 { max-height: 120px; overflow:hidden; }
+.listing-view .image-listing250 img { width: 100%; }
 .listing-view .image { margin-bottom: 10px; margin-right:auto; margin-left:auto; }
+
+
 
 /* listing-view end */
 
@@ -131,6 +141,19 @@
 .categories_listing li { list-style-type:none }
 .categories_listing li h5:before{content:'\f101'; font-family: Fontawesome; margin-right:5px;}
 .categories_listing .category-area { margin-bottom: 10px; margin-top: 10px; }
+.categories_listing .title-border { padding-bottom: 10px}
+.categories_listing .title-border .h4-title{
+/*    margin-right: 150px; */
+    margin: 0 0 10px 10px	;
+}
+.categories_listing .title-border .h4-title-more{
+    padding: 3px 10px 0 20px;
+    float:right;
+    margin-left: 3px;
+    font-size: 14px;
+    color:#36e
+/*    border-bottom: 4px solid #36e; */
+}
 
 /* categories_listing end */
 
@@ -203,7 +226,7 @@
 }
 
 .category-title span {
-    padding: 0 5px;
+    padding: 0 8px;
     color: #fff;
     background-color: #e84244;
 }
@@ -234,7 +257,7 @@
     color:#fff;
 }
 
-.social-list .white a {
+.social-list .white a#portaltab-s2t {
     color: #fff;
     font-size: 26px;
     margin: 0 5px ;
@@ -332,6 +355,7 @@ ul.nav.nav-tabs li a:before, ul.nav.nav-pills li a:before {
 
 .news-slider .ms-thumb h4 {
     color: #444;
+    white-space: nowrap;
 }
 
 .news-slider .ms-thumb h4:before, .widget ul li a:before {
@@ -431,6 +455,9 @@ thead {
 
 .title-border {
     padding: 0 20px 12px 0;
+/*    width: 85%;
+    padding: 0 5px 12px 0;
+*/
     margin-bottom: 30px;
     border-bottom: 4px solid rgba(232, 66, 68, 0.9);
 }
@@ -567,6 +594,8 @@ thead {
     margin-bottom: 0px;
 }
 
+.portlet_tabs .tab-content ul li a { white-space:nowrap; }
+
 footer .categories { font-size: 18px; margin-top:30px}
 #relatedItemBox { font-size: 18px }
 #relatedItemBox h3 { margin: 15px 0 }
@@ -611,3 +640,6 @@ body.template-logged_out #footer,
 body.template-login_form #header,
 body.template-login_form #footer {display:none}
 body.template-login_form #content {margin-top:200px}
+/* .read-more { color:#36e !important; font-size:10px } */
+h3 .h3-title-more { float:right; font-size:18px; padding: 8px 10px 0 0 }
+.post .image { background-color: initial }

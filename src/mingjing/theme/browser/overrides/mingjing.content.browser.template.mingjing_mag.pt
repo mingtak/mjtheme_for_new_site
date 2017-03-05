@@ -28,7 +28,10 @@ children_folder= api.content.find(context=context, Type='Folder', depth=1)
 <section>
     <div class="row">
         <div class="col-md-12" tal:define="items python:news[0:10]">
-        <h3 class="category-title"><span>最新內容</span></h3>
+            <h3 class="category-title">
+                <span>最新內容</span>
+                <a href="javascript:void(0)" class="h3-title-more">更多</a>
+            </h3>
             <metal:macro use-macro="context/@@mingjing_macro/macros/normal_slider" />
         </div>
     </div>
@@ -42,13 +45,19 @@ children_folder= api.content.find(context=context, Type='Folder', depth=1)
 
 
 <!-- 封面故事 -->
-        <h3 class="category-title"><span>封面故事</span></h3>
+        <h3 class="category-title">
+            <span>封面故事</span>
+            <a href="javascript:void(0)" class="h3-title-more">更多</a>
+        </h3>
+
             <tal:listing define="items python:hot_news[:6]">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />
             </tal:listing>
 
 <!-- 雜誌列表 -->
-        <h3 class="category-title"><span>雜誌列表</span></h3>
+        <h3 class="category-title">
+            <span>雜誌列表</span>
+        </h3>
             <tal:listing define="items children_folder">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/categories_listing" />
             </tal:listing>

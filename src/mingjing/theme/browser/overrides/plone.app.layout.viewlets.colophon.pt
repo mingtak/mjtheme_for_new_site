@@ -4,8 +4,17 @@
 
     <div class="row">
         <div class="col-sm-12">
-
-关於明镜  |  友情连结  |  明镜报导  |  服务条款  |  版权声明  |  隐私政策  |  网站地图  |  RSS订阅  |  
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+<a href="${portal/absolute_url}/resource/pages/about">关於明镜</a>  |
+<a href="${portal/absolute_url}/resource/pages/externallink">友情连结</a>  |
+<a href="${portal/absolute_url}/resource/pages/service">服务条款</a>  |
+<a href="${portal/absolute_url}/resource/pages/copyright">版权声明</a>  |
+<a href="${portal/absolute_url}/resource/pages/privacy">隐私政策</a>  |
+<a href="${portal/absolute_url}/sitemap">网站地图</a>  |
+<a href="${portal/absolute_url}/resource/pages/rss">RSS订阅</a>
 
         </div>
     </div>

@@ -42,7 +42,10 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
     <div class="parallax-content">
 
 <!-- 電視 -->
-        <h3 class="category-title"><span>電視</span></h3>
+        <h3 class="category-title">
+          <span>電視</span>
+          <a href="${portal/absolute_url}/video" class="h3-title-more">更多</a>
+        </h3>
 
         <div class="row">
             <div class="col-sm-12" tal:define="items python:list(youtubes)[0:5];
@@ -68,7 +71,10 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
 
 
 <!-- 電台 -->
-        <h3 class="category-title"><span>電台</span></h3>
+        <h3 class="category-title">
+            <span>電台</span>
+            <a href="https://www.youtube.com/playlist?list=PL7rBJWuEBrPYJCcxbTI-qTzuEEmiCCDXX" target="_blank" class="h3-title-more">更多</a>
+        </h3>
 
         <div class="row">
             <div class="col-sm-6" tal:define="side string:even">
@@ -89,7 +95,10 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
         </div>
 
 <!-- 今日播報 -->
-        <h3 class="category-title"><span>今日播報</span></h3>
+        <h3 class="category-title">
+            <span>今日播報</span>
+            <a href="javascript:void(0)" class="h3-title-more">更多</a>
+        </h3>
         <div class="row" tal:define="items python:list(todayNews)[0:8]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>
@@ -148,7 +157,10 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
 
 
 <!-- 排行榜 -->
-        <h3 class="category-title"><span>排行榜</span></h3>
+        <h3 class="category-title">
+            <span>排行榜</span>
+            <a href="javascript:void(0)" class="h3-title-more">更多</a>
+        </h3>
         <div class="row" tal:define="items python:list(rankingNews)[0:6]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>

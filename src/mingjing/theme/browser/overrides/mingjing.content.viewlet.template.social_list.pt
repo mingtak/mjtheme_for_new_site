@@ -1,13 +1,17 @@
 <div class="social-list">
 
-<i class="fa fa-youtube-square" aria-hidden="true"></i>
-<i class="fa fa-rss" aria-hidden="true"></i>
-<i class="fa fa-facebook-official" aria-hidden="true"></i>
-<i class="fa fa-twitter" aria-hidden="true"></i>
+<a href="https://www.youtube.com/channel/UCdKyM0XmuvQrD0o5TNhUtkQ" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+<a href="/resource/pages/rss"><i class="fa fa-rss" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/MingJingNews/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+<a href="https://twitter.com/MingJingNews" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 
     <div class="white pull-right">
-        <i class="fa fa-apple" aria-hidden="true"></i>
-        <i class="fa fa-android" aria-hidden="true"></i>
+        <a href="" target="_blank">        
+            <i class="fa fa-apple" aria-hidden="true"></i>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=tw.com.appsfly.mirror" target="_blank">
+            <i class="fa fa-android" aria-hidden="true"></i>
+        </a>
         <a id="portaltab-s2t" href="javascript:void(0)">繁</a>
         <i class="fa fa-bars burger-menu pm-right" aria-hidden="true"></i>
     </div>
