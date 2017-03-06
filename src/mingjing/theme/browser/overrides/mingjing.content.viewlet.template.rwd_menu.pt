@@ -22,11 +22,11 @@ portal = api.portal.get()
                             <a href="javascript:;" class="close-menu"></a>
                             
                             <div class="pm-socials">
-                                <a href="javascript:;"><i class="fa fa-facebook"></i></a>
-                                <a href="javascript:;"><i class="fa fa-twitter"></i></a>
-                                <a href="javascript:;"><i class="fa fa-google-plus"></i></a>
-                                <a href="javascript:;"><i class="fa fa-pinterest"></i></a>
-                                <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/MingJingNews/"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="https://twitter.com/MingJingNews"><i class="fa fa-twitter"></i></a>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCdKyM0XmuvQrD0o5TNhUtkQ"><i class="fa fa-youtube"></i></a>
+                                <a target="_blank" href="${portal/absolute_url}/resource/pages/rss"><i class="fa fa-rss"></i></a>
+                                <a target="_blank" href="https://play.google.com/store/apps/details?id=tw.com.appsfly.mirror"><i class="fa fa-android"></i></a>
                             </div>
 
 
@@ -68,7 +68,7 @@ portal = api.portal.get()
 
 
                             </nav>
-
+<!--
                             <div class="pm-en-recent">
 <h4 class="title-border">最新書刊</h4>
                                 <a href="#" class="er-item">
@@ -78,7 +78,7 @@ portal = api.portal.get()
                                     <img src="http://www.mingjingnews.com/MIBM/upimages/Banner/WW120161028004603.jpg" alt="recent entertainment">
                                 </a>
                             </div>
-
+-->
                         </div>
                     </div>
                 </div>

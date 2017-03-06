@@ -25,6 +25,9 @@ from plone import api
 portal = api.portal.get()
 LIMIT = 10
 hot_news = api.content.find(context=context, depth=1, sort_limit=LIMIT)[:LIMIT]
+if not hot_news:
+    hot_news = api.content.find(context=context.getParentNode(),
+        Type=['News Item', 'Youtube', 'Blog', 'Ebook'], sort_on='created', sort_order='reverse', sort_limit=LIMIT)[:LIMIT]
 ?>
 
         <tal:hot_news define="items python:hot_news[0:3]">
