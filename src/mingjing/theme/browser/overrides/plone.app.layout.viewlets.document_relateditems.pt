@@ -42,6 +42,8 @@
 from plone import api
 portal = api.portal.get()
 brain = api.content.find(context=portal, sort_on='created', sort_order='reverse', sort_limit=5)[:5]
+tabsNameList = ['24小時', '48小時', '72小時', '一周', '一月']
+tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=view.request)
 ?>
 
 
@@ -49,6 +51,15 @@ brain = api.content.find(context=portal, sort_on='created', sort_order='reverse'
         <tal:listing define="items brain">
             <metal:macro use-macro="context/@@mingjing_macro/macros/li-listing" />
         </tal:listing>
+
+        <h3 class="category-title"><span>最熱點擊</span></h3>
+        <div class="col-sm-12 hot-hits"
+             tal:define="tabs_name tabsNameList;
+                         tabs_id_prefix string:hot_hits_tabs;
+                         brains python:tabsBrain();">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
+        </div>
+
 
 
 

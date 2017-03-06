@@ -15,11 +15,12 @@
 <?python
 from plone import api
 from DateTime import DateTime
+LIMIT = 20
 portal = api.portal.get()
-news = api.content.find(context=portal['magazine'], Type='News Item', sort_on='modified', sort_order='reverse')
-hots = api.content.find(context=portal['magazine'], Type='News Item', sort_on='modified', sort_order='reverse')
-youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse')
-hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse')
+news = api.content.find(context=portal['magazine'], Type='News Item', sort_on='modified', sort_order='reverse', sort_limit=LIMIT)[:LIMIT]
+hots = api.content.find(context=portal['magazine'], Type='News Item', sort_on='modified', sort_order='reverse', sort_limit=LIMIT)[:LIMIT]
+youtubes = api.content.find(context=portal, Type='Youtube', sort_on='created', sort_order='reverse', sort_limit=LIMIT)[:LIMIT]
+hot_news = api.content.find(context=context, Type='News Item', sort_on='modified', sort_order='reverse', sort_limit=LIMIT)[:LIMIT]
 children_folder= api.content.find(context=context, Type='Folder', depth=1)
 ?>
 

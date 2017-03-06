@@ -26,8 +26,6 @@ ebooks = view.ebooks()
 rankingNews = view.rankingNews()
 liveProgram_1 = view.liveProgram(context.liveProgram_1)
 liveProgram_2 = view.liveProgram(context.liveProgram_2)
-
-news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sort_on='modified', sort_order='reverse')
 ?>
 
 <!-- 首頁 Main slider start -->

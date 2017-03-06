@@ -8,6 +8,21 @@
 <body>
 
 
+<!-- li listing 一般通用列表 傳入items(catalog brain) -->
+  <metal:row define-macro="li-listing">
+    <div class="li-listing">
+      <ul>
+          <li tal:repeat="item items">
+              <a href="${item/getURL}">${item/Title}</a>
+          </li>
+      </ul>
+    </div>
+  </metal:row>
+
+
+
+
+
 <!-- 通用slider, 傳入: items -->
   <metal:row define-macro="normal_slider">
       <div class="normal_slider">

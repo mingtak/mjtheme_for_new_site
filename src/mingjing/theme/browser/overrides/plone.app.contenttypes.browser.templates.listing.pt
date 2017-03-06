@@ -23,7 +23,8 @@
 <?python
 from plone import api
 portal = api.portal.get()
-hot_news = api.content.find(context=context, depth=1)
+LIMIT = 10
+hot_news = api.content.find(context=context, depth=1, sort_limit=LIMIT)[:LIMIT]
 ?>
 
         <tal:hot_news define="items python:hot_news[0:3]">

@@ -597,11 +597,22 @@ thead {
 .portlet_tabs .tab-content ul li a { white-space:nowrap; }
 
 footer .categories { font-size: 18px; margin-top:30px}
+
+/* relatedItemBox start */
 #relatedItemBox { font-size: 18px }
 #relatedItemBox h3 { margin: 15px 0 }
 #relatedItemBox ul { padding-left: 10px }
 #relatedItemBox ul li { list-style-type: none; margin-bottom: 10px}
 #relatedItemBox ul li a:before { content: "\f105"; font-family: Fontawesome; margin-right: 5px;}
+
+#relatedItemBox .hot-hits{ font-size: initial }
+#relatedItemBox .hot-hits ul { padding-left: 0 }
+#relatedItemBox .hot-hits ul li { list-style-type: none; margin-bottom: 0}
+#relatedItemBox .hot-hits .tab-content ul li { padding-left: 5px }
+#relatedItemBox .hot-hits .tab-content ul li a:before { content: "\f0da"; font-family: Fontawesome; margin-right: 5px;}
+#relatedItemBox .hot-hits ul.nav.nav-tabs li a:before { content:none; margin-right: 5px;}
+/* relatedItemBox end */
+
 
 
 /* submenu begin */

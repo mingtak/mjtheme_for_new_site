@@ -1,7 +1,8 @@
 <?python
 from plone import api
 portal = api.portal.get()
-items = api.content.find(context=portal['news'], Type=['News Item', 'Document'], sort_on="created")[0:6]
+LIMIT = 6
+items = api.content.find(context=portal['news'], Type=['News Item', 'Document'], sort_on="created", sort_limit=LIMIT)[:LIMIT]
 ?>
 
 <div class="above-content-info">
