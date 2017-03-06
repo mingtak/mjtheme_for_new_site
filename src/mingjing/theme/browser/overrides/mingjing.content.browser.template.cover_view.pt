@@ -33,6 +33,14 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
 <!-- 首頁 Main slider start -->
 <section tal:define="items python:list(mainSliderNews)[0:10];
                      main_slider_id string:cover_main_slider_1">
+
+        <h3 class="category-title">
+          <span>頭條</span>
+          <a href="${portal/absolute_url}/news" class="h3-title-more">更多</a>
+        </h3>
+
+
+
     <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
 </section>
 <!-- 首頁 Main slider end -->
@@ -53,26 +61,25 @@ news = api.content.find(Type='News Item', id=context.mainSliderNews.split(), sor
                                                col string:owl-carousel-12">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
             </div>
-
         </div>
 
         <div class="row">
             <div class="col-sm-12 col-md-6" tal:define="items liveProgram_1;
                                                t_title string:明鏡電視">
-                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC3lyWHqUY9IiP4en5jnY6vA" target="_blank">${t_title}</a></h4>
+                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC8ATxGF2jaIJxahAd1MwdJw/live" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
             <div class="col-sm-12 col-md-6" tal:define="items liveProgram_2;
                                                t_title string:明鏡24小時">
-                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC68uS1JD0yAVo4FlBRLuCrA" target="_blank">${t_title}</a></h4>
+                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC2enBbQhEfPWD0vpEpA1qyw/live" target="_blank">${t_title}</a></h4>
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
             </div>
         </div>
 
 
-<!-- 電台 -->
+<!-- 廣播 -->
         <h3 class="category-title">
-            <span>電台</span>
+            <span>廣播</span>
             <a href="https://www.youtube.com/playlist?list=PL7rBJWuEBrPYJCcxbTI-qTzuEEmiCCDXX" target="_blank" class="h3-title-more">更多</a>
         </h3>
 

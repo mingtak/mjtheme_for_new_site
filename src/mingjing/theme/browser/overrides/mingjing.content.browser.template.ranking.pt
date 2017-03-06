@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="mingjing.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+from DateTime import DateTime
+portal = api.portal.get()
+range = view.request.form.get('range', '1d')
+?>
+
+<!-- 廣告 -->
+    <div class="row">
+        <div class="col-sm-12 mv3 mvt0">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+        </div>
+    </div>
+
+
+<section>
+
+<!-- 新聞列表 -->
+        <h3 class="category-title" tal:switch="range">
+            <span tal:case="string:2d">瀏覽排行-48小時</span>
+            <span tal:case="string:3d">瀏覽排行-72小時</span>
+            <span tal:case="string:w">瀏覽排行-一周</span>
+            <span tal:case="string:m">瀏覽排行-一月</span>
+            <span tal:case="default">瀏覽排行-24小時</span>
+        </h3>
+            <tal:listing define="items view/brain">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />
+            </tal:listing>
+
+</section>
+
+
+
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

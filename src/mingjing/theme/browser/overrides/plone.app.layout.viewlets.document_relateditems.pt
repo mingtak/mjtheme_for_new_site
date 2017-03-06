@@ -36,5 +36,22 @@
               </li>
           </tal:noRelated>
         </ul>
+
+
+<?python
+from plone import api
+portal = api.portal.get()
+brain = api.content.find(context=portal, sort_on='created', sort_order='reverse', sort_limit=5)[:5]
+?>
+
+
+        <h3 class="category-title"><span>最新播報</span></h3>
+        <tal:listing define="items brain">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/li-listing" />
+        </tal:listing>
+
+
+
+
     </div>
 </div>
