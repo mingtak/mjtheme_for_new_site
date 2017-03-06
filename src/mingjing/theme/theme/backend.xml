@@ -138,6 +138,7 @@
     <drop css:content="#contentview-view" />
     <drop css:content="#contentview-local_roles" />
     <drop css:content="#plone-contentmenu-display" />
+    <drop css:content="#plone-contentmenu-workflow" />
   </rules>
 
 </rules>

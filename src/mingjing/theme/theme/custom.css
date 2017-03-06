@@ -2,7 +2,7 @@
     .logo-side-ad, .header-date { display: none; }
     .header-member {font-size:12px;}
     .social-list { float:left !important; }
-    .news-slider .box h4 { font-size: 18px;}
+    .news-slider .box h4 { font-size: 24px;}
 }
 
 @media (max-width: 768px) {

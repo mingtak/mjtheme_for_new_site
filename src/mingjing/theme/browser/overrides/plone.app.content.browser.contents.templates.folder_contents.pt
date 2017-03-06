@@ -70,7 +70,8 @@ tabs.reverse()
                      </a>
                  </tal:switch>
                  <a class="viewpage" href="${item/absolute_url}?view=true" target="_blank">(閱覽)</a>
-                 <span class="featured" tal:condition="python:hasattr(item, 'featured')">
+                 <span class="featured"
+                       tal:condition="python:hasattr(item, 'featured') and api.user.get_permissions().get('Review portal content')">
                      精選: <input ${python:'checked' if getattr(item, 'featured') else ''}
                                   type="checkbox" class="featured-checkbox" name="featured"
                                   id="${item/UID}">

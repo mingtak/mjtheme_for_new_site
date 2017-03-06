@@ -134,7 +134,7 @@
       <img tal:define="yUrl python:item.getObject().youtubeURL;
                        yId python:yUrl.split('/')[-1]"
            src="https://img.youtube.com/vi/${yId}/0.jpg" alt="${item/Title}" />
-      <a href="${item/getURL}/@@to_youtube" title="${item/Description}" target="_blank">
+      <a href="${item/getURL}" title="${item/Description}" target="_blank">
           <div class="live-item-title">${python:item.Title[0:70]}${python:'...' if len(item.Title)>70 else None}</div>
       </a>
   </div>
@@ -170,6 +170,29 @@
     </div>
   </metal:row>
 
+
+<!-- 分頁 tabs for 最熱點擊, BrowserView用, 傳入tabs_name, brains, tabs_id_prefix -->
+  <metal:row define-macro="hothit_tabs">
+    <div class="views_tabs">
+
+      <ul class="nav nav-tabs">
+          <li tal:repeat="tab tabs_name"
+              class="${python:'active' if repeat['tab'].start else None}">
+              <a data-toggle="tab" href="#${tabs_id_prefix}-${repeat/tab/index}">${tab}</a>
+          </li>
+      </ul>
+      <div class="tab-content">
+          <div tal:repeat="tab tabs_name"
+               id="${tabs_id_prefix}-${repeat/tab/index}" class="tab-pane fade in ${python:'active' if repeat['tab'].start else None}">
+
+              <div class="row" tal:define="items python:brains[repeat['tab'].index][:6]">
+                  <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
+              </div>
+          </div>
+      </div>
+
+    </div>
+  </metal:row>
 
 
 <!-- 分頁 tabs, Portlet用 -->

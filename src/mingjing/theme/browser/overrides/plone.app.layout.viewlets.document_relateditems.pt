@@ -53,11 +53,11 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
         </tal:listing>
 
         <h3 class="category-title"><span>最熱點擊</span></h3>
-        <div class="col-sm-12 hot-hits"
+        <div class="hot-hits"
              tal:define="tabs_name tabsNameList;
                          tabs_id_prefix string:hot_hits_tabs;
                          brains python:tabsBrain();">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
+            <metal:macro use-macro="context/@@mingjing_macro/macros/hothit_tabs" />
         </div>
 
 
