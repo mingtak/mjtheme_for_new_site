@@ -30,17 +30,16 @@
 <div class="owl-theme owl-carousel">
   <div class="normal_slider_item" tal:repeat="item items">
 
-      <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
-          <tal:check case="False">
-              <img tal:condition="python:item.getObject().image"
-                   src="${item/getURL}/@@images/image/large" alt="${item/Title}"/>
-              <img tal:condition="not:python:item.getObject().image"
+      <tal:img switch="python:bool(getattr(item.getObject(), 'image', False))">
+          <img tal:case="python:True"
+               src="${item/getURL}/@@images/image/large" alt="${item/Title}"/>
+          <tal:noimg case="default">
+              <img tal:condition="python:not getattr(item.getObject(), 'oldPicturePath', False)"
                    src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/large" alt="${item/Title}"/>
-          </tal:check>
-          <img tal:case="default" src="${python:getattr(item.getObject(), 'oldPicturePath')}" alt="${item/Title}"/>
+              <img tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
+                   src="${python:getattr(item.getObject(), 'oldPicturePath')}" alt="${item/Title}"/>
+          </tal:noimg>
       </tal:img>
-
-
 
 
    <!--   <img src="${item/getURL}/@@images/image/large" alt="${item/Title}" /> -->
@@ -385,14 +384,53 @@
   </metal:row>
 
 
-<!-- Ad Block -->
+<!-- Ad Block 728*90 -->
   <metal:row define-macro="ad_block">
       <div style="max-width:728px; margin-left:auto; margin-right:auto">
-          <a href="entertainment.html">
-              <img src="https://tpc.googlesyndication.com/simgad/15926840416994248994" alt="廣告" class="full-size">
-          </a>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728*90 display&text -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6428195540030903"
+     data-ad-slot="6560305675"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
       </div>
   </metal:row>
+
+<!-- Ad Block 468*60 -->
+  <metal:row define-macro="ad_block_468_60">
+      <div style="max-width:468px; margin-left:auto; margin-right:auto">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 文章下方橫幅廣告 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-6428195540030903"
+     data-ad-slot="8244569274"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+      </div>
+  </metal:row>
+
+<!-- Ad Block 250*250 -->
+  <metal:row define-macro="ad_block_250_250">
+      <div style="max-width:250px; margin-left:auto; margin-right:auto">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 方形 250*250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-6428195540030903"
+     data-ad-slot="9082600078"></ins>
+<script>
+      </div>
+  </metal:row>
+
 
 
 <!-- listing_with_mini, 傳入 items(brain) -->
@@ -521,21 +559,21 @@ from DateTime import DateTime
                     <div class="master-slider ms-skin-default" id="${main_slider_id}">
        
                         <div class="ms-slide" data-delay="6" tal:repeat="item items">
-                            <tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath'))">
-                                <tal:check case="False">
-                                    <img tal:condition="python:item.getObject().image"
-                                         src="/++resource++mingjing.theme/images/blank.gif"
-                                         data-src="${string:${item/getURL}/@@images/image/preview}"
-                                         alt="${item/Title}" />
-                                    <img tal:condition="not:python:item.getObject().image"
-                                         src="/++resource++mingjing.theme/images/blank.gif"
-                                         data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
-                                         alt="${item/Title}" />
-                                </tal:check>
-                                <img tal:case="default"
-                                     src="${python:getattr(item.getObject(), 'oldPicturePath')}"
-                                     data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                            <tal:img switch="python:bool(getattr(item.getObject(), 'image', False))">
+                                <img tal:case="python:True"
+                                     src="/++resource++mingjing.theme/images/blank.gif"
+                                     data-src="${string:${item/getURL}/@@images/image/preview}"
                                      alt="${item/Title}" />
+                                <tal:noimg case="default">
+                                    <img tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
+                                         src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                         data-src="${python:getattr(item.getObject(), 'oldPicturePath')}"
+                                         alt="${item/Title}" />
+                                    <img tal:condition="not:python:getattr(item.getObject(), 'oldPicturePath', False)"
+                                         src="/++resource++mingjing.theme/images/blank.gif"
+                                         data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/preview"
+                                         alt="${item/Title}" />
+                                </tal:noimg>
                             </tal:img>
                             <div class="ms-thumb post hover-zoom">
                                 <div class="thumb-meta">

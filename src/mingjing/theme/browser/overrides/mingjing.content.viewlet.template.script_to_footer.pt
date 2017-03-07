@@ -169,4 +169,13 @@ function getCookie(cname) {
 
 </script>
 
+
+<!-- 網頁層級廣告 -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6428195540030903",
+    enable_page_level_ads: true
+  });
+</script>
 </div>

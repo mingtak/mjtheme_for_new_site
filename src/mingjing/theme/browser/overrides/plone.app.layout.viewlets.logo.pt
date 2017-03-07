@@ -24,7 +24,7 @@ weekDay = {'0':'日', '1':'一', '2':'二', '3':'三', '4':'四', '5':'五', '6'
 
 <div class="logo-side-ad col-lg-5 col-md-1">
     <div class="pull-right">
-        <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+        <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block_468_60" />
     </div>
 
 </div>
