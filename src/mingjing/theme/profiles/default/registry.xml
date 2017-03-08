@@ -6,7 +6,7 @@
     <value key="resources" purge="true">
       <element>waypoints</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/jquery.waypoints.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -17,7 +17,7 @@
     <value key="resources" purge="true">
       <element>bootstrap</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/bootstrap/js/bootstrap.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -28,7 +28,7 @@
     <value key="resources" purge="true">
       <element>typedjs</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/typed.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -39,7 +39,7 @@
     <value key="resources" purge="true">
       <element>theia-sticky-sidebar</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/theia-sticky-sidebar.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -50,7 +50,7 @@
     <value key="resources" purge="true">
       <element>parallax-columns</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/jquery.parallax.columns.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -61,7 +61,7 @@
     <value key="resources" purge="true">
       <element>jquery-s2t</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++resource++mingjing.theme/jquery.s2t.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -72,7 +72,7 @@
     <value key="resources" purge="true">
       <element>swiper</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/swiper/js/swiper.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -83,7 +83,7 @@
     <value key="resources" purge="true">
       <element>magnific-popup</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/magnific-popup/jquery.magnific-popup.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -94,7 +94,7 @@
     <value key="resources" purge="true">
       <element>masterslider-jquery-easing</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/masterslider/jquery.easing.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -105,7 +105,7 @@
     <value key="resources" purge="true">
       <element>masterslider</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery,plone.bundles/masterslider-jquery-easing</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/masterslider/masterslider.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -116,7 +116,7 @@
     <value key="resources" purge="true">
       <element>owl-carousel</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++theme++mingjing.theme/vendors/owlCarousel/dist/owl.carousel.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
@@ -127,7 +127,7 @@
     <value key="resources" purge="true">
       <element>awesomeCloud</element>
     </value>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="depends">jquery</value>
     <value key="jscompilation">++resource++mingjing.theme/jquery.awesomeCloud-0.2.min.js</value>
     <value key="last_compilation">2017-01-23 00:00:00</value>
