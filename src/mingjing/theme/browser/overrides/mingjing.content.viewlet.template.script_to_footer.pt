@@ -2,31 +2,36 @@
 
 <!-- FB 留言(暫時性/尚未建立app) -->
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=551502991686024";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+<script>
+$(document).ready(function(){
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=551502991686024";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+});
 </script>
 
 <!-- text cloud(半成品) -->
 <script>
-$( "#wordcloud" ).awesomeCloud({
-    "size" : {
-        "grid" : 5,
-        "factor" : 3,
-        },
-    "color" : {
-        "background" : "#666",
-    },
-    "options" : {
-        "color" : "random-light",
-        "printMultiplier" : 1
-    },
-    "font" : "Futura, Helvetica, sans-serif",
-    "shape" : "square",
+$(document).ready(function(){
+  $( "#wordcloud" ).awesomeCloud({
+      "size" : {
+          "grid" : 5,
+          "factor" : 3,
+          },
+      "color" : {
+          "background" : "#666",
+      },
+      "options" : {
+          "color" : "random-light",
+          "printMultiplier" : 1
+      },
+      "font" : "Futura, Helvetica, sans-serif",
+      "shape" : "square",
+  });
 });
 </script>
 
@@ -107,51 +112,53 @@ $(document).ready(function(){
 
 <!-- 繁簡轉換 -->
 <script tal:condition="python:'folder_contents' not in view.request.getURL()">
-$(function() {
-    var lang = getCookie('lang');
-    if(lang == 'tw'){     
-        $("body").s2t();
-        document.getElementById('portaltab-s2t').innerHTML = '简';
-    }else{
-        $("body").t2s();
-        document.getElementById('portaltab-s2t').innerHTML = '繁';
-    }
+$(document).ready(function(){
+  $(function() {
+      var lang = getCookie('lang');
+      if(lang == 'tw'){     
+          $("body").s2t();
+          document.getElementById('portaltab-s2t').innerHTML = '简';
+      }else{
+          $("body").t2s();
+          document.getElementById('portaltab-s2t').innerHTML = '繁';
+      }
+  });
+
+  $("#portaltab-s2t").click(function(){
+      var lang = getCookie('lang');
+      if(lang == 'tw'){
+          setCookie('lang', 'cn');
+          $("body").t2s();
+          document.getElementById('portaltab-s2t').innerHTML = '繁';
+      }else{
+          setCookie('lang', 'tw');
+          $("body").s2t();
+          document.getElementById('portaltab-s2t').innerHTML = '简';
+      }
+  });
+
+  function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "tw";
+  }
 });
-
-$("#portaltab-s2t").click(function(){
-    var lang = getCookie('lang');
-    if(lang == 'tw'){
-        setCookie('lang', 'cn');
-        $("body").t2s();
-        document.getElementById('portaltab-s2t').innerHTML = '繁';
-    }else{
-        setCookie('lang', 'tw');
-        $("body").s2t();
-        document.getElementById('portaltab-s2t').innerHTML = '简';
-    }
-});
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "tw";
-}
 </script>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -159,6 +166,7 @@ function getCookie(cname) {
 
 <!-- Google Analytics -->
 <script>
+$(document).ready(function(){
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -166,16 +174,18 @@ function getCookie(cname) {
 
   ga('create', 'UA-61174515-1', 'auto');
   ga('send', 'pageview');
-
+});
 </script>
 
 
 <!-- 網頁層級廣告 -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
+$(document).ready(function(){
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-6428195540030903",
     enable_page_level_ads: true
   });
+});
 </script>
 </div>

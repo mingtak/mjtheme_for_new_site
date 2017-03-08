@@ -522,14 +522,17 @@ from DateTime import DateTime
        
                         <div class="ms-slide" data-delay="6" tal:repeat="item items">
 
-                                <img tal:condition="python:item.getObject().image"
-                                     src="/++resource++mingjing.theme/images/blank.gif"
-                                     data-src="${string:${item/getURL}/@@images/image/preview}"
-                                     alt="${item/Title}" />
-
+<tal:first switch="python:repeat['item'].index < 3">
+                                <img tal:case="True"
+                                     data-src="${item/getURL}/@@images/image/preview.png"
+                                     alt="${item/Title}"/>
+                                <img tal:case="default"
+                                     src="${item/getURL}/@@images/image/preview.png"
+                                     alt="${item/Title}"/>
+</tal:first>
                                 <img tal:condition="python:not item.getObject().image"
                                      src="/++resource++mingjing.theme/images/blank.gif"
-                                     data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/preview"
+                                     data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/preview.png"
                                      alt="${item/Title}" />
 
                             <div class="ms-thumb post hover-zoom">
