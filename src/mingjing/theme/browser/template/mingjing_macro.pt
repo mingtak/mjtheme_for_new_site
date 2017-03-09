@@ -99,16 +99,17 @@
       </div>
   </metal:row>
 
-<!-- 電台 youtube radio list 傳入 radioList in Cover, side: 'odd', 'even' or 'single'. (Cover content type only) -->
+<!-- 電台 youtube radioList, yt_interList 傳入 plList(radioList or yt_interList) in Cover, side: 'odd',
+     'even' or 'single'. (Cover content type only) -->
   <metal:row define-macro="radio_listing">
       <div class="radio-listing">
           <ul>
-              <tal:li repeat="item python:context.radioList.split('\n')[0:10]"
+              <tal:li repeat="item python:plList.split('\n')[0:10]"
                       switch="side">
-                  <li tal:case="string:even" tal:condition="repeat/item/even">
+                  <li tal:case="string:even">
                       <a href="${python:item.split('|||')[1]}" target="_blank">${python:item.split('|||')[0][0:23]}<span tal:condition="python:len(item.split('|||')[0])>23">...</span></a>
                   </li>
-                  <li tal:case="string:odd" tal:condition="repeat/item/odd">
+                  <li tal:case="string:odd">
                       <a href="${python:item.split('|||')[1]}" target="_blank">${python:item.split('|||')[0][0:23]}<span tal:condition="python:len(item.split('|||')[0])>23">...</span></a>
                   </li>
                   <li tal:case="string:single">

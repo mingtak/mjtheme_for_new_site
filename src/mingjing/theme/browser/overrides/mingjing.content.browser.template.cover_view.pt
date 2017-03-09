@@ -84,10 +84,10 @@ liveProgram_2 = view.liveProgram(context.liveProgram_2)
         </h3>
 
         <div class="row">
-            <div class="col-sm-6" tal:define="side string:even">
+            <div class="col-sm-6" tal:define="side string:even; plList context/radioList">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/radio_listing" />
             </div>
-            <div class="col-sm-6" tal:define="side string:odd">
+            <div class="col-sm-6" tal:define="side string:odd; plList context/yt_interList">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/radio_listing" />
             </div>
         </div>
