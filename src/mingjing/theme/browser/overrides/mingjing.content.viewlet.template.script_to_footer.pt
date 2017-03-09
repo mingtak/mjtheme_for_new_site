@@ -179,6 +179,7 @@ $(document).ready(function(){
 
 
 <!-- 網頁層級廣告 -->
+<!--
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
 $(document).ready(function(){
@@ -188,4 +189,5 @@ $(document).ready(function(){
   });
 });
 </script>
+-->
 </div>

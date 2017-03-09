@@ -136,14 +136,6 @@ liveProgram_2 = view.liveProgram(context.liveProgram_2)
             </div>
         </div>
 
-
-<!-- Ad block -->
-        <div class="row">
-            <div class="col-sm-12 mv3 mvt0">
-                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
-            </div>
-        </div>
-
 <!-- Tabs -->
         <div class="row">
             <div class="col-sm-6"
