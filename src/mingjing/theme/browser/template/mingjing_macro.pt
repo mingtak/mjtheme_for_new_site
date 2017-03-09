@@ -104,7 +104,7 @@
   <metal:row define-macro="radio_listing">
       <div class="radio-listing">
           <ul>
-              <tal:li repeat="item python:plList.split('\n')[0:10]"
+              <tal:li repeat="item python:plList.split('\n')[0:5]"
                       switch="side">
                   <li tal:case="string:even">
                       <a href="${python:item.split('|||')[1]}" target="_blank">${python:item.split('|||')[0][0:23]}<span tal:condition="python:len(item.split('|||')[0])>23">...</span></a>
