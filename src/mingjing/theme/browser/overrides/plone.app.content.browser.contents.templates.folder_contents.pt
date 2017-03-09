@@ -42,6 +42,12 @@ while True:
 tabs.reverse()
 ?>
 
+    <div class="pat-structure"
+         tal:condition="python:'Manager' in api.user.get_roles()"
+         tal:attributes="data-pat-structure view/options" />
+
+
+
 <h4 class="path">
 <tal:path repeat="item tabs">
     <a href="${item/absolute_url}/folder_contents"> ${python:item.title} </a>
@@ -108,11 +114,6 @@ $(".featured-checkbox").change(function(obj){
 .path { margin-top:50px}
 .viewpage { margin: 0 20px}
 </style>
-
-
-    <div class="pat-structure"
-         tal:condition="python:'Manager' in api.user.get_roles()"
-         tal:attributes="data-pat-structure view/options" />
 
 
     </metal:content-core>
