@@ -42,12 +42,6 @@ while True:
 tabs.reverse()
 ?>
 
-    <div class="pat-structure"
-         tal:condition="python:'Manager' in api.user.get_roles()"
-         tal:attributes="data-pat-structure view/options" />
-
-
-
 <h4 class="path">
 <tal:path repeat="item tabs">
     <a href="${item/absolute_url}/folder_contents"> ${python:item.title} </a>
@@ -80,7 +74,10 @@ tabs.reverse()
                        tal:condition="python:hasattr(item, 'featured') and api.user.get_permissions().get('Review portal content')">
                      精選: <input ${python:'checked' if getattr(item, 'featured') else ''}
                                   type="checkbox" class="featured-checkbox" name="featured"
-                                  id="${item/UID}">
+                                  id="f-${item/UID}">
+                     頭條權重: <input value="${item/headWeight}"
+                                  type="number" class="headweight" name="headweight"
+                                  id="h-${item/UID}">
                  </span>
             </td>
             <td> <tal:state replace="python:api.content.get_state(item)" on-error="nothing"/> </td>
@@ -90,13 +87,28 @@ tabs.reverse()
 </table>
 
 <script>
+$(".headweight").change(function(obj){
+  uid = obj.target.id;
+  uid = uid.split('h-')[1];
+  value = obj.target.value;
+
+  $.ajax({
+    type: "POST",
+    url: '${portal/absolute_url}/set_featured',
+    data: {'uid':uid, 'headWeight':value},
+//    success: alert('已完成設定'),
+  });
+
+});
+
 $(".featured-checkbox").change(function(obj){
   uid = obj.target.id;
+  uid = uid.split('f-')[1];
   checked = obj.target.checked;
 
   $.ajax({
     type: "POST",
-    url: '/set_featured',
+    url: '${portal/absolute_url}/set_featured',
     data: {'uid':uid, 'checked':checked},
 //    success: alert('已完成設定'),
   });
@@ -104,16 +116,20 @@ $(".featured-checkbox").change(function(obj){
 });
 </script>
 
-
-
-
 <style type="text/css">
 #custom-folder-contents { margin: 50px 0}
 #custom-folder-contents td { border: solid 1px; padding: 8px}
-.featured { color:red}
+.featured { color:red }
+.featured .headweight { color:#555; }
+.featured .featured-checkbox { margin-right:20px }
 .path { margin-top:50px}
 .viewpage { margin: 0 20px}
 </style>
+
+
+    <div class="pat-structure"
+         tal:condition="python:'Manager' in api.user.get_roles()"
+         tal:attributes="data-pat-structure view/options" />
 
 
     </metal:content-core>

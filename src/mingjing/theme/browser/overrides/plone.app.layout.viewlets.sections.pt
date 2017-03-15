@@ -35,25 +35,6 @@ portal = api.portal.get()
                                      target tab/link_target|nothing;">
                     Tab Name
                   </a>
-                  <ul tal:condition="python:folder and folder.Type() == 'Folder' and selected_tab!=tid">
-<tal:items define="items python:list(folder.getChildNodes());
-                   brain python:api.content.find(Type='Folder', context=folder)">
-                    <li>
-                      <div class="row">
-                        <div class="col-sm-6 col-md-1 mega-menu-column" tal:repeat="col python:range(12)">
-                          <div class="mega-menu-lists" tal:define="colCount python:int(math.ceil(float(len(items))/12))">
-                            <tal:a tal:repeat="item python:range(colCount)">
-                              <a tal:content="python:items[item*12+col].title"
-                                 tal:attributes="href python:items[item*12+col].absolute_url()"
-                                 tal:on-error="nothing"
-                                 href="single-news.html">Autos</a>
-                            </tal:a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-</tal:items>
-                  </ul>
               </li>
             </tal:tabs>
 

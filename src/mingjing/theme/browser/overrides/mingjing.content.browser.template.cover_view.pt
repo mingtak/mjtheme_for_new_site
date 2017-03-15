@@ -18,11 +18,11 @@ import random
 from DateTime import DateTime
 portal = api.portal.get()
 
-mainSliderNews = view.mainSliderNews()
+#mainSliderNews = view.mainSliderNews()
 youtubes = view.youtubes()
 todayNews = view.todayNews()
 tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
-ebooks = view.ebooks()
+#ebooks = view.ebooks()
 rankingNews = view.rankingNews()
 tabsNameList = ['12小時', '24小時', '48小時', '72小時', '一周', '一月']
 tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=view.request)
@@ -31,7 +31,7 @@ liveProgram_2 = view.liveProgram(context.liveProgram_2)
 ?>
 
 <!-- 首頁 Main slider start -->
-<section tal:define="items python:list(mainSliderNews)[0:10];
+<section tal:define="items python:list(view.mainSliderNews())[0:10];
                      main_slider_id string:cover_main_slider_1">
 
         <h3 class="category-title">
@@ -63,18 +63,6 @@ liveProgram_2 = view.liveProgram(context.liveProgram_2)
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12 col-md-6" tal:define="items liveProgram_1;
-                                               t_title string:明鏡電視">
-                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC8ATxGF2jaIJxahAd1MwdJw/live" target="_blank">${t_title}</a></h4>
-                <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
-            </div>
-            <div class="col-sm-12 col-md-6" tal:define="items liveProgram_2;
-                                               t_title string:明鏡24小時">
-                <h4 class="program-h4"><a href="https://www.youtube.com/channel/UC2enBbQhEfPWD0vpEpA1qyw/live" target="_blank">${t_title}</a></h4>
-                <metal:macro use-macro="context/@@mingjing_macro/macros/live_program" />
-            </div>
-        </div>
 
 
 <!-- 廣播 -->
@@ -144,15 +132,12 @@ liveProgram_2 = view.liveProgram(context.liveProgram_2)
                              brains python:tabsBrain_3;">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
             </div>
-            <div class="col-sm-2" tal:repeat="item python:['最新書刊', '最熱書刊', '電子書刊']">
-                <h5 class="category-title ebook"><span>${item}</span></h5>
-                <div class="ebook-cover">
-                    <a href="${python:ebooks[repeat['item'].index].getURL()}" title="${python:ebooks[repeat['item'].index].Title}">
-                        <img src="${python:ebooks[repeat['item'].index].getURL()}/@@images/image" alt="${python:ebooks[repeat['item'].index].Description}"/>
-                    </a>
-                </div>
+            <div class="col-sm-6">
+                <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
             </div>
+
         </div>
+
 
 
 <!-- 最熱點擊 -->

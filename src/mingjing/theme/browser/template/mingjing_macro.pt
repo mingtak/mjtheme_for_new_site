@@ -363,53 +363,21 @@
   </metal:row>
 
 
-<!-- Ad Block 728*90 -->
+<!-- Ad Block RWD -->
   <metal:row define-macro="ad_block">
       <div style="max-width:728px; margin-left:auto; margin-right:auto">
-
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 728*90 display&text -->
+<!-- 回應式廣告(news site) -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-6428195540030903"
-     data-ad-slot="6560305675"></ins>
+     style="display:block"
+     data-ad-client="ca-pub-9621066722313042"
+     data-ad-slot="1544871075"
+     data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
       </div>
   </metal:row>
-
-<!-- Ad Block 468*60 -->
-  <metal:row define-macro="ad_block_468_60">
-      <div style="max-width:468px; margin-left:auto; margin-right:auto">
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 文章下方橫幅廣告 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-6428195540030903"
-     data-ad-slot="8244569274"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-      </div>
-  </metal:row>
-
-<!-- Ad Block 250*250 -->
-  <metal:row define-macro="ad_block_250_250">
-      <div style="max-width:250px; margin-left:auto; margin-right:auto">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 方形 250*250 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:250px;height:250px"
-     data-ad-client="ca-pub-6428195540030903"
-     data-ad-slot="9082600078"></ins>
-<script>
-      </div>
-  </metal:row>
-
 
 
 <!-- listing_with_mini, 傳入 items(brain) -->
@@ -522,20 +490,16 @@ from DateTime import DateTime
                     <div class="master-slider ms-skin-default" id="${main_slider_id}">
        
                         <div class="ms-slide" data-delay="6" tal:repeat="item items">
-
-<tal:first switch="python:repeat['item'].index < 3">
-                                <img tal:case="True"
-                                     data-src="${item/getURL}/@@images/image/preview.png"
-                                     alt="${item/Title}"/>
-                                <img tal:case="default"
-                                     src="${item/getURL}/@@images/image/preview.png"
-                                     alt="${item/Title}"/>
-</tal:first>
-                                <img tal:condition="python:not item.getObject().image"
-                                     src="/++resource++mingjing.theme/images/blank.gif"
-                                     data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/preview.png"
-                                     alt="${item/Title}" />
-
+<tal:img switch="python:bool(getattr(item.getObject(), 'oldPicturePath', False))">
+                            <img tal:case="True"
+                                 src="/++resource++mingjing.theme/images/blank.gif"
+                                 data-src="${python:item.getObject().oldPicturePath}"
+                                 alt="${item/Title}" />
+                            <img tal:case="False"
+                                 src="/++resource++mingjing.theme/images/blank.gif"
+                                 data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/preview.png"
+                                 alt="${item/Title}" />
+</tal:img>
                             <div class="ms-thumb post hover-zoom">
                                 <div class="thumb-meta">
                                     <h4>${python:item.Title[0:42]}</h4>
