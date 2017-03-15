@@ -401,7 +401,7 @@ from DateTime import DateTime
                                                      style="background-image: url('');"></div>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
-                                    <p>${python:item.Description[0:135]}...<a href="${item/getURL}" class="read-more">更多</a></p>
+                                    <p>${python:item.Description[0:135]}...</p>
                                     <div class="meta">
                                         <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>
@@ -426,7 +426,7 @@ from DateTime import DateTime
                                                      style="background-image: url('');"></div>
                                     </a>
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
-                                    <p>${python:item.Description[0:135]}...<a href="${item/getURL}" class="read-more">更多</a></p>
+                                    <p>${python:item.Description[0:135]}...</p>
                                     <div class="meta">
                                         <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
                                     </div>

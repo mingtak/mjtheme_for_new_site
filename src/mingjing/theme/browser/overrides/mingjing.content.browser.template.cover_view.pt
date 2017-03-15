@@ -23,11 +23,8 @@ youtubes = view.youtubes()
 todayNews = view.todayNews()
 tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
 #ebooks = view.ebooks()
-rankingNews = view.rankingNews()
 tabsNameList = ['12小時', '24小時', '48小時', '72小時', '一周', '一月']
 tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=view.request)
-liveProgram_1 = view.liveProgram(context.liveProgram_1)
-liveProgram_2 = view.liveProgram(context.liveProgram_2)
 ?>
 
 <!-- 首頁 Main slider start -->
