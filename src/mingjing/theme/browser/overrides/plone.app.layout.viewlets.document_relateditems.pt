@@ -41,7 +41,7 @@
 <?python
 from plone import api
 portal = api.portal.get()
-brain = api.content.find(context=portal, sort_on='created', sort_order='reverse', sort_limit=5)[:5]
+brain = api.content.find(context=portal, Type=['News Item', 'Blog', 'Ebook', 'Youtube'], sort_on='created', sort_order='reverse', sort_limit=5)[:5]
 tabsNameList = ['24小時', '48小時', '72小時', '一周', '一月']
 tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=view.request)
 ?>
