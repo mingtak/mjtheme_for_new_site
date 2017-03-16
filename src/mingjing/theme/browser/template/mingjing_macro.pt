@@ -62,7 +62,7 @@
 <metal:row define-macro="subjects">
 
                 <p>
-                    <span id="categories-filed-under">網友熱搜:</span>
+                    <span id="categories-filed-under">其它分類:</span>
                     <tal:tag repeat="category categories">
                         <a rel="tag"
                            tal:define="quotedCat python:url_quote(category)"

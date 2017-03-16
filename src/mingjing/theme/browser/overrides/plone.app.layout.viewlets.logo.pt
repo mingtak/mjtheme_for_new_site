@@ -8,40 +8,18 @@ weekDay = {'0':'日', '1':'一', '2':'二', '3':'三', '4':'四', '5':'五', '6'
 ?>
                             <div class="header-wrapper">
 
-                                <div class="site-logo col-lg-2 col-md-2 col-sm-2">
+                                <div class="site-logo col-lg-2 col-md-6 col-sm-6">
                                     <!-- image logo -->
                                     <a href="${view/navigation_root_url}"
                                        title="${view/navigation_root_title}"
                                        rel="home" class="custom-logo-link">
-                                        <img src="logo.png" alt="${view/navigation_root_title}">
+                                        <img src="${view/navigation_root_url}/logo.png" alt="${view/navigation_root_title}">
                                     </a>
                                     <!-- text logo -->
                                     
-                                    
+                            </div>
 
-
-                                </div>
-
-<div class="logo-side-ad col-lg-5 col-md-1">
-    <div class="pull-right">
-        <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
-    </div>
-
-</div>
-
-
-
-                                <div class="pull-right col-lg-3 col-md-5 col-sm-5 header-member">
-                                    <div class="user-profile">
-                                        <div class="entry-name">
-會員註冊 | 會員登入 | 設為首頁 | 會員專區<br>
-購物車　 | 訂閱新聞 | 訂閱郵報 | 聯絡我們
-                                        </div>
-
-                                    </div>
-                                </div>
-
-<div class="pull-right col-lg-2 col-md-1 header-date">
+<div class="col-lg-2 col-md-6 header-date">
 <span>
 [美東時間]<br>
 ${now/year}年${now/month}月${now/day}日<br>
@@ -50,6 +28,9 @@ ${now/hour}時${now/minute}分 星期${python:weekDay[now.strftime('%w')]}
 </div>
 
 
+<div class="logo-side-ad col-lg-8 col-md-12" style="margin-bottom:8px">
+        <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block" />
+</div>
 
                             </div>
 

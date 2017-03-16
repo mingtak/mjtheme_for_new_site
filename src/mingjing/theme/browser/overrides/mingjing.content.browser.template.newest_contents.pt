@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="mingjing.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+
+<?python
+from plone import api
+portal = api.portal.get()
+brain = api.content.find(context=portal, Type=['News Item', 'Blog', 'Youtube', 'Ebook'], sort_on='created', sort_order='reverse', sort_limit=100)[:100]
+?>
+
+<h4 class="path">
+最新內容
+</h4>
+
+
+<table id="custom-folder-contents">
+    <thead>
+        <tr>
+            <td>標題</td>
+            <td>狀態</td>
+            <td>建立時間</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr tal:repeat="item brain">
+            <td> [ <tal:type replace="item/Type"/> ]
+                 <a href="${item/getURL}/edit">
+                     <tal:title replace="item/Title"/>
+                 </a>
+                 <a class="viewpage" href="${item/getURL}?view=true" target="_blank">(閱覽)</a>
+                 <span class="featured"
+                       tal:condition="python:hasattr(item, 'featured') and api.user.get_permissions().get('Review portal content')">
+                     精選: <input ${python:'checked' if getattr(item, 'featured') else ''}
+                                  type="checkbox" class="featured-checkbox" name="featured"
+                                  id="f-${item/UID}">
+                     頭條權重: <input value="${item/headWeight}"
+                                  type="number" class="headweight" name="headweight"
+                                  id="h-${item/UID}">
+                 </span>
+            </td>
+            <td> <tal:state replace="python:api.content.get_state(item.getObject())" on-error="nothing"/> </td>
+            <td> ${python:item.created.strftime('%Y/%m/%d %H:%M')}</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+$(".headweight").change(function(obj){
+  uid = obj.target.id;
+  uid = uid.split('h-')[1];
+  value = obj.target.value;
+
+  $.ajax({
+    type: "POST",
+    url: '${portal/absolute_url}/set_featured',
+    data: {'uid':uid, 'headWeight':value},
+//    success: alert('已完成設定'),
+  });
+
+});
+
+$(".featured-checkbox").change(function(obj){
+  uid = obj.target.id;
+  uid = uid.split('f-')[1];
+  checked = obj.target.checked;
+
+  $.ajax({
+    type: "POST",
+    url: '${portal/absolute_url}/set_featured',
+    data: {'uid':uid, 'checked':checked},
+//    success: alert('已完成設定'),
+  });
+
+});
+</script>
+
+<style type="text/css">
+#custom-folder-contents { margin: 50px 0}
+#custom-folder-contents td { border: solid 1px; padding: 8px}
+.featured { color:red }
+.featured .headweight { color:#555; }
+.featured .featured-checkbox { margin-right:20px }
+.path { margin-top:50px}
+.viewpage { margin: 0 20px}
+</style>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

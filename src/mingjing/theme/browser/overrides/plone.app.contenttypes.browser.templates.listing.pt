@@ -70,11 +70,11 @@ from plone import api
                     <div class="summary col-md-3" tal:attributes="title item_type">
                       <a tal:attributes="href item_link">
                           <div class="image image-listing250">
-                                    <img tal:condition="python:not item.getObject().image"
+                                    <img tal:condition="python:not item.getObject().oldPicturePath"
                                          tal:attributes="src string:${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini;
                                                          alt item_title">
-                                    <img tal:condition="python:item.getObject().image" class="image-tile" alt="${item_title}"
-                                         tal:attributes="src string:${item_url}/@@images/image/preview">
+                                    <img tal:condition="python:item.getObject().oldPicturePath" class="image-tile" alt="${item_title}"
+                                         tal:attributes="src string:${python:item.getObject().oldPicturePath}">
                           </div>
                       </a>
                     </div>
