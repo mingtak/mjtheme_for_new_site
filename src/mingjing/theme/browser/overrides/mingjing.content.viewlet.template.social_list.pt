@@ -1,9 +1,14 @@
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+
 <div class="social-list">
 
-<a title="Facebook" href="https://www.facebook.com/MingJingNews/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-<a title="Twitter" href="https://twitter.com/MingJingNews" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-<a title="Youtube" href="https://www.youtube.com/channel/UCdKyM0XmuvQrD0o5TNhUtkQ" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
-<a title="RSS" href="/resource/pages/rss"><i class="fa fa-rss" aria-hidden="true"></i></a>
+<a title="Facebook" href="javascript:void(0)" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+<a title="Twitter" href="javascript:void(0)" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+<a title="Youtube" href="javascript:void(0)" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+<a title="RSS" href="${portal/absolute_url}/resource/pages/rss"><i class="fa fa-rss" aria-hidden="true"></i></a>
 
 
     <div class="white pull-right">

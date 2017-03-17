@@ -36,7 +36,6 @@ children_folder = api.content.find(context=context, Type='Folder', depth=1)
         <div class="col-md-12">
             <h3 class="category-title">
                 <span>今日熱門</span>
-                <a href="javascript:void(0)" class="h3-title-more">更多</a>
             </h3>
             <metal:macro use-macro="context/@@mingjing_macro/macros/youtube_today_hot"/>
         </div>
@@ -49,7 +48,6 @@ children_folder = api.content.find(context=context, Type='Folder', depth=1)
     <div class="parallax-content">
         <h3 class="category-title">
             <span>直播節目表</span>
-            <a href="javascript:void(0)" class="h3-title-more">更多</a>
         </h3>
         <div class="row">
             <div class="col-sm-12 col-md-6" tal:define="items liveProgram_1;
@@ -85,7 +83,6 @@ children_folder = api.content.find(context=context, Type='Folder', depth=1)
 <!-- 特别推荐 -->
         <h3 class="category-title">
             <span>特别推荐</span>
-            <a href="javascript:void(0)" class="h3-title-more">更多</a>
         </h3>
             <tal:listing define="items python:hot_news[:6]">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />

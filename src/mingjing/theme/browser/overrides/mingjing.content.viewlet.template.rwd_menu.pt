@@ -22,16 +22,14 @@ portal = api.portal.get()
                             <a href="javascript:;" class="close-menu"></a>
                             
                             <div class="pm-socials">
-                                <a target="_blank" href="https://www.facebook.com/MingJingNews/"><i class="fa fa-facebook"></i></a>
-                                <a target="_blank" href="https://twitter.com/MingJingNews"><i class="fa fa-twitter"></i></a>
-                                <a target="_blank" href="https://www.youtube.com/channel/UCdKyM0XmuvQrD0o5TNhUtkQ"><i class="fa fa-youtube"></i></a>
+                                <a target="_blank" href="javascript:void(0)"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="javascript:void(0)"><i class="fa fa-twitter"></i></a>
+                                <a target="_blank" href="javascript:void(0)"><i class="fa fa-youtube"></i></a>
                                 <a target="_blank" href="${portal/absolute_url}/resource/pages/rss"><i class="fa fa-rss"></i></a>
-                                <a target="_blank" href="https://play.google.com/store/apps/details?id=tw.com.appsfly.mirror"><i class="fa fa-android"></i></a>
                             </div>
 
 
 <div class="text-center">
-<p>註冊 | 登入 | 訂閱新聞 | 訂閱郵報</p>
 
 
 </div>

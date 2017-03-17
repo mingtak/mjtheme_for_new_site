@@ -31,7 +31,6 @@ tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBr
 
         <h3 class="category-title">
           <span>頭條</span>
-          <a href="${portal/absolute_url}/news" class="h3-title-more">更多</a>
         </h3>
 
 
@@ -47,7 +46,6 @@ tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBr
 <!-- 視頻 -->
 <!--        <h3 class="category-title">
           <span>視頻</span>
-          <a href="${portal/absolute_url}/video" class="h3-title-more">更多</a>
         </h3>
 
         <div class="row">
@@ -63,7 +61,6 @@ tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBr
 <!-- 視頻列表 -->
 <!--        <h3 class="category-title">
             <span>視頻列表</span>
-            <a href="https://www.youtube.com/playlist?list=PL7rBJWuEBrPYJCcxbTI-qTzuEEmiCCDXX" target="_blank" class="h3-title-more">更多</a>
         </h3>
 
         <div class="row">
@@ -87,7 +84,6 @@ tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBr
 <!-- 今日播報 -->
         <h3 class="category-title">
             <span>今日播報</span>
-            <a href="javascript:void(0)" class="h3-title-more">更多</a>
         </h3>
         <div class="row" tal:define="items python:list(todayNews)[0:8]">
            <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />

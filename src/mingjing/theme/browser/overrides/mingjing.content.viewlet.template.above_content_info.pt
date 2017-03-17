@@ -2,38 +2,21 @@
 from plone import api
 portal = api.portal.get()
 LIMIT = 6
-items = api.content.find(context=portal, Type='News Item', sort_on="created", sort_limit=LIMIT)[:LIMIT]
+items = api.content.find(context=portal, Type='News Item', featured=True, hasOldPicture=True, sort_on="created", sort_order="reverse", sort_limit=LIMIT)[:LIMIT]
 ?>
 
 <div class="above-content-info">
 
                 <div class="container" tal:define="breadcrumbs view/breadcrumbs" >
 
-                    <div class="row submenu" tal:condition="python:context.Type() in ['News Item', 'Folder']">
-                        <div class="col-sm-12"
-                             tal:define="id python:breadcrumbs[0]['absolute_url'].split('/')[-1];
-                                         brain python:api.content.find(context=portal[id], depth=1, Type='Folder');
-                                         folders python:portal[id].getChildNodes()">
-                            <tal:tab repeat="item folders">
-                              <tal:type condition="python:item.Type() == 'Folder'">
-                                <a class="${python:'current' if (item.absolute_url() == context.getParentNode().absolute_url()) or (item.absolute_url() == context.absolute_url()) else None}"
-                                   href="${item/absolute_url}"
-                                   title="${item/Title}">${item/Title}</a><span tal:condition="not:repeat/item/end">|</span>
-                              </tal:type>
-                            </tal:tab>
-                        </div>
-                    </div>
-
-
-
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-12">
                             <div class="tt-el-ticker">
-                                <strong class="fastest-news" style="font-family: initial">快訊 <i class="fa fa-angle-double-right" aria-hidden="true"></i> </strong>
+                                <strong class="fastest-news">快訊 <i class="fa fa-angle-double-right" aria-hidden="true"></i> </strong>
                                 <span class="entry-ticker fastest-news-title fastest-news">
                                     <span tal:repeat="item items">
                                         <a href="${item/getURL}" class="fastest-news">
-                                            ${python:item.Description[0:150]}${python:'...' if len(item.Description)>130 else None}
+                                            ${python:item.Description[0:180]}${python:'...' if len(item.Description)>180 else None}
                                         </a>
                                     </span>
                                 </span>

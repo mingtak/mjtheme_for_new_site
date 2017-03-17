@@ -47,7 +47,6 @@ children_folder= api.content.find(context=context, Type='Folder', depth=1)
 
         <h3 class="category-title">
             <span>焦點話題</span>
-            <a href="javascript:void(0)" class="h3-title-more">更多</a>
         </h3>
         <tal:hot_news define="items python:hot_news[0:3]">
             <metal:macro use-macro="context/@@mingjing_macro/macros/hot_news" />
@@ -65,7 +64,6 @@ children_folder= api.content.find(context=context, Type='Folder', depth=1)
 <!-- 新聞列表 -->
         <h3 class="category-title">
             <span>新聞列表</span>
-            <a href="javascript:void(0)" class="h3-title-more">更多</a>
         </h3>
             <tal:listing define="items python:hot_news[:6]">
                 <metal:macro use-macro="context/@@mingjing_macro/macros/item_listing" />

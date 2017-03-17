@@ -14,7 +14,6 @@ portal = api.portal.get()
 <a href="${portal/absolute_url}/resource/pages/privacy">隱私權政策</a>  |
 <a href="${portal/absolute_url}/sitemap">網站地圖</a>  |
 <a href="${portal/absolute_url}/resource/pages/rss">RSS</a>
-
         </div>
     </div>
 
