@@ -30,16 +30,10 @@
 <div class="owl-theme owl-carousel">
   <div class="normal_slider_item" tal:repeat="item items">
 
-      <tal:img switch="python:bool(getattr(item.getObject(), 'image', False))">
-          <img tal:case="python:True"
-               src="${item/getURL}/@@images/image/large" alt="${item/Title}"/>
-          <tal:noimg case="default">
-              <img src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/large" alt="${item/Title}"/>
-          </tal:noimg>
-      </tal:img>
-
-
-   <!--   <img src="${item/getURL}/@@images/image/large" alt="${item/Title}" /> -->
+      <img tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
+           data-src="${python:item.getObject().oldPicturePath}" class="owl-lazy"/>
+      <img tal:condition="python:not getattr(item.getObject(), 'oldPicturePath', False)" class="owl-lazy"
+           data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/large" alt="${item/Title}"/>
       <a href="${item/getURL}" title="${item/Description}">
           <h4 class="normal-item-title">${python:item.Title[0:70]}${python:'...' if len(item.Title)>70 else None}</h4>
       </a>
@@ -182,8 +176,8 @@
           <div tal:repeat="tab tabs_name"
                id="${tabs_id_prefix}-${repeat/tab/index}" class="tab-pane fade in ${python:'active' if repeat['tab'].start else None}">
 
-              <div class="row" tal:define="items python:brains[repeat['tab'].index][:6]">
-                  <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
+              <div class="row" tal:define="items python:brains[repeat['tab'].index][:10]">
+                 <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
               </div>
           </div>
       </div>
@@ -391,11 +385,11 @@ from DateTime import DateTime
               <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/even">
                                     <a href="${item/getURL}">
-                                                <div tal:condition="python:item.getObject().image"
+                                                <div tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
                                                      class="image image-thumb"
-                                                     data-src="${item/getURL}/@@images/image/mini"
+                                                     data-src="${python:item.getObject().oldPicturePath}"
                                                      style="background-image: url('');"></div>
-                                                <div tal:condition="python:not item.getObject().image"
+                                                <div tal:condition="python:not getattr(item.getObject(), 'oldPicturePath', False)"
                                                      class="image image-thumb"
                                                      data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
                                                      style="background-image: url('');"></div>
@@ -416,11 +410,11 @@ from DateTime import DateTime
               <tal:item repeat="item items">
                                 <div class="post hover-light" tal:condition="repeat/item/odd">
                                     <a href="${item/getURL}">
-                                                <div tal:condition="python:item.getObject().image"
+                                                <div tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
                                                      class="image image-thumb"
-                                                     data-src="${item/getURL}/@@images/image/mini"
+                                                     data-src="${python:item.getObject().oldPicturePath}"
                                                      style="background-image: url('');"></div>
-                                                <div tal:condition="python:not item.getObject().image"
+                                                <div tal:condition="python:not getattr(item.getObject(), 'oldPicturePath', False)"
                                                      class="image image-thumb"
                                                      data-src="${portal/absolute_url}/resource/images/logo_gray.png/@@images/image/mini"
                                                      style="background-image: url('');"></div>
@@ -438,9 +432,9 @@ from DateTime import DateTime
   </metal:row>
 
 
-<!-- 明鏡火拍, 傳入 items(brain) -->
+<!--  傳入 items(brain) -->
 <!--  <metal:row define-macro="mingjing_youtube">
-      <h3 class="category-title"><span>明鏡火拍</span></h3>
+      <h3 class="category-title"><span>視頻節目</span></h3>
           <div class="row">
               <tal:repeat repeat="item items">
                                   <div class="col-md-6">

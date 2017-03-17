@@ -23,8 +23,6 @@ youtubes = view.youtubes()
 todayNews = view.todayNews()
 tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
 #ebooks = view.ebooks()
-tabsNameList = ['12小時', '24小時', '48小時', '72小時', '一周', '一月']
-tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=view.request)
 ?>
 
 <!-- 首頁 Main slider start -->
@@ -37,8 +35,8 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
         </h3>
 
 
-
-    <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/>
+    <metal:macro use-macro="context/@@mingjing_macro/macros/normal_slider" />
+<!--    <metal:macro use-macro="context/@@mingjing_macro/macros/main_slider"/> -->
 </section>
 <!-- 首頁 Main slider end -->
 
@@ -46,9 +44,9 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
 <section>
     <div class="parallax-content">
 
-<!-- 電視 -->
-        <h3 class="category-title">
-          <span>電視</span>
+<!-- 視頻 -->
+<!--        <h3 class="category-title">
+          <span>視頻</span>
           <a href="${portal/absolute_url}/video" class="h3-title-more">更多</a>
         </h3>
 
@@ -59,12 +57,12 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
                 <metal:macro use-macro="context/@@mingjing_macro/macros/live_slider" />
             </div>
         </div>
+-->
 
 
-
-<!-- 廣播 -->
-        <h3 class="category-title">
-            <span>廣播</span>
+<!-- 視頻列表 -->
+<!--        <h3 class="category-title">
+            <span>視頻列表</span>
             <a href="https://www.youtube.com/playlist?list=PL7rBJWuEBrPYJCcxbTI-qTzuEEmiCCDXX" target="_blank" class="h3-title-more">更多</a>
         </h3>
 
@@ -76,7 +74,7 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
                 <metal:macro use-macro="context/@@mingjing_macro/macros/radio_listing" />
             </div>
         </div>
-
+-->
 
 <!-- Ad block -->
 <p class="margin-line"/>
@@ -92,7 +90,7 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
             <a href="javascript:void(0)" class="h3-title-more">更多</a>
         </h3>
         <div class="row" tal:define="items python:list(todayNews)[0:8]">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
+           <metal:macro use-macro="context/@@mingjing_macro/macros/listing_with_mini" />
         </div>
 
 
@@ -106,7 +104,7 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
 
 
 <!-- Tabs -->
-        <div class="row">
+<!--        <div class="row">
             <div class="col-sm-6"
                  tal:define="tabs_name tabsNameList_1;
                              tabs_id_prefix string:cover_tabs_1;
@@ -120,9 +118,9 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
                 <metal:macro use-macro="context/@@mingjing_macro/macros/views_tabs" />
             </div>
         </div>
-
+-->
 <!-- Tabs -->
-        <div class="row">
+<!--        <div class="row">
             <div class="col-sm-6"
                  tal:define="tabs_name tabsNameList_2;
                              tabs_id_prefix string:cover_tabs_3;
@@ -134,20 +132,7 @@ tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=
             </div>
 
         </div>
-
-
-
-<!-- 最熱點擊 -->
-        <h3 class="category-title">
-            <span>最熱點擊</span>
-            <a href="javascript:void(0)" class="h3-title-more">更多</a>
-        </h3>
-        <div class="hot-hits"
-             tal:define="tabs_name tabsNameList;
-                         tabs_id_prefix string:hot_hits_tabs;
-                         brains python:tabsBrain();">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/hothit_tabs" />
-        </div>
+-->
 
     </div>
     <!-- end .parallax-content -->

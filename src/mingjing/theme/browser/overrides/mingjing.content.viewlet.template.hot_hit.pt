@@ -1,0 +1,15 @@
+<?python
+from plone import api
+portal = api.portal.get()
+tabsNameList = ['24小時', '48小時', '72小時', '一周', '一月']
+?>
+
+
+        <h3 class="category-title"><span>最熱點擊</span></h3>
+        <div class="hot-hits"
+             tal:define="tabs_name tabsNameList;
+                         tabs_id_prefix string:hot_hits_tabs;
+                         brains view/brain">
+            <metal:macro use-macro="context/@@mingjing_macro/macros/hothit_tabs" />
+        </div>
+

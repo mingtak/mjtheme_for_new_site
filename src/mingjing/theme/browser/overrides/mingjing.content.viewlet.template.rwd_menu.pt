@@ -38,8 +38,8 @@ portal = api.portal.get()
                             <div class="rwd-menu-logo">
                                 <img src="${portal/absolute_url}/logo_black.png" alt="${portal/title}">
 <!--                                <div class="auth-name">
-                                    <h4><a href="${portal/absolute_url}">明鏡網</a></h4>
-                                    <p><a href="javascript:;">mingjingnet.com</a></p>
+                                    <h4><a href="${portal/absolute_url}">北美觀天下</a></h4>
+                                    <p><a href="javascript:;">NAVisions.com</a></p>
                                 </div>
 -->
                             </div>
@@ -68,17 +68,6 @@ portal = api.portal.get()
 
 
                             </nav>
-<!--
-                            <div class="pm-en-recent">
-<h4 class="title-border">最新書刊</h4>
-                                <a href="#" class="er-item">
-                                    <img src="http://www.mingjingnews.com/MIBM/upimages/Book/P00001021.jpg" alt="recent news">
-                                </a>
-                                <a href="#" class="er-item">
-                                    <img src="http://www.mingjingnews.com/MIBM/upimages/Banner/WW120161028004603.jpg" alt="recent entertainment">
-                                </a>
-                            </div>
--->
                         </div>
                     </div>
                 </div>

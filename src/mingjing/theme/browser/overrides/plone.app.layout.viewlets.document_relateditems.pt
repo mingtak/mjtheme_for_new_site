@@ -1,7 +1,7 @@
 <div class="relatedItems"
      i18n:domain="plone"
      tal:define="related view/related_items"
-     tal:condition="python:context.Type() not in ['Cover', 'Folder', 'Page']">
+     tal:condition="python:context.Type() in ['News Item', 'Blog', 'Ebook', 'Youtube']">
     <div class="visualClear" id="clear-space-before-relatedItemBox"><!-- --></div>
     <div id="relatedItemBox"
               tal:define="plone_view nocall:context/@@plone;
@@ -42,27 +42,11 @@
 from plone import api
 portal = api.portal.get()
 brain = api.content.find(context=portal, Type=['News Item', 'Blog', 'Ebook', 'Youtube'], sort_on='created', sort_order='reverse', sort_limit=5)[:5]
-tabsNameList = ['24小時', '48小時', '72小時', '一周', '一月']
-tabsBrain = api.content.get_view(name='hot_hits', context=view.context, request=view.request)
 ?>
-
-
         <h3 class="category-title"><span>最新播報</span></h3>
         <tal:listing define="items brain">
             <metal:macro use-macro="context/@@mingjing_macro/macros/li-listing" />
         </tal:listing>
-
-        <h3 class="category-title"><span>最熱點擊</span></h3>
-        <div class="hot-hits"
-             tal:define="tabs_name tabsNameList;
-                         tabs_id_prefix string:hot_hits_tabs;
-                         brains python:tabsBrain();">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/hothit_tabs" />
-        </div>
-
-
-
-
 
     </div>
 </div>
