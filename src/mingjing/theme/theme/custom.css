@@ -666,4 +666,4 @@ body.template-login_form #content {margin-top:200px}
 h3 .h3-title-more { float:right; font-size:18px; padding: 8px 10px 0 0 }
 .post .image { background-color: initial }
 
-.template-newsitem_view #content-core img {float:right; margin:10px; max-width:50%; width:100%; height:auto}
+.template-newsitem_view #content-core img {float:right; margin:10px 0 10px 10px; max-width:50%; width:100%; height:auto}

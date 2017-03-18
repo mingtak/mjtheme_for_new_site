@@ -21,8 +21,6 @@
 
 
 
-
-
 <!-- 通用slider, 傳入: items -->
   <metal:row define-macro="normal_slider">
       <div class="normal_slider">
@@ -377,9 +375,6 @@
 <!-- listing_with_mini, 傳入 items(brain) -->
   <metal:row define-macro="listing_with_mini">
 
-<?python
-from DateTime import DateTime
-?>
       <div class="col-md-6">
           <div class="category-block articles listing_with_mini">
               <tal:item repeat="item items">
@@ -397,7 +392,7 @@ from DateTime import DateTime
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
                                     <p>${python:item.Description[0:135]}...</p>
                                     <div class="meta">
-                                        <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
+                                        <span class="pull-right theme-cover-span date">${python:item.created.strftime('%X')}</span>
                                     </div>
                                 </div>
               </tal:item>
@@ -422,7 +417,7 @@ from DateTime import DateTime
                                     <h4><a href="${item/getURL}">${python:item.Title[0:45]}${python:'...' if len(item.Title) > 45 else None}</a></h4>
                                     <p>${python:item.Description[0:135]}...</p>
                                     <div class="meta">
-                                        <span class="pull-right theme-cover-span date">${python:int(DateTime()-item.created)} 小時前</span>
+                                        <span class="pull-right theme-cover-span date">${python:item.created.strftime('%X')}</span>
                                     </div>
                                 </div>
               </tal:item>

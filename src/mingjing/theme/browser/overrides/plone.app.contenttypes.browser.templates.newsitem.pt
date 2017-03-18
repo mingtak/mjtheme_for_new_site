@@ -24,12 +24,16 @@ isPaid = not api.user.is_anonymous() and api.user.has_permission('MingJing News:
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox"></div>
-
+<div class="row">
+<div class="col-md-12">
+<p style="float:right">發佈時間: ${python:context.created().strftime('%Y/%m/%d %H:%M')}</p>
+</div>
+</div>
             <div id="parent-fieldname-text"
                  tal:condition="context/text"
                  tal:content="structure python:context.text.output_relative_to(view.context)"
                  tal:attributes="class python: toc and 'pat-autotoc' or ''" />
-    </div>
+            </div>
 
 </div>
 
@@ -40,17 +44,6 @@ isPaid = not api.user.is_anonymous() and api.user.has_permission('MingJing News:
         </div>
     </div>
 
-
-<!-- 網友熱搜 -->
-<tal:tags define="categories context/Subject|nothing;
-                  url_quote  nocall:modules/Products.PythonScripts.standard/url_quote;"
-         condition="categories">
-    <div class="row">
-        <div class="col-sm-12">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/subjects" />
-        </div>
-    </div>
-</tal:tags>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox"></div>
@@ -79,15 +72,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-<!-- Ad block -->
-    <div class="row">
-        <div class="col-sm-12 mv3 mvt0">
-            <metal:macro use-macro="context/@@mingjing_macro/macros/ad_block"/>
-        </div>
-    </div>
-
-
 
 
 </metal:content-core>
