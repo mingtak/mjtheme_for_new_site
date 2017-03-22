@@ -17,8 +17,15 @@ from plone import api
 import random
 from DateTime import DateTime
 portal = api.portal.get()
-
-#mainSliderNews = view.mainSliderNews()
+date_range = {
+    'query': (
+        DateTime()-1,
+        DateTime(),
+    ),
+    'range': 'min:max',
+}
+#mainSliderNews = api.content.find(Type=['News Item', 'Blog', 'Ebook', 'Youtube'], review_state='published', hasOldPicture=True,
+#                      featured=True, created=date_range, sort_on='headWeight', sort_order='reverse')
 youtubes = view.youtubes()
 todayNews = view.todayNews()
 tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
@@ -26,7 +33,7 @@ tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBr
 ?>
 
 <!-- 首頁 Main slider start -->
-<section tal:define="items python:list(view.mainSliderNews())[0:10];
+<section tal:define="items python:list(view.mainSliders())[0:10];
                      main_slider_id string:cover_main_slider_1">
 
         <h3 class="category-title">
