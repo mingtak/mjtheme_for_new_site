@@ -28,7 +28,7 @@ date_range = {
 #                      featured=True, created=date_range, sort_on='headWeight', sort_order='reverse')
 youtubes = view.youtubes()
 todayNews = view.todayNews()
-tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
+#tabsNameList_1, tabsBrain_1, tabsNameList_2, tabsBrain_2, tabsNameList_3, tabsBrain_3 = view.tabsNameLists()
 #ebooks = view.ebooks()
 ?>
 

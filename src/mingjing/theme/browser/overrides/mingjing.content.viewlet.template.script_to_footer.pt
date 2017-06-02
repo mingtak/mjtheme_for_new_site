@@ -115,12 +115,10 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(function() {
       var lang = getCookie('lang');
-      if(lang == 'tw'){     
-          $("body").s2t();
-//          document.getElementById('portaltab-s2t').innerHTML = '简';
+      if(lang == 'tw'){
+          TongWen.trans2Trad(document);
       }else{
-          $("body").t2s();
-//          document.getElementById('portaltab-s2t').innerHTML = '繁';
+          TongWen.trans2Simp(document);
       }
   });
 
@@ -128,14 +126,20 @@ $(document).ready(function(){
       var lang = getCookie('lang');
       if(lang == 'tw'){
           setCookie('lang', 'cn');
-          $("body").t2s();
-//          document.getElementById('portaltab-s2t').innerHTML = '繁';
+          TongWen.trans2Simp(document);
       }else{
           setCookie('lang', 'tw');
-          $("body").s2t();
-//          document.getElementById('portaltab-s2t').innerHTML = '简';
+          TongWen.trans2Trad(document);
       }
   });
+
+  function toTradChinese(obj) {
+      return TongWen.convert(obj, 'traditional');
+  }
+
+  function toSimpChinese(obj) {
+      return TongWen.convert(obj, 'simplified');
+  }
 
   function setCookie(cname, cvalue, exdays) {
       var d = new Date();
