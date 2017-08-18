@@ -1,8 +1,18 @@
 <?python
 from plone import api
+from DateTime import DateTime
 portal = api.portal.get()
 LIMIT = 6
 items = api.content.find(context=portal, Type='News Item', featured=True, hasOldPicture=True, sort_on="created", sort_order="reverse", sort_limit=LIMIT)[:LIMIT]
+
+date_range = {
+    'query': (
+        DateTime()-3,
+    ),
+    'range': 'min',
+}
+collection = api.content.find(context=portal['99'], Type='Collection', created=date_range, sort_on='created', sort_order='reverse')
+
 ?>
 
 <div class="above-content-info">
@@ -20,6 +30,12 @@ items = api.content.find(context=portal, Type='News Item', featured=True, hasOld
                                         </a>
                                     </span>
                                 </span>
+
+<!-- 焦點話題 -->
+<a class="btn btn-warning" href="${python:collection[0].getURL()}" style="width:100%"
+   tal:condition="collection">
+  <span class="pull-left" style="font-size:18px">焦點話題: ${python:collection[0].Title}</span>
+</a>
 
 <nav id="portal-breadcrumbs" class="plone-breadcrumb"
          i18n:domain="plone"

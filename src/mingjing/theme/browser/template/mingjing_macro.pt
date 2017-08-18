@@ -42,6 +42,26 @@
   </metal:row>
 
 
+<!-- 通用slider for collections, 傳入: items -->
+  <metal:row define-macro="normal_slider_for_collections">
+      <div class="normal_slider">
+
+<div class="owl-theme owl-carousel">
+  <tal:item repeat="item items">
+    <div class="normal_slider_item" tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)">
+      <img tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
+           data-src="${python:item.getObject().oldPicturePath}" class="owl-lazy"/>
+      <a href="${item/getURL}" title="${item/Description}">
+          <h4 class="normal-item-title">${python:item.title[0:70]}${python:'...' if len(item.title)>70 else None}</h4>
+      </a>
+    </div>
+  </tal:item>
+</div>
+
+      </div>
+  </metal:row>
+
+
 <!-- 今日熱門 for tv, 傳入 youtube content type(brain) -->
 <metal:row define-macro="youtube_today_hot">
     <div class="youtube_today_hot" tal:define="y_id python:items.getObject().youtubeURL.split('/')[-1]">

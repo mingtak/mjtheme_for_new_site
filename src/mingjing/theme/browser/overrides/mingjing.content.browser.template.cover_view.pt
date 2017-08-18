@@ -32,6 +32,7 @@ todayNews = view.todayNews()
 #ebooks = view.ebooks()
 ?>
 
+
 <!-- 首頁 Main slider start -->
 <section tal:define="items python:list(view.mainSliders())[0:10];
                      main_slider_id string:cover_main_slider_1">
