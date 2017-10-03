@@ -52,7 +52,7 @@
       <img tal:condition="python:getattr(item.getObject(), 'oldPicturePath', False)"
            data-src="${python:item.getObject().oldPicturePath}" class="owl-lazy"/>
       <a href="${item/getURL}" title="${item/Description}">
-          <h4 class="normal-item-title">${python:item.title[0:70]}${python:'...' if len(item.title)>70 else None}</h4>
+          <h4 class="normal-item-title">${python:item.title}${python:'...' if len(item.title)>70 else None}</h4>
       </a>
     </div>
   </tal:item>
